@@ -1,0 +1,119 @@
+/* http://codepen.io/mr_alien/pen/Alzqe?editors=110 */
+.stand{
+    width:300px; height:20px; border-radius: 5px;
+    background-color: deepskyblue;
+    position:absolute;
+    z-index:1;
+    top:212px; left:49%;
+    transform-origin: left;
+  }
+  .sd1{
+   transform: rotate(60deg);
+  }
+  .sd2{
+    transform: rotate(120deg);
+  }
+.wheel{
+    width:50px; height:50px; border-radius: 50%;
+    background-color: deepskyblue;
+    position:relative; 
+    /*top:300px; left:340px;*/
+    top:190px; left:45%;
+    animation: turn 15s 0s infinite linear;
+  }
+
+.wheel:before{
+    content:'';
+    width:425px; height:425px; border-radius: 50%;
+    border: 20px solid deepskyblue;
+    position:absolute; top:-190px; left:-190px;
+  }
+  
+.support{
+    width:190px; border-bottom:5px solid deepskyblue;
+    position:absolute;
+  }
+    .sp1{
+      top:5px;left:25px;
+      transform-origin: left;
+      transform:rotate(-90deg);
+    }
+    .sp2{
+      top:30px;left:25px;
+      transform-origin: left;
+      transform: rotate(90deg);
+    }
+    .sp3{
+      top:25px;left:5px;
+      transform-origin: left;
+      transform: rotate(-180deg);
+    }
+    .sp4{
+      top:25px;left:30px;
+      transform-origin: left;
+      transform: rotate(0deg);
+    }
+    .sp5{
+      top:35px;left:40px;
+      transform-origin: left;
+      transform: rotate(45deg);
+    }
+    .sp6{
+      top:10px;left:10px;
+      transform-origin: left;
+      transform: rotate(225deg);
+    }
+    .sp7{
+      top:10px;left:45px;
+      transform-origin: left;
+      transform: rotate(-45deg);
+    }
+    .sp8{
+      top:35px;left:10px;
+      transform-origin: left;
+      transform: rotate(135deg);
+    }
+.seat{
+      width:40px;height:40px; border-radius: 50%;
+      position:absolute;
+    }
+    .s1{
+      background-color:gold;
+      top: -240px;left:5px;
+    }
+    .s2{
+      background-color:palevioletred;
+      top: 240px;left:5px;
+    }
+    .s3{
+      background-color:turquoise;
+      top: 5px;left:-240px;
+    }
+    .s4{
+      background-color:tomato;
+      top: 5px;left:240px;
+    }
+    .s5{
+      background-color:salmon;
+      top: 173.5px;left:173.5px;
+    }
+    .s6{
+      background-color:palegreen;
+      top: -170.5px;left:-170.5px;
+    }
+    .s7{
+      background-color:#FF9933;
+      top: -162.5px;left:182.5px;
+    }
+    .s8{
+      background-color:plum;
+      top: 172.5px;left:-172.5px;
+    }
+
+
+/*animations*/
+@keyframes turn{
+    100%{
+      transform:rotate(360deg);
+      }
+    }

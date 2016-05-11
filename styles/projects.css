@@ -1,0 +1,127 @@
+.section{
+    font-family: 'Varela Round', sans-serif;
+    position: relative;
+    float: left;
+    padding: 5%;
+    padding:0;
+    height:100%;
+    width:100%;
+    background-color: transparent;
+}
+.section-port{
+    padding: 0 5%;
+}
+.title-port{
+    color:#66CC99;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+}
+
+ul.finCalc-list li{
+    position: relative; left:25px;
+}
+
+
+/*
+.port-box-frame{
+    width: 210px;
+    height: 210px;
+    background-color: #97CE68;
+    margin: 2%;
+    border-radius: 2px;
+    box-shadow: 6px 4px 0px #6fad38;
+    border-radius: 5px;
+    
+   /* background: -webkit-linear-gradient(bottom right, #97CE68 81%, #ebcb7a 100% ); 
+    background: -o-linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% ); 
+    background: -moz-linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% ); 
+    background: linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% ); *//*
+    position: relative;
+    top:0px;
+    animation:boxHover 0.4s linear 0s infinite alternate;
+    animation-play-state: paused;
+}*/
+
+/*--------------------------------------------------------------
+                            MODAL
+---------------------------------------------------------------*/
+.modal-content{
+    overflow:hidden;
+}
+
+.modal-body{
+    position:absolute;
+    height: 500px;
+}
+.modal-body p{
+    font-size: 15px;
+}
+.modal-head{
+    padding:10px 10px;
+    text-align: center;
+    height:50px;
+}
+.modal-foot{
+    height:70px; width:100%; position:relative; left:px; 
+    text-align: center;
+}
+.modal-foot p{
+    font-size: 15px;
+    padding:5px;
+}
+.port-gsc-icon{
+    position: relative; top:-10px;
+    color:#876C95; 
+} /* #876C95   */
+.port-modal-vid{
+    /* transform: translateX(25%); MODAL VID*/    
+}
+
+
+/*  http://thenewcode.com/825/Pinterest-Style-Column-Layout-In-Pure-CSS    */
+/*--------------------------------------------------------------
+                    PINTREST LAYOUT
+---------------------------------------------------------------*/
+#columns {
+	column-width: 320px;
+	column-gap: 15px;
+	width: 90%;
+	max-width: 1100px;
+	margin: 50px auto;
+}
+div#columns figure figcaption{
+    color:white; font-weight: 600; font-size: 18px;
+}
+div#columns figure {
+	background: #66CC99;
+	border: 2px solid #66CC99;
+	box-shadow: 0 1px 2px #66CC99;
+	margin: 0 2px 15px;
+	padding: 15px;
+	padding-bottom: 10px;
+	transition: opacity .4s ease-in-out;
+	column-break-inside: avoid;
+	display: inline-block;
+}
+div#columns figure img {
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid white;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+div#columns:hover figure:not(:hover) {
+	opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+	#columns { column-gap: 0px; }
+	#columns figure { width: 100%; }
+}
+
+
+
+
+
