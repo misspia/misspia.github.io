@@ -3,9 +3,6 @@ http://codepen.io/Zeaklous/pen/kyGqm
 http://codepen.io/Rplus/pen/lEDBj
 
 */
-.section{
-    
-}
 .section-title{
     color: white;
     font-size: 50px;
@@ -32,6 +29,8 @@ http://codepen.io/Rplus/pen/lEDBj
 .exp-box p{
     position:absolute;
     visibility: hidden;
+    font-size: 40px;
+    line-height: px;
 }
 .activebox{
     padding: 0px 10%;
@@ -39,14 +38,12 @@ http://codepen.io/Rplus/pen/lEDBj
 }
 .activebox p{
     text-align: left;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 20px; font-weight: 400; line-height: 25px;
     display: list-item; list-style-type: circle;
     position: relative;
     left: 40px;
     top:-50px;
     width:350px;
-    position:relative;
     visibility: visible;
 }
 .activebox h1{
@@ -70,11 +67,5 @@ http://codepen.io/Rplus/pen/lEDBj
     padding-top: 25px;
  
 }
-.activebox .exp-title{
-    position: relative;
-    font-size: 20px;
-    top: -20px;
-}
-
 
 

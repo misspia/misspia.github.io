@@ -16,3 +16,17 @@ function stop(){
     $('.c2').css('animation-play-state', 'running');
     $('.c3').css('animation-play-state', 'running');    
   }
+
+
+/////////////////////////////CKN OR MAN //////////////////////////////////
+function chickensuit() {
+  $('.person-arms').css('opacity', '0');
+   $('.chicken-outfit').css('opacity','1');
+   $('.sir-outfit').css('opacity','0');
+   
+}
+function sirsuit(){
+     $('.person-arms').css('opacity', '1');
+    $('.sir-outfit').css('opacity','1');
+    $('.chicken-outfit').css('opacity','0');
+}

@@ -38,11 +38,14 @@ ul.finCalc-list li{
 ---------------------------------------------------------------*/
 .modal-content{
     overflow:hidden;
+    /*
+    height:600px;
+    */
 }
 
 .modal-body{
-    position:absolute;
-    height: 500px;
+    height:500px;
+     max-height: 800px;
 }
 .modal-body p{
     font-size: 15px;
@@ -58,10 +61,10 @@ ul.finCalc-list li{
 }
 .modal-foot p{
     font-size: 15px;
-    padding:5px;
+    padding:5px; line-height: 15px;
 }
 .port-gsc-icon{
-    position: relative; top:-10px;
+    position: relative; top:-20px;
     color:#876C95; 
 } /* #876C95   */
 .port-modal-vid{

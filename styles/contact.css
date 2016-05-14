@@ -53,10 +53,11 @@ body {
 
 
 /*----------------------------------------------------
-SOCIAL LINKS
+                    SOCIAL LINKS
 --------------------------------------------------- */
 .subtitle-contact, .contact-email{
-    text-align: center;
+    text-align: center; color:#66CC99; font-weight: 600;
+    font-size: 15px;
 }
 .social-fa{
     color:white;
@@ -67,7 +68,6 @@ SOCIAL LINKS
 }
 .contact-media li{
     list-style-type:none;
-
 }
 .contact-media a{
     float:left;
@@ -89,7 +89,7 @@ SOCIAL LINKS
                     SHARE
 --------------------------------------------------- */
 .subtitle-share{
-    text-align: center;
+    text-align: center; color:#66CC99; font-weight: 600;
 }
 .contact-share{
     width:75px; padding:0px;
