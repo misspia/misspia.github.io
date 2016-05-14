@@ -33,11 +33,7 @@ $(document).ready(function () {
      $(".overview-int").mouseout(function () {
         $(this).css("background-color", "transparent");
          resetColor();
-
         });
-    
-    
-    
 });
 
 function resetDesc (){

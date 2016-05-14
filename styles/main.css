@@ -1,3 +1,15 @@
+.section{
+    font-family: 'Varela Round', sans-serif;
+    position: relative;
+    float: left;
+    padding: 5%;
+    padding:0;
+    width:100%; height:100%; 
+    top:5px; bottom:5px;
+    background-color: transparent;
+}
+
+
 /*---------------------------------------------------------------
         LANDING
 ------------------------------------------------------------------*/
@@ -10,9 +22,6 @@
     background-color: black;
 }
 
-.active{
-    
-}
 .share-item{
     position: relative;
    height:50px;
@@ -65,7 +74,7 @@
     40%{transform: rotate(10deg);}
     60%{transform: rotate(-10deg);}
     80%{transform: rotate(0deg);}
-   
+
 }
 
 /*------------------------------------------------------------
@@ -125,8 +134,8 @@ p{
 
 
 
-/*----------------------------------------------------------------- 
-        LANDING - code for animated blinking cursor 
+/*-----------------------------------------------------------------
+        LANDING - code for animated blinking cursor
 -----------------------------------------------------------------*/
         .typed-cursor{
             opacity: 1;
@@ -162,7 +171,7 @@ p{
             50% { opacity:0; }
             100% { opacity:1; }
         }
-/* -----------------------------------------------------------------                HEADER  
+/* -----------------------------------------------------------------                HEADER
 ------------------------------------------------------------------*/
 
 
@@ -219,18 +228,29 @@ p{
 .navbar-custom li a{
     color:#202634; font-weight: 600;
 }
+.navbar-custom .navbar-nav > .active a{
+  color: #FF7E88 !important;
+  background-color: transparent !important;
+}
+
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #FF7E88 !important;
+  background-color: transparent !important;
+}
 
 ul.nav a:hover,
 ul.nav a:active,
-ul.nav a:focus{ 
-    color: #FF7E88 !important; 
-    background-color: transparent !important;    
+ul.nav a:focus{
+    color: #FF7E88 !important;
+    background-color: transparent !important;
 }
 .sr-only{
-    
+
 }
 .icon-bar{
-    
+
 }
 .navbar-toggle{
     background-color: #FF7E88 !important;

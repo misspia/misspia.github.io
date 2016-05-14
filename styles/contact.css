@@ -1,11 +1,8 @@
+body {
+  position: relative;
+}
 .section{
-    font-family: 'Varela Round', sans-serif;
-    position: relative;
-    float: left;
-    padding:0;
-    height:100%;
-    width:100%;
-    background-color: transparent; color:#66CC99; font-weight: 600;
+
 }
 .contact-letter{
     color:#66CC99;
@@ -25,7 +22,7 @@
     font-size: 30px; font-weight: 600; color:#66CC99;
     position:relative; margin-left: auto; margin-right: auto;
     height: 200px; width:200px;
-    border-radius: 50%; border:solid 4px #66CC99; 
+    border-radius: 50%; border:solid 4px #66CC99;
 }
 .contact-bubble:after,
 .contact-bubble:before {
@@ -39,7 +36,7 @@
     margin-left: -119.5px;
     position: absolute;
     transform: rotate(55deg);
-    
+
 }
 
 /* Styling for second triangle (border) */
@@ -69,8 +66,8 @@ SOCIAL LINKS
     margin-left: auto; margin-right: auto;
 }
 .contact-media li{
-    list-style-type:none; 
-    
+    list-style-type:none;
+
 }
 .contact-media a{
     float:left;
@@ -88,7 +85,7 @@ SOCIAL LINKS
     background-color: #666666;
 }
 
-/*----------------------------------------------------  
+/*----------------------------------------------------
                     SHARE
 --------------------------------------------------- */
 .subtitle-share{

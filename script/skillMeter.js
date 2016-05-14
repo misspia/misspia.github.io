@@ -18,7 +18,6 @@ $(document).ready(function ( ) {
             resetDesc ();
             htmlDesc ();
             $('.skill-meter-label-6').css('opacity', '1');
-            
         }       
     );
     $(".skill-btn-js").click(
@@ -135,25 +134,25 @@ function j1Needle(){
 
 //////////////////////DESCRIPTION BOX///////////////////////
 function resetDesc (){
-    $('.skill-detail-box-desc').children("p").remove();
+    $('.skill-detail-box-desc').find('span').remove()
 }
 function excelDesc (){
-        $('<p>VBA, macros, advanced logical formulas, vlookup</p>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+        $('<span>VBA, macros, advanced logical formulas, vlookup</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
 }
 function htmlDesc (){
-    $('<p>Bootstrap, Pure CSS, animations</p>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+    $('<span>Bootstrap, Pure CSS, animations</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
 }
 function jsDesc (){
-    $('<p>JQuery, JSON</p>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+    $('<span>JQuery, JSON</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
 }
 function pythonDesc (){
-    $('<p> </p>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+    $('<span> </span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
 }
 function sqlDesc (){
-    $('<p>YQL</p>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+    $('<span>YQL</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
 }
 function j1Desc (){
-    $('<p>No karaoke please</p>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+    $('<span>No karaoke please</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
 }
 
 

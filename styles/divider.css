@@ -1,0 +1,9 @@
+.divider-t,
+.divider-g{
+    position: relative; margin-left: auto; margin-right: auto;
+    height:5px; width:80%;
+    border-radius: 50px;
+    margin-top:2%; margin-bottom:2%; 
+}
+.divider-t{background-color: #6FCDCF;}
+.divider-g{background-color: #66CC99;}

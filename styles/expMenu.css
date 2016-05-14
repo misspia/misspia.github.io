@@ -4,14 +4,7 @@ http://codepen.io/Rplus/pen/lEDBj
 
 */
 .section{
-    font-family: 'Varela Round', sans-serif;
-    position: relative;
-    float: left;
-    padding: 5%;
-    padding:0;
-    height:100%;
-    width:100%;
-    background-color: transparent;
+    
 }
 .section-title{
     color: white;

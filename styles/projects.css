@@ -1,13 +1,3 @@
-.section{
-    font-family: 'Varela Round', sans-serif;
-    position: relative;
-    float: left;
-    padding: 5%;
-    padding:0;
-    height:100%;
-    width:100%;
-    background-color: transparent;
-}
 .section-port{
     padding: 0 5%;
 }
