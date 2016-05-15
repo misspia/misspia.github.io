@@ -21,6 +21,15 @@ $(document).ready(function ( ) {
       $('.skill-meter-label-6').css('opacity', '1');
     }
   );
+    $(".skill-btn-css").click(
+    function () {
+      resetOpacity();
+      cssNeedle();
+      resetDesc();
+      cssDesc();
+      $('.skill-meter-label-6').css('opacity', '1');
+    }
+  );
   $(".skill-btn-js").click(
     function () {
       resetOpacity();
@@ -96,6 +105,15 @@ function excelNeedle(){
       },
       duration:'slow'
     },'linear');}
+function cssNeedle(){
+    $(".skill-meter-needle").animate({  borderSpacing: 160 }, {
+      step: function(now,fx) {
+        $(this).css('-webkit-transform','rotate('+now+'deg)');
+        $(this).css('-moz-transform','rotate('+now+'deg)');
+        $(this).css('transform','rotate('+now+'deg)');
+      },
+      duration:'slow'
+    },'linear');}
     function jsNeedle(){
       $(".skill-meter-needle").animate({  borderSpacing: 90 }, {
         step: function(now,fx) {
@@ -139,7 +157,10 @@ function excelNeedle(){
               $('<span>VBA, macros, advanced logical formulas, vlookup</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
             }
             function htmlDesc (){
-              $('<span>Bootstrap, Pure CSS, animations</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+              $('<span>Bootstrap, Skeleton</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+            }
+            function cssDesc (){
+              $('<span>Sass. SCSS, animations</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
             }
             function jsDesc (){
               $('<span>JQuery, JSON</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
