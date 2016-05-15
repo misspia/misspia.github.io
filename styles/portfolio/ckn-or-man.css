@@ -1,5 +1,5 @@
 .person-container{
-    position:absolute; top:0px;
+    position:relative; top:0px;
     margin-left: auto; margin-right: auto;
     height:500px; width:400px;
     z-index: -0;

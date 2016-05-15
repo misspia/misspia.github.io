@@ -1,4 +1,8 @@
-/* http://codepen.io/mr_alien/pen/Alzqe?editors=110 */
+.ferris-wheel-container{
+    width:500px;
+    position:relative;
+    margin-left: auto; margin-right: auto;
+}
 .stand{
     width:300px; height:20px; border-radius: 5px;
     background-color: deepskyblue;
@@ -33,42 +37,42 @@
     width:190px; border-bottom:5px solid deepskyblue;
     position:absolute;
   }
-    .sp1{
+    .support:nth-child(1){
       top:5px;left:25px;
       transform-origin: left;
       transform:rotate(-90deg);
     }
-    .sp2{
+    .support:nth-child(2){
       top:30px;left:25px;
       transform-origin: left;
       transform: rotate(90deg);
     }
-    .sp3{
+    .support:nth-child(3){
       top:25px;left:5px;
       transform-origin: left;
       transform: rotate(-180deg);
     }
-    .sp4{
+    .support:nth-child(4){
       top:25px;left:30px;
       transform-origin: left;
       transform: rotate(0deg);
     }
-    .sp5{
+    .support:nth-child(5){
       top:35px;left:40px;
       transform-origin: left;
       transform: rotate(45deg);
     }
-    .sp6{
+    .support:nth-child(6){
       top:10px;left:10px;
       transform-origin: left;
       transform: rotate(225deg);
     }
-    .sp7{
+    .support:nth-child(7){
       top:10px;left:45px;
       transform-origin: left;
       transform: rotate(-45deg);
     }
-    .sp8{
+    .support:nth-child(8){
       top:35px;left:10px;
       transform-origin: left;
       transform: rotate(135deg);
@@ -77,41 +81,41 @@
       width:40px;height:40px; border-radius: 50%;
       position:absolute;
     }
-    .s1{
+    .seat:nth-child(9){
       background-color:gold;
       top: -240px;left:5px;
     }
-    .s2{
+    .seat:nth-child(10){
       background-color:palevioletred;
       top: 240px;left:5px;
     }
-    .s3{
+    .seat:nth-child(11){
       background-color:turquoise;
       top: 5px;left:-240px;
     }
-    .s4{
+    .seat:nth-child(12){
       background-color:tomato;
       top: 5px;left:240px;
     }
-    .s5{
+    .seat:nth-child(13){
       background-color:salmon;
       top: 173.5px;left:173.5px;
     }
-    .s6{
+    .seat:nth-child(14){
       background-color:palegreen;
       top: -170.5px;left:-170.5px;
     }
-    .s7{
+    .seat:nth-child(15){
       background-color:#FF9933;
       top: -162.5px;left:182.5px;
     }
-    .s8{
+    .seat:nth-child(16){
       background-color:plum;
       top: 172.5px;left:-172.5px;
     }
 
 
-/*animations*/
+/*animation*/
 @keyframes turn{
     100%{
       transform:rotate(360deg);
