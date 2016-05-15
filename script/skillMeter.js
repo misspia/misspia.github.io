@@ -21,7 +21,6 @@ $(document).ready(function ( ) {
       $('.skill-meter-label-6').css('opacity', '1');
     }
   );
-<<<<<<< HEAD
     $(".skill-btn-css").click(
     function () {
       resetOpacity();
@@ -31,8 +30,6 @@ $(document).ready(function ( ) {
       $('.skill-meter-label-6').css('opacity', '1');
     }
   );
-=======
->>>>>>> origin/master
   $(".skill-btn-js").click(
     function () {
       resetOpacity();
@@ -108,7 +105,6 @@ function excelNeedle(){
       },
       duration:'slow'
     },'linear');}
-<<<<<<< HEAD
 function cssNeedle(){
     $(".skill-meter-needle").animate({  borderSpacing: 160 }, {
       step: function(now,fx) {
@@ -118,8 +114,6 @@ function cssNeedle(){
       },
       duration:'slow'
     },'linear');}
-=======
->>>>>>> origin/master
     function jsNeedle(){
       $(".skill-meter-needle").animate({  borderSpacing: 90 }, {
         step: function(now,fx) {
@@ -163,14 +157,10 @@ function cssNeedle(){
               $('<span>VBA, macros, advanced logical formulas, vlookup</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
             }
             function htmlDesc (){
-<<<<<<< HEAD
               $('<span>Bootstrap, Skeleton</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
             }
             function cssDesc (){
               $('<span>Sass. SCSS, animations</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
-=======
-              $('<span>Bootstrap, Pure CSS, animations</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
->>>>>>> origin/master
             }
             function jsDesc (){
               $('<span>JQuery, JSON</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
