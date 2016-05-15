@@ -36,13 +36,14 @@ ul.finCalc-list li{
 /*--------------------------------------------------------------
                             MODAL
 ---------------------------------------------------------------*/
-body .modal-content{
-    /* new custom width */
-    min-width: 1000px;
-    margin-left: -200px;
-    /* must be half of the width, minus scrollbar on the left (30px)
-    margin-left: -375px;*/
+
+
+@media screen and (min-width: 768px) {
+
+	.modal .modal-dialog  {width:900px;}
+
 }
+body .modal .modal-dialog  {width:75%;}
 
 .modal-content{
   max-height: calc(100vh - 210px);
@@ -66,7 +67,7 @@ body .modal-content{
     height:50px;
 }
 .modal-foot{
-    height:70px; 
+    height:70px;
     text-align: center;
 }
 .modal-foot p{
