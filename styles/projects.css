@@ -22,10 +22,10 @@ ul.finCalc-list li{
     border-radius: 2px;
     box-shadow: 6px 4px 0px #6fad38;
     border-radius: 5px;
-    
-   /* background: -webkit-linear-gradient(bottom right, #97CE68 81%, #ebcb7a 100% ); 
-    background: -o-linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% ); 
-    background: -moz-linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% ); 
+
+   /* background: -webkit-linear-gradient(bottom right, #97CE68 81%, #ebcb7a 100% );
+    background: -o-linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% );
+    background: -moz-linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% );
     background: linear-gradient(bottom right,#e1b137 81%, #ebcb7a 100% ); *//*
     position: relative;
     top:0px;
@@ -36,8 +36,18 @@ ul.finCalc-list li{
 /*--------------------------------------------------------------
                             MODAL
 ---------------------------------------------------------------*/
+body .modal-content{
+    /* new custom width */
+    min-width: 1000px;
+    margin-left: -200px;
+    /* must be half of the width, minus scrollbar on the left (30px)
+    margin-left: -375px;*/
+}
+
 .modal-content{
-    overflow:hidden;
+  max-height: calc(100vh - 210px);
+  min-height: 700px;
+  overflow-y: auto;
     /*
     height:600px;
     */
@@ -56,7 +66,7 @@ ul.finCalc-list li{
     height:50px;
 }
 .modal-foot{
-    height:70px; width:100%; position:relative; left:px; 
+    height:70px; width:100%; position:relative; left:px;
     text-align: center;
 }
 .modal-foot p{
@@ -65,10 +75,10 @@ ul.finCalc-list li{
 }
 .port-gsc-icon{
     position: relative; top:-20px;
-    color:#876C95; 
+    color:#876C95;
 } /* #876C95   */
 .port-modal-vid{
-    /* transform: translateX(25%); MODAL VID*/    
+    /* transform: translateX(25%); MODAL VID*/
 }
 
 
@@ -113,8 +123,3 @@ div#columns:hover figure:not(:hover) {
 	#columns { column-gap: 0px; }
 	#columns figure { width: 100%; }
 }
-
-
-
-
-
