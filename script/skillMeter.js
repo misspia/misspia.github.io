@@ -27,7 +27,7 @@ $(document).ready(function ( ) {
       excelNeedle();
       resetDesc();
       excelDesc();
-      $('.skill-meter-label-7').css('opacity', '1');
+      $('.skill-meter-label-6').css('opacity', '1');
     }
   );
   $(".skill-btn-html").click(
@@ -36,7 +36,7 @@ $(document).ready(function ( ) {
       htmlNeedle();
       resetDesc();
       htmlDesc();
-      $('.skill-meter-label-6').css('opacity', '1');
+      $('.skill-meter-label-5').css('opacity', '1');
     }
   );
   $(".skill-btn-css").click(
@@ -45,7 +45,7 @@ $(document).ready(function ( ) {
       cssNeedle();
       resetDesc();
       cssDesc();
-      $('.skill-meter-label-6').css('opacity', '1');
+      $('.skill-meter-label-5').css('opacity', '1');
     }
   );
   $(".skill-btn-js").click(
@@ -86,15 +86,7 @@ $(document).ready(function ( ) {
   );
 
 
-
-
-
 });
-
-
-function AlertSave() {
-  alert("Alert Message OnClick");
-}
 
 function resetOpacity() {
   $('.skill-meter-label').css('opacity','0.6');
@@ -106,7 +98,7 @@ function hideNeedle(){
 }
 
 function excelNeedle(){
-  $(".skill-meter-needle").animate({  borderSpacing: 170 }, {
+  $(".skill-meter-needle").animate({  borderSpacing: 155 }, {
     step: function(now,fx) {
       $(this).css('-webkit-transform','rotate('+now+'deg)');
       $(this).css('-moz-transform','rotate('+now+'deg)');
@@ -115,7 +107,7 @@ function excelNeedle(){
     duration:'slow'
   },'linear');}
   function htmlNeedle(){
-    $(".skill-meter-needle").animate({  borderSpacing: 150 }, {
+    $(".skill-meter-needle").animate({  borderSpacing: 110 }, {
       step: function(now,fx) {
         $(this).css('-webkit-transform','rotate('+now+'deg)');
         $(this).css('-moz-transform','rotate('+now+'deg)');
@@ -124,7 +116,7 @@ function excelNeedle(){
       duration:'slow'
     },'linear');}
     function cssNeedle(){
-      $(".skill-meter-needle").animate({  borderSpacing: 160 }, {
+      $(".skill-meter-needle").animate({  borderSpacing: 135 }, {
         step: function(now,fx) {
           $(this).css('-webkit-transform','rotate('+now+'deg)');
           $(this).css('-moz-transform','rotate('+now+'deg)');
