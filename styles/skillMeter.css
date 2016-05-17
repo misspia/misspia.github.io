@@ -208,7 +208,7 @@
 ------------------------------------------------------------*/
 .skill-detail-box{
     position: relative;
-    height: 55px; width: 600px;
+    height: 55px; width: 650px;
     margin-left:auto; margin-right: auto;
     background-color: transparent;
     border-radius: 10px; border:solid 2px #6fcdcf;
@@ -226,7 +226,7 @@
 .skill-detail-box-desc{
     position: relative;
     top:-39px; left:105px; 
-    width:480px; height:40px;
+    width:530px; height:40px;
     border-radius: 5px; border:solid 2px #6fcdcf;
     color:#6fcdcf;
     font-size: 18px; font-weight: 600;

@@ -53,7 +53,7 @@ body .modal .modal-dialog  {width:60%;}
 }
 .port-gsc-icon{
     position: relative; top:-20px;
-    color:#876C95;
+    color:#876C95; 
 } 
 .port-modal-vid{
     transform: translateX(11%);
@@ -63,6 +63,23 @@ body .modal .modal-dialog  {width:60%;}
     transform: translate(10%);
     
 }
+/*----------------CAROUSEL------------------*/
+.carousel-control{
+    background: none !important; opacity:1;
+    color:#66CC99;
+    height:50px; top:45%;
+}
+.carousel-control:hover,
+.carousel-control:focus{
+    color:#66CC99 ;
+}
+.carousel-indicators .active{
+    background-color: #66CC99;
+}
+.carousel-indicators li{
+    border: solid 2px #66CC99;
+}
+
 
 
 /*  http://thenewcode.com/825/Pinterest-Style-Column-Layout-In-Pure-CSS    */
