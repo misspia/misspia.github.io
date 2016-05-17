@@ -43,12 +43,11 @@ body .modal .modal-dialog  {width:60%;}
     height:50px;
 }
 .modal-foot{
-    height:50px;
+    height:50px; 
     text-align: center; 
 }
 .modal-foot p{
-    position: absolute
-    font-size: 15px;
+    position: relative; font-size: 15px;
     padding:5px; line-height: 15px;
 }
 .port-gsc-icon{
