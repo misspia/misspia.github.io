@@ -48,7 +48,6 @@ function eduDesc (){
     $('<p>Education</p>').appendTo('.profile-desc-head').hide().fadeIn();
     $('<p>Currently a 3rd year accounting and finance student at the University of Waterloo</p>').appendTo('.profile-desc-body').hide().fadeIn();
     $('<p><a href="https://uwaterloo.ca/school-of-accounting-and-finance/future-undergraduates" target="_blank">School of Accounting and Finance</a></p>').appendTo('.profile-desc-body').hide().fadeIn();
-     $('<p><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></p>').appendTo('.profile-desc-body').hide().fadeIn();
 }
 function codeDesc (){
     $('<p>How my coding journey began..</p>').appendTo('.profile-desc-head').hide().fadeIn();
@@ -61,5 +60,5 @@ function intDesc (){
     $('<p>Current Interests</p>').appendTo('.profile-desc-head').hide().fadeIn();
     $('<p>IT Solutions</p>').appendTo('.profile-desc-body').hide().fadeIn();
     $('<p>Wealth Management</p>').appendTo('.profile-desc-body').hide().fadeIn();
-    $('<p>Mobile App Deveopment</p>').appendTo('.profile-desc-body').hide().fadeIn();
+    $('<p>Mobile App Development</p>').appendTo('.profile-desc-body').hide().fadeIn();
 }

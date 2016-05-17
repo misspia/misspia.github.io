@@ -1,3 +1,6 @@
+.header{
+    min-height:90vh;
+}
 .section{
     font-family: 'Varela Round', sans-serif;
     position: relative;
@@ -8,7 +11,10 @@
     background-color: transparent;
 }
 .section-contact{
-    min-height: 80vh;
+   
+}
+.section-profile{
+    min-height:96vh;
 }
 
 /*---------------------------------------------------------------

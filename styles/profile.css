@@ -1,6 +1,4 @@
-.section-profile{
 
-}
 
 .profile-intro{
     font-size: 50px; text-align: center; color:#66CC99;
@@ -17,7 +15,7 @@
     font-size: 30px;
 }
 .profile-desc{
-    width:400px; height:200px;
+    width:500px; height:200px;
     /*border:solid 2px white;*/
     margin-left: auto; margin-right: auto; margin-top:2%;
     text-align: center; 
@@ -28,7 +26,8 @@
     line-height: 0px;
 }
 .profile-desc-body{
-    position:relative; height:100px;
+    position:relative; height:100px; width: 400px;
+    margin-left: auto; margin-right: auto;
     margin-top:30px;
 }
 .profile-desc-body p{
