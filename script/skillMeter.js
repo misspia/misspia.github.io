@@ -176,7 +176,7 @@ function excelNeedle(){
                 $('<span>JQuery, JSON</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
               }
               function pythonDesc (){
-                $('<span> </span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
+                $('<span>None...yet! </span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
               }
               function sqlDesc (){
                 $('<span>YQL</span>').appendTo('.skill-detail-box-desc').hide().fadeIn();
