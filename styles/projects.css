@@ -117,6 +117,41 @@ div#columns figure img {
 div#columns:hover figure:not(:hover) {
 	opacity: 0.4;
 }
+/*---------------------------------
+        Stock Watcher Modal
+-----------------------------------*/
+#port7 img{
+    display:block;
+  margin-left:auto;
+  margin-right:auto;
+    margin-bottom: 5%;
+}
+.tryitSW{
+    position:relative;
+    margin-left: auto; margin-right: auto; 
+    margin-top: 2%;
+    height:2em; width:6em;
+    font-size: 2em;
+    text-align: center; line-height: 2em;
+    border-radius: 5px;
+    background-color:#876C95;
+    color:white;
+    box-shadow: 0px 4px #5e4b68;
+}
+.modal-body a:hover,
+.modal-body a:active,
+.modal-body a:focus{
+    text-decoration: none;
+    color:white;
+}
+.tryitSW:active{
+    transform: translateY(3px);
+    box-shadow: 0px 1px #5e4b68;
+}
+.tryitSW i{
+    
+}
+
 
 @media screen and (max-width: 750px) {
 	#columns { column-gap: 0px; }
