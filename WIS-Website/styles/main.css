@@ -209,7 +209,13 @@ section {
     .chart tbody tr {
       background-color: transparent !important;
       border-bottom: 2vh solid white;
-      line-height: 7vh; }
+      line-height: 7vh;
+      /*&:nth-child(1) .percent div{width:39%;}*/
+      /*&:nth-child(2) .percent div{width:34%;}*/
+      /*&:nth-child(3) .percent div{width:59%;}*/
+      /*&:nth-child(4) .percent div{width:23%;}*/
+      /*&:nth-child(5) .percent div{width:30%;}*/
+      /* &:nth-child(6) .percent div{width:22%;}*/ }
       .chart tbody tr td:nth-child(1) {
         text-align: right;
         line-height: 3vh;
@@ -223,16 +229,12 @@ section {
       .chart tbody tr td:nth-child(3) {
         width: 60%; }
       .chart tbody tr:nth-child(1) .percent div {
-        width: 39%; }
-      .chart tbody tr:nth-child(2) .percent div {
-        width: 34%; }
-      .chart tbody tr:nth-child(3) .percent div {
         width: 59%; }
-      .chart tbody tr:nth-child(4) .percent div {
+      .chart tbody tr:nth-child(2) .percent div {
         width: 23%; }
-      .chart tbody tr:nth-child(5) .percent div {
+      .chart tbody tr:nth-child(3) .percent div {
         width: 30%; }
-      .chart tbody tr:nth-child(6) .percent div {
+      .chart tbody tr:nth-child(4) .percent div {
         width: 22%; }
 
 #chart {
