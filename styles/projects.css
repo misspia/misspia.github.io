@@ -33,6 +33,8 @@ body .modal .modal-dialog  {width:60%;}
 .modal-body{
     height:500px;
     max-height: 800px;
+    padding-right:4%;
+    padding-left:4%;
 }
 .modal-body p{
     font-size: 15px;
