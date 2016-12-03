@@ -1,0 +1,273 @@
+// Place all the styles related to the Company controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+$color:#F3F4F5; 
+$bgcolor: #181818;
+$nin-color: #2F383F; $highlight: #47CEC0;
+$border: solid black 1px;
+$shadow: #2F383F;
+@mixin center-hor(){position:relative; margin:0 auto;}
+@mixin circle($width){width: $width; height: $width; border-radius: 50%;}
+@mixin square($width){width:$width; height:$width;}
+
+// .tooltip{
+//   white-space:pre-line;
+// }
+body{
+	font-family: 'Raleway', sans-serif;
+	margin:0;
+}
+.ver-center {
+ 	display:flex;
+ 	flex-direction: column;
+ 	justify-content: center;
+ 	height:100vh;
+
+}
+.hor-center {
+    display: flex;
+ 	flex-direction: row;
+ 	justify-content: center;
+ 	width:100%;
+}
+
+/*General Section styling*/
+.section{
+	min-height: 100vh;
+	text-align: center;	
+	background-color: $highlight;
+	color:$color;
+	.title{font-size:3em; letter-spacing:0.01em;}
+	p{font-size:1.5rem;opacity:0;}
+}
+
+/*Section Specific*/
+#concept, #contact{background-color:darken($highlight, 6%);}
+#hero{
+	.title{opacity:0;}
+	.google-badge{
+		z-index:1;
+		transform:translatey(-70px);
+		opacity:0;
+		img{
+			position:relative;
+			// margin-left: auto; margin-right: auto;
+			max-width: 280px;
+			opacity:1;
+			animation: badge 8s 1 1.5s ease-in-out;
+			animation-fill-mode: forwards;
+		}
+	}
+}
+#team{
+	.title{opacity:0;}
+	.profile-container{
+		display:flex; flex-flow: row wrap;
+		justify-content: center;
+		.profile{
+			opacity:0;
+			display:flex; justify-content:center;
+			height:20em; width: 14.5em;
+			margin: 1em 0.4em;
+			color:$nin-color; background-color: white;
+			border-radius:0.4em;
+			box-shadow: 0em 1em 1em 0em darken($highlight,20%);
+			font-weight:600;
+			.crop{
+				@include circle(11em);
+				margin:0 0 0.5em 0;
+				align-self: center;
+				overflow:hidden;
+				border:white 5px solid;
+				box-shadow: 0em 0em 0em 0.1em $highlight;
+				img{height:11em; width:auto;}
+			}
+			.name{margin-top:0.5em;}
+			.role{color:$highlight; margin-top:0.4em;}
+		}		
+	}
+
+}
+
+/*/////////////////////////////FIXED SIDE-BAR///////////////////////////*/
+#page-nav{
+  position: fixed;
+  left: 0;
+  top: 50vh;
+  width: 4em;
+  padding-left: 1em;
+  line-height: 2em;
+  margin-top: -2.5em;
+  z-index: 1;
+  .menu-item{
+  	height:1rem; width:1rem;
+  	border-radius: 50%;
+  	background-color: $color;
+  	&:hover{
+  		border:$color solid 0.1rem;
+		background-color: transparent;
+		transform: scale(1.5);
+		transition:all 1s;
+  	}
+  }
+  .active{
+  	border:$color solid 0.1rem;
+	background-color: transparent;
+	transform: scale(1.5);
+	transition:all 0.5s;
+  }
+}
+
+ul{
+  	list-style-type:none !important;
+  	li{
+  		margin:1rem 0;
+  	}
+  	a{
+  		color:$color;
+  	}
+  }
+
+@media screen and (max-width: 800px) {
+    #page-nav {
+        opacity:0;
+    }
+}
+
+/*////////////////////HERO//////////////////////////////*/
+.container-title-ver{
+  height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.container-title-hor{
+   display:flex; justify-content:center;
+   transform:translatex(-60px);
+}
+.container-title {
+  transform: rotate(-5deg); opacity:0;
+}
+.container{
+  height:1em; width:5em;
+  line-height:1em; font-size:6em;
+  font-weight:400;
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+  color:$nin-color;
+  overflow:hidden;
+  .top, .bot{
+    position:relative;
+    transform:rotate(5deg);
+  }
+  .top{top:0.5em;}
+  .bot{top:-0.5em;}
+}
+.container-inner{
+  align-self:flex-start;
+  display:flex; flex-direction: column;
+  justify-content: center;
+  height:15em;
+  &:nth-child(1){transform: translatey(-2em);}
+  &:nth-child(2){transform: translatey(0.6em);}
+}
+  .slash{
+  // position:absolute;
+  height:0.15em; width:5em;
+  background-color:$nin-color;
+  transform:rotate(-5deg);
+  opacity:0;
+  align-self: flex-start; 
+  }
+.container-ninja{
+  opacity:0;
+  height:15em; width:15em;
+  transform:scale(0.4) translatex(-350px) translatey(10px);
+  position:absolute;
+  .antena{
+    height:1em; width:1em;
+    @include center-hor();
+    @include circle(1.2em);
+    background-color: $nin-color;
+    &:after{
+      display: block; content:'';
+      height:0.5em; width:40%;
+      @include center-hor();
+      top:1em;
+      background-color:inherit;
+    }
+  }
+  .body{
+    height: 12em; width:10em;
+    @include center-hor();
+    top:0.5em;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: $nin-color;
+    .face{
+      @include center-hor();
+      width:70%; height:4em; top:16%;
+      border-radius:5em 5em 3.8em 3.8em;
+      background-color: white;
+      .eye-container{
+        @include center-hor();
+        width:85%; height: 1.5em;
+        top:30%;
+        .eye{
+          @include circle(1.4em);
+          position:relative;
+          background-color: $nin-color;
+          animation: eye 1s infinite;
+          &:nth-child(2){
+            margin-left:auto;
+            top:-1.3em;   //negative value of .eye dimmensions
+          }   
+        }
+      }
+    }
+    .chest{
+      width:35%; height:1em;
+      position:relative;
+      top:23%;
+      left:53%;
+      .btn{
+        @include circle(0.6em);
+        position:absolute;
+        background-color:white;
+        &:nth-child(2){left: 33%;}
+        &:nth-child(3){left:66%;}
+      }
+    }
+  }
+}
+/*////////////////CONTACT/////////////////////////*/
+#contact{
+	.title{opacity:1;}
+	p{line-height:0;}
+}
+/*////////////////CONCEPT/////////////////////////*/
+#concept{
+	.ver-center{width:100%;}
+	.title{opacity:0;}
+	ol{
+		text-align:left;
+		font-size:2em;
+		li{margin-bottom:0.5em; opacity:0;}
+	}
+	.phone{
+		height: 70vh; width:auto;
+	}
+	.phone-container{
+		left:10vh; opacity:0;
+	}
+}
+@media screen and (max-width: 470px) {
+	.phone-container{display:none;}
+	#concept{
+		ol{
+			transform: translateY(-1em) translatex(0.5em);
+
+		}
+	}
+}
