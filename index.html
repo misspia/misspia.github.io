@@ -2,154 +2,42 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Speak</title>
-	<!--stylesheets-->
-	<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css" />
-	<link rel="stylesheet" type="text/css" href="styles/structure.css">
+	<title>Pia Leung</title>
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
-
- 	<!--javascript -->
- 	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-	<script type="text/javascript" src='lib/jquery.onscreen.min.js'></script>
-	<script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.tooltip').tooltipster({
-              theme: 'tooltipster-borderless',
-              animation:'grow',
-              delayTouch: [0,200],
-              maxWidth: 350,
-              contentAsHTML: true
-            });
-        });
-    </script>
 </head>
-<body>
-    <ul id="page-nav">
-      <li>
-        <a href="#hero">
-          <div class="menu-item active menu-1"></div></a>
-      </li>
-      <li>
-        <a href="#concept">
-          <div class="menu-item menu-2"></div></a>
-      </li>
-      <li>
-        <a href="#team">
-          <div class="menu-item menu-3"></div></a>
-      </li>
-      <li>
-        <a href="#contact">
-          <div class="menu-item menu-4"></div></a>
-      </li>
-    </ul>
-	<section id = 'hero' class='col'>
-	        <div class='ver-center'>
-	          <div class='hor-center'>
-	            <div class='ver-center'>
-					<div class='container-title-ver'>
-					  <div class='container-title-hor'>
-					    <div class='container-inner'>
-					      <div class='container-ninja'>
-					  <div class='antena'></div>
-					  <div class='body'>
-					    <div class='face'>
-					      <div class='eye-container'>
-					        <div class='eye'></div>
-					        <div class='eye'></div>
-					      </div>
-					    </div>
-					    <div class='chest'>
-					      <div class='btn'></div>
-					      <div class='btn'></div>
-					      <div class='btn'></div>
-					    </div>
-					  </div>
-					</div>
-					    </div>
-					    <div class='container-inner'>
-					      <div class="slash"> </div>
-					    </div>
-
-					    <div class='container-title'>
-					      <div class="container"><div class="top">NOTE</div></div>
-					      <div class="container"><div class="bot">NOTE</div></div>
-					      <div class='unslashed'>JUTSU</div>
-					    </div>
-					  </div>
-					  	                <a href="https://play.google.com/store/apps/details?id=com.spotify.music&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="google-badge" target="_blank">
-	                       <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png">
-	                        </a>
-					</div>
-
-
-	            </div>
-	          </div>
-	        </div>
-	</section>
-	<section id = 'concept' class='col'>
-		<ul>
-			<li class='row heading'>Concept</li>
-			<ul class='row'>
-				<li class='image-container'>
-					<div class='phone-container'><img src='img/nexus5-blank.png' class='phone'/></div>
-				</li>
-				<li class='steps'>
-					<ol type='1'>
-						<li>show up to class</li>
-						<li>record your lecture</li>
-						<li>let us create notes for you</li>
-					</ol>
-				</li>
+<body class="full-width-height">
+	<ul id="main" class="col align-center full-width">
+		<li id="nav" class="row full-width">
+			<ul class="row center full-width-height">
+				<a href="#about" class="row align-center full-height">About</a>
+				<a href="#hero" class="row align-center full-height" >Home</a>
+				<a href="#projects" class="row align-center full-height">Projects</a>
 			</ul>
-		</ul>
-	</section>
-	<section id= 'team' class='col'>
-		<ul>
-			<li class='row heading'>Meet Our Team</li>
-			<li>
-				<ul>
-					<li class='team-members row' >
-						<ul class=''>
-							<div class='profile tooltip' title="Computer Science <br> University of Waterloo"><img src="img/profile-sibtain.jpg"></div>
-							<li>Sibtain Jafferi</li>
-							<li>Founder</li>
-						</ul>
-						<ul class=''>
-							<div class='profile tooltip' title=" Electrical and Electronics Engineering <br> University of Waterloo"><img src="img/profile-haytham.jpg"></div>
-							<li>Haytham Labrini</li>
-							<li>Frontend Developer</li>
-						</ul>
-						<ul>
-							<div class='profile tooltip' title="Computer Science <br> University of Waterloo"><img src="img/profile-nerman.jpg"></div>
-							<li>Nerman Nicholas</li>
-							<li>Backend Engineer</li>
-						</ul>
-						<ul>
-							<div class='profile tooltip' title="Software Developer <br> University of Waterloo Alumni"><img src="img/profile-hoc.jpg"></div>
-							<li>Hoc Huynh</li>
-							<li>Full Stack Developer</li>
-						</ul>
-	   					<ul>
-							<div class='profile tooltip' title="Financial Management <br> University of Waterloo"><img src="img/profile-pia.jpg"></div>
-							<li>Pia Leung</li>
-							<li>Design + Web Developer</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</section>
-	<section id='contact' class='col'>
-		<ul>
-			<li class='row heading'>Contact</li>
-			<li>contact@speak.com</li>
-		</ul>
-
-	</section>
+		</li>
+		<li id="hero" class="full-width section">
+			<ul class="col center align-center full-width-height">
+				<li id="bgVid">
+					<video playsinline autoplay muted loop >
+						<source src="media/smoke.mp4" type="video/mp4">
+					</video>
+				</li>
+				<li class="section-content">
+					hero
+				</li>
+			</ul>		
+		</li>
+		<li id="about" class="full-width section">
+			<ul class="col center align-center full-width-height">
+				about
+			</ul>	
+		</li>
+		<li id="projects" class="full-width section">
+			<ul class="col center align-center full-width-height">
+				projects
+			</ul>	
+		</li>
+	</ul>
 </body>
+
+	<script type="text/javascript" src="js/app.js"></script>
 </html>
