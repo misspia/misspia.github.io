@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300");
 .row, .col {
   display: flex;
   flex-wrap: wrap; }
@@ -75,6 +77,12 @@ a {
   a:active, a:visited {
     color: #000; }
 
+.title, .section-title {
+  font-family: "Montserrat", sans-serif; }
+
+.section-title {
+  font-size: 3.5em; }
+
 #nav {
   position: fixed;
   top: 0;
@@ -86,16 +94,35 @@ a {
 #bgVid {
   position: fixed;
   top: 0;
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100vw;
   border-radius: 0;
   z-index: -9999;
-  opacity: 0.6; }
+  opacity: 0.3; }
+  #bgVid video {
+    height: 100%;
+    width: 100%;
+    border-radius: 0; }
 
 #hero {
   position: relative;
   overflow: hidden;
   height: 100vh; }
+  #hero .box {
+    height: 20em;
+    width: 20em;
+    border-radius: 0;
+    border-radius: 0.2em;
+    background-color: #fff;
+    box-shadow: 0.1em 0.1em 0.3em 0.1em rgba(0, 0, 0, 0.26);
+    text-align: center; }
+    #hero .box .title {
+      color: #fff;
+      text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
+      font-size: 4em; }
+  #hero .title {
+    font-size: 1.6em;
+    padding: 0.5em 0; }
 
 /*
 http://chdmlr.com/index.html
@@ -104,8 +131,13 @@ http://anaiszamboni.com/#work
 http://www.smashurbanmedia.com/
 http://aaronxmarquez.com/
 
+type
+http://alessandroscarpellini.it/logos/
+
 projects
 http://www.riangle.com/
+http://stuartregan.com/
+https://madeby.google.com/
 
 mobile
 http://www.eisenberger.co.at/
@@ -119,6 +151,17 @@ http://www.eleganza.ca/?lang=en
 
 canvas
 https://www.collectivei.com/join-us/
+http://strandfuif.be/2016/
+http://www.dtsi.de/home/
+
+hero
+http://visitmy.country/
+
+section divide
+https://highness.co/
+
+contact
+https://www.siteinspire.com/websites/2609-helloauan
 
 
 */
@@ -130,6 +173,20 @@ https://www.collectivei.com/join-us/
   min-height: 100vh;
   background-color: #fff; }
 
+.project-container {
+  height: 50vh;
+  border: solid 0.1em #000; }
+  .project-container .img-container {
+    height: 20em;
+    width: 30em;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0.5em 0.5em 1em 0.2em rgba(0, 0, 0, 0.26); }
+  .project-container .description-container {
+    padding: 2em 0 0 2em; }
+
 body {
   background-color: #fff;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: "Nunito Sans", sans-serif;
+  background-image: url("../media/bg.gif"); }

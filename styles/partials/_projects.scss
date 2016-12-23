@@ -1,4 +1,21 @@
 #projects {
 	min-height: 100vh;
 	background-color: $baseBgColor;
+
+
+}
+
+.project-container{
+	height:50vh;
+	border:solid 0.1em #000;
+
+	.img-container{
+		@include rect(30em, 20em);
+		overflow: hidden;
+		box-shadow: 0.5em 0.5em 1em 0.2em $boxShadow;
+	}		
+
+	.description-container {
+		padding:2em 0 0 2em;
+	}
 }

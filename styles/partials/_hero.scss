@@ -1,14 +1,39 @@
 #bgVid{
 	position:fixed;
 	top:0;
-	@include rect(auto, 100%);
+	@include rect(100vw, auto);
 	z-index: -9999;
-	opacity:0.6;
+	opacity:0.3;
+	video{
+
+		@include rect(100%, 100%);
+	}
+
 }
 #hero {
 	position:relative;
 	overflow:hidden;
 	height:100vh;	
+	
+	.box {
+		@include rect(20em, 20em);
+		border-radius:0.2em;
+		background-color:$baseBgColor;
+		box-shadow: 0.1em 0.1em 0.3em 0.1em $boxShadow;
+		text-align: center;
+		
+		.title{
+			color:#fff;
+			text-shadow: 0.1em 0em 0.1em $boxShadow;
+			font-size:4em;
+		}
+			
+	}
+	.title{
+		font-size:1.6em;
+		padding: 0.5em 0;
+		// border:solid 0.1em #000;
+	}
 }
 
 /*
@@ -18,8 +43,13 @@ http://anaiszamboni.com/#work
 http://www.smashurbanmedia.com/
 http://aaronxmarquez.com/
 
+type
+http://alessandroscarpellini.it/logos/
+
 projects
 http://www.riangle.com/
+http://stuartregan.com/
+https://madeby.google.com/
 
 mobile
 http://www.eisenberger.co.at/
@@ -33,6 +63,17 @@ http://www.eleganza.ca/?lang=en
 
 canvas
 https://www.collectivei.com/join-us/
+http://strandfuif.be/2016/
+http://www.dtsi.de/home/
+
+hero
+http://visitmy.country/
+
+section divide
+https://highness.co/
+
+contact
+https://www.siteinspire.com/websites/2609-helloauan
 
 
 */

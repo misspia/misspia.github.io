@@ -5,3 +5,11 @@ a{
 		color: $baseTextColor;
 	}
 }
+
+.title, .section-title{
+	font-family: $titleFont;
+}
+
+.section-title{
+	font-size:3.5em;
+}
