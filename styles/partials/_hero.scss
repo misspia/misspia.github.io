@@ -8,8 +8,14 @@
 
 		@include rect(100%, 100%);
 	}
-
 }
+#smoke{
+	position:fixed;
+	top:0;
+	@include rect(100vw, auto);
+	z-index: -9999;
+}
+
 #hero {
 	position:relative;
 	overflow:hidden;
@@ -23,8 +29,6 @@
 		text-align: center;
 		
 		.title{
-			color:#fff;
-			text-shadow: 0.1em 0em 0.1em $boxShadow;
 			font-size:4em;
 		}
 			

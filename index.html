@@ -16,15 +16,16 @@
 		</li>
 		<li id="hero" class="full-width section">
 			<ul class="col center align-center full-width-height">
-				<li id="bgVid">
+				<!-- <li id="bgVid">
 					<video playsinline autoplay muted loop >
 						<source src="media/ink.mp4" type="video/mp4">
 					</video>
-				</li>
+				</li> -->
+				<li id="smoke"></li>
 				<li class="section-content">
 					<ul class="col center align-center full-width-height">
 						<li class="col center align-center box">
-							<span class="title row">PIA LEUNG</span>
+							<span class="row title shadow-text">PIA LEUNG</span>
 							<span class="subtitle row">FRONT END DEVELOPER</span>
 						</li>
 						<li class="row center align-center title">
@@ -39,21 +40,38 @@
 		<li id="about" class="full-width section">
 			<ul class="col center align-center full-width-height">
 				<li class="section-title">about.</li>
+				<li class="row social-links">
+					<a href="">Resume</a>
+					<a href="">GitHub</a>
+					<a href="">LinkedIn</a>
+					<a href="">Codepen</a>
+				</li>
 			</ul>	
 		</li>
 
 
 		<li id="projects" class="full-width section">
 			<ul class="col center align-center full-width-height">
-				<li class="section-title">projects.</li>
+				<li class="section-title">projects. </li>
 				<li class="row full-width project-container">
 					<ul class="row align-center full-width-height">
 						<li class="img-container">
 							<img src="media/projects/placeholder.png">
 						</li>
-						<li class="col description-container">
+						<li class="col info-container">
 							<span class="title">D3 Audio Visualizer</span>
-							<span class="">description</span>
+							<span class="description">description</span>
+							<span class="row technology-stack">
+								Technology: D3.js, JavaScript, Sass, HTML5
+							</span>
+							<span class="row project-links">
+								<a href="#" class="row center align-center link demo">
+									<span class="bold">DEMO</span>
+								</a>
+								<a href="#" class="row center align-center link code">
+									<span class="bold">CODE</span>
+								</a>
+							</span>
 						</li>
 					</ul>
 				</li>
@@ -61,6 +79,9 @@
 		</li>
 	</ul>
 </body>
-
+	<script type="text/javascript" src="node_modules/three/three.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/smoke.js"></script>
+
 </html>
+

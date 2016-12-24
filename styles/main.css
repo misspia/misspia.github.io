@@ -77,11 +77,15 @@ a {
   a:active, a:visited {
     color: #000; }
 
-.title, .section-title {
+.title, .section-title, .bold {
   font-family: "Montserrat", sans-serif; }
 
 .section-title {
   font-size: 3.5em; }
+
+.shadow-text {
+  color: #fff;
+  text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26); }
 
 #nav {
   position: fixed;
@@ -104,6 +108,14 @@ a {
     width: 100%;
     border-radius: 0; }
 
+#smoke {
+  position: fixed;
+  top: 0;
+  height: auto;
+  width: 100vw;
+  border-radius: 0;
+  z-index: -9999; }
+
 #hero {
   position: relative;
   overflow: hidden;
@@ -117,8 +129,6 @@ a {
     box-shadow: 0.1em 0.1em 0.3em 0.1em rgba(0, 0, 0, 0.26);
     text-align: center; }
     #hero .box .title {
-      color: #fff;
-      text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
       font-size: 4em; }
   #hero .title {
     font-size: 1.6em;
@@ -174,16 +184,65 @@ https://www.siteinspire.com/websites/2609-helloauan
   background-color: #fff; }
 
 .project-container {
-  height: 50vh;
-  border: solid 0.1em #000; }
+  height: 50vh; }
+  .project-container .img-container, .project-container .info-container {
+    height: 20em; }
   .project-container .img-container {
-    height: 20em;
     width: 30em;
-    border-radius: 0;
     overflow: hidden;
     box-shadow: 0.5em 0.5em 1em 0.2em rgba(0, 0, 0, 0.26); }
-  .project-container .description-container {
+  .project-container .info-container {
     padding: 2em 0 0 2em; }
+  .project-container .title {
+    flex: 1;
+    font-size: 1.8em; }
+  .project-container .description {
+    flex: 2; }
+  .project-container .technology-stack {
+    flex: 1; }
+  .project-container .project-links {
+    flex: 1; }
+  .project-container .link {
+    position: relative;
+    margin: 0 0.5em;
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    border-width: 0.2em;
+    border-style: solid;
+    overflow: hidden; }
+    .project-container .link span {
+      z-index: 99999;
+      transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
+    .project-container .link:before {
+      content: '';
+      display: block;
+      position: absolute;
+      transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+      height: 120%;
+      width: 120%;
+      border-radius: 0;
+      top: 100%;
+      left: -110%;
+      transform: rotate(45deg);
+      background-color: #F26798; }
+    .project-container .link.demo {
+      border-color: #5bd999;
+      color: #5bd999; }
+      .project-container .link.demo:before {
+        background-color: #5bd999; }
+    .project-container .link.code {
+      border-color: #cb70d7;
+      color: #cb70d7; }
+      .project-container .link.code:before {
+        background-color: #cb70d7; }
+    .project-container .link:hover {
+      color: #fff; }
+      .project-container .link:hover span {
+        transform: scale(1.1); }
+      .project-container .link:hover:before {
+        top: -10%;
+        left: -10%; }
 
 body {
   background-color: #fff;

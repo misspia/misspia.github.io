@@ -7,15 +7,83 @@
 
 .project-container{
 	height:50vh;
-	border:solid 0.1em #000;
-
+	// border:solid 0.1em #000;
+	
+	.img-container, .info-container{
+		height: 20em;
+	}
 	.img-container{
-		@include rect(30em, 20em);
+		width:30em;
 		overflow: hidden;
 		box-shadow: 0.5em 0.5em 1em 0.2em $boxShadow;
 	}		
-
-	.description-container {
+	.info-container {
 		padding:2em 0 0 2em;
+	}
+
+	.title{
+		flex:1;
+		font-size:1.8em;
+	}
+	.description{
+		flex:2;
+	}
+	.technology-stack{
+		flex:1;
+	}
+	.project-links{
+		flex:1;
+	}
+	.link{
+		position:relative;
+		margin:0 0.5em;
+		@include circle(4em);
+
+		border-width:0.2em;
+		border-style:solid;
+
+		
+		overflow:hidden;
+		span{
+			z-index:99999;
+			transition: $transitionBounce;
+		}
+		&:before{
+			content: ''; display: block;
+			position:absolute;
+			transition: $transitionBounce;
+
+			@include rect(120%, 120%);
+			top: 100%;
+			left: -110%;
+			transform:rotate(45deg);
+			background-color:#F26798;
+		}
+
+		&.demo{
+			border-color: $demo;
+			color: $demo;
+			&:before{
+				background-color: $demo;
+			}
+		}
+		&.code{
+			border-color: $github;
+			color:$github;
+			&:before{
+				background-color: $github;
+			}
+		}
+		&:hover{
+			color:#fff;
+			
+			span{
+				transform:scale(1.1);
+			}
+			&:before{
+				top: -10%;
+				left: -10%;
+			}
+		}
 	}
 }
