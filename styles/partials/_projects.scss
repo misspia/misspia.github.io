@@ -7,18 +7,44 @@
 
 .project-container{
 	height:50vh;
-	// border:solid 0.1em #000;
 	
 	.img-container, .info-container{
-		height: 20em;
+		flex:1;
+		// border:solid 0.1em #000;
 	}
-	.img-container{
+	.img-container-inner{
+		position:relative;
+		height: 20em;
 		width:30em;
 		overflow: hidden;
 		box-shadow: 0.5em 0.5em 1em 0.2em $boxShadow;
+
+		img{
+			@include rect(auto, 110%);	
+			transition: $transitionBounce;
+		}
+		.img-link-demo{
+			cursor:pointer;
+			position:absolute;
+			top: 0.5em; right: 0.5em;
+			z-index:1;
+			opacity:0;
+			transition: $transition;
+		}
+
+		&:hover{
+			filter: grayscale(80%);
+			img{
+				transform: scale(1.1);		
+			}
+			.img-link-demo{
+				opacity: 1;
+			}
+		}
 	}		
-	.info-container {
-		padding:2em 0 0 2em;
+	.info-container-inner{
+		@include rect(90%, 90%);
+
 	}
 
 	.title{
@@ -26,7 +52,7 @@
 		font-size:1.8em;
 	}
 	.description{
-		flex:2;
+		flex:2.5;
 	}
 	.technology-stack{
 		flex:1;
@@ -41,13 +67,9 @@
 
 		border-width:0.2em;
 		border-style:solid;
-
 		
 		overflow:hidden;
-		span{
-			z-index:99999;
-			transition: $transitionBounce;
-		}
+
 		&:before{
 			content: ''; display: block;
 			position:absolute;
@@ -59,30 +81,43 @@
 			transform:rotate(45deg);
 			background-color:#F26798;
 		}
+		&:after{
+			display: block;
+			z-index:99999;
+			transition: $transitionBounce;
+		}
 
 		&.demo{
 			border-color: $demo;
 			color: $demo;
+
 			&:before{
 				background-color: $demo;
+			}
+			&:after{
+				content:'DEMO';
 			}
 		}
 		&.code{
 			border-color: $github;
 			color:$github;
+
 			&:before{
 				background-color: $github;
+			}
+			&:after{
+				content:'CODE';
 			}
 		}
 		&:hover{
 			color:#fff;
 			
-			span{
-				transform:scale(1.1);
-			}
 			&:before{
 				top: -10%;
 				left: -10%;
+			}
+			&:after{
+				transform:scale(1.2);
 			}
 		}
 	}

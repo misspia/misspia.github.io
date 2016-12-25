@@ -1,4 +1,23 @@
 #about {
 	min-height: 100vh;
 	background-color:$baseBgColor;
+
+
+	.social-link-container{
+		
+	}
+	.social-link{
+		font-size:1.5em;
+		padding: 0 0.1em;
+
+		&.github{
+			color:$github;
+		}
+		&.linkedin{
+			color:$linkedin;
+		}
+		&.codepen{
+			color: $codepen;
+		}
+	}
 }

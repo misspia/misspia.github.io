@@ -98,23 +98,12 @@ a {
 #bgVid {
   position: fixed;
   top: 0;
-  height: auto;
-  width: 100vw;
-  border-radius: 0;
   z-index: -9999;
-  opacity: 0.3; }
-  #bgVid video {
-    height: 100%;
-    width: 100%;
-    border-radius: 0; }
-
-#smoke {
-  position: fixed;
-  top: 0;
-  height: auto;
-  width: 100vw;
-  border-radius: 0;
-  z-index: -9999; }
+  opacity: 0.3;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto; }
 
 #hero {
   position: relative;
@@ -178,6 +167,15 @@ https://www.siteinspire.com/websites/2609-helloauan
 #about {
   min-height: 100vh;
   background-color: #fff; }
+  #about .social-link {
+    font-size: 1.5em;
+    padding: 0 0.1em; }
+    #about .social-link.github {
+      color: #cb70d7; }
+    #about .social-link.linkedin {
+      color: #0e85c9; }
+    #about .social-link.codepen {
+      color: #4c4c4c; }
 
 #projects {
   min-height: 100vh;
@@ -186,18 +184,41 @@ https://www.siteinspire.com/websites/2609-helloauan
 .project-container {
   height: 50vh; }
   .project-container .img-container, .project-container .info-container {
-    height: 20em; }
-  .project-container .img-container {
+    flex: 1; }
+  .project-container .img-container-inner {
+    position: relative;
+    height: 20em;
     width: 30em;
     overflow: hidden;
     box-shadow: 0.5em 0.5em 1em 0.2em rgba(0, 0, 0, 0.26); }
-  .project-container .info-container {
-    padding: 2em 0 0 2em; }
+    .project-container .img-container-inner img {
+      height: 110%;
+      width: auto;
+      border-radius: 0;
+      transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
+    .project-container .img-container-inner .img-link-demo {
+      cursor: pointer;
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s; }
+    .project-container .img-container-inner:hover {
+      filter: grayscale(80%); }
+      .project-container .img-container-inner:hover img {
+        transform: scale(1.1); }
+      .project-container .img-container-inner:hover .img-link-demo {
+        opacity: 1; }
+  .project-container .info-container-inner {
+    height: 90%;
+    width: 90%;
+    border-radius: 0; }
   .project-container .title {
     flex: 1;
     font-size: 1.8em; }
   .project-container .description {
-    flex: 2; }
+    flex: 2.5; }
   .project-container .technology-stack {
     flex: 1; }
   .project-container .project-links {
@@ -211,9 +232,6 @@ https://www.siteinspire.com/websites/2609-helloauan
     border-width: 0.2em;
     border-style: solid;
     overflow: hidden; }
-    .project-container .link span {
-      z-index: 99999;
-      transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
     .project-container .link:before {
       content: '';
       display: block;
@@ -226,23 +244,31 @@ https://www.siteinspire.com/websites/2609-helloauan
       left: -110%;
       transform: rotate(45deg);
       background-color: #F26798; }
+    .project-container .link:after {
+      display: block;
+      z-index: 99999;
+      transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
     .project-container .link.demo {
       border-color: #5bd999;
       color: #5bd999; }
       .project-container .link.demo:before {
         background-color: #5bd999; }
+      .project-container .link.demo:after {
+        content: 'DEMO'; }
     .project-container .link.code {
       border-color: #cb70d7;
       color: #cb70d7; }
       .project-container .link.code:before {
         background-color: #cb70d7; }
+      .project-container .link.code:after {
+        content: 'CODE'; }
     .project-container .link:hover {
       color: #fff; }
-      .project-container .link:hover span {
-        transform: scale(1.1); }
       .project-container .link:hover:before {
         top: -10%;
         left: -10%; }
+      .project-container .link:hover:after {
+        transform: scale(1.2); }
 
 body {
   background-color: #fff;

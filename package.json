@@ -29,7 +29,5 @@
     "precss": "^1.4.0",
     "run-sequence": "^1.2.2"
   },
-  "dependencies": {
-    "three": "^0.71.0"
-  }
+  "dependencies": {}
 }

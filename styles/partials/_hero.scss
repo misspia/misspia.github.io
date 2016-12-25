@@ -1,19 +1,14 @@
 #bgVid{
 	position:fixed;
 	top:0;
-	@include rect(100vw, auto);
 	z-index: -9999;
 	opacity:0.3;
-	video{
 
-		@include rect(100%, 100%);
-	}
-}
-#smoke{
-	position:fixed;
-	top:0;
-	@include rect(100vw, auto);
-	z-index: -9999;
+	min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+
 }
 
 #hero {
