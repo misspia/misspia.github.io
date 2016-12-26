@@ -10,11 +10,14 @@
 	
 	.img-container, .info-container{
 		flex:1;
+		
+	}
+	.img-container-inner, .info-container-inner {
+		height: 20em;
 		// border:solid 0.1em #000;
 	}
 	.img-container-inner{
 		position:relative;
-		height: 20em;
 		width:30em;
 		overflow: hidden;
 		box-shadow: 0.5em 0.5em 1em 0.2em $boxShadow;
@@ -26,25 +29,35 @@
 		.img-link-demo{
 			cursor:pointer;
 			position:absolute;
-			top: 0.5em; right: 0.5em;
+			@include rect(100%, 100%);
 			z-index:1;
+			transition: $transitionBounce;
+
 			opacity:0;
-			transition: $transition;
+
+			&:after{
+				content:'CHECK IF OUT'; 
+				display:flex;
+				justify-content: center; align-items: center;
+				@include circle(10em);
+				border:solid 0.3em #fff; 
+				font-size: 1.1em; color:#fff;
+				background-color: rgba(0,0,0, 0.3);
+			}
 		}
 
 		&:hover{
 			filter: grayscale(80%);
-			img{
+			img, .img-link-demo{
 				transform: scale(1.1);		
 			}
 			.img-link-demo{
-				opacity: 1;
+				opacity:1;
 			}
 		}
 	}		
 	.info-container-inner{
-		@include rect(90%, 90%);
-
+		width:90%;
 	}
 
 	.title{
@@ -58,11 +71,12 @@
 		flex:1;
 	}
 	.project-links{
-		flex:1;
+		flex:1.5;
 	}
 	.link{
 		position:relative;
 		margin:0 0.5em;
+		font-size: 0.9em;
 		@include circle(4em);
 
 		border-width:0.2em;

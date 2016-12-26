@@ -90,10 +90,13 @@ a {
 #nav {
   position: fixed;
   top: 0;
-  z-index: 1;
-  height: 4em;
-  background-color: #fff;
-  box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.26); }
+  z-index: 100;
+  height: 4em; }
+  #nav .nav-item {
+    padding: 0 0.8em;
+    transition: all 0.3s; }
+    #nav .nav-item:hover {
+      color: #707070; }
 
 #bgVid {
   position: fixed;
@@ -125,7 +128,6 @@ a {
 
 /*
 http://chdmlr.com/index.html
-http://d352ltojookjzf.cloudfront.net/wp-content/uploads/2013/06/Christopher-Meeks.jpg
 http://anaiszamboni.com/#work
 http://www.smashurbanmedia.com/
 http://aaronxmarquez.com/
@@ -185,9 +187,10 @@ https://www.siteinspire.com/websites/2609-helloauan
   height: 50vh; }
   .project-container .img-container, .project-container .info-container {
     flex: 1; }
+  .project-container .img-container-inner, .project-container .info-container-inner {
+    height: 20em; }
   .project-container .img-container-inner {
     position: relative;
-    height: 20em;
     width: 30em;
     overflow: hidden;
     box-shadow: 0.5em 0.5em 1em 0.2em rgba(0, 0, 0, 0.26); }
@@ -199,21 +202,32 @@ https://www.siteinspire.com/websites/2609-helloauan
     .project-container .img-container-inner .img-link-demo {
       cursor: pointer;
       position: absolute;
-      top: 0.5em;
-      right: 0.5em;
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
       z-index: 1;
-      opacity: 0;
-      transition: all 0.3s; }
+      transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+      opacity: 0; }
+      .project-container .img-container-inner .img-link-demo:after {
+        content: 'CHECK IF OUT';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10em;
+        width: 10em;
+        border-radius: 50%;
+        border: solid 0.3em #fff;
+        font-size: 1.1em;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.3); }
     .project-container .img-container-inner:hover {
       filter: grayscale(80%); }
-      .project-container .img-container-inner:hover img {
+      .project-container .img-container-inner:hover img, .project-container .img-container-inner:hover .img-link-demo {
         transform: scale(1.1); }
       .project-container .img-container-inner:hover .img-link-demo {
         opacity: 1; }
   .project-container .info-container-inner {
-    height: 90%;
-    width: 90%;
-    border-radius: 0; }
+    width: 90%; }
   .project-container .title {
     flex: 1;
     font-size: 1.8em; }
@@ -222,10 +236,11 @@ https://www.siteinspire.com/websites/2609-helloauan
   .project-container .technology-stack {
     flex: 1; }
   .project-container .project-links {
-    flex: 1; }
+    flex: 1.5; }
   .project-container .link {
     position: relative;
     margin: 0 0.5em;
+    font-size: 0.9em;
     height: 4em;
     width: 4em;
     border-radius: 50%;

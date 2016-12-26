@@ -7,13 +7,15 @@
 </head>
 <body class="full-width-height">
 	<ul id="main" class="col align-center full-width">
-		<li id="nav" class="row full-width">
-			<ul class="row center full-width-height">
-				<a href="#about" class="row align-center full-height">About</a>
-				<a href="#hero" class="row align-center full-height" >Home</a>
-				<a href="#projects" class="row align-center full-height">Projects</a>
+
+		<!--NAV-->
+		<li id="nav" class="row center full-width">
+			<ul class="row flex-end full-width-height bold nav-inner">
+				<a href="#about" class="row center align-center full-height nav-item">ABOUT</a>
+				<a href="#projects" class="row center align-center full-height nav-item">PROJECTS</a>
 			</ul>
-		</li>
+		</li> <!--NAV END-->
+
 		<li id="hero" class="full-width section">
 			<ul class="col center align-center full-width-height">
 				<video id="bgVid" playsinline autoplay muted loop  >
@@ -25,13 +27,16 @@
 							<span class="row title shadow-text">PIA LEUNG</span>
 							<span class="subtitle row">FRONT END DEVELOPER</span>
 						</li>
-						<li class="row center align-center title">
+						<!-- <li class="row center align-center title">
 							code is my paint brush
-						</li>
+						</li> -->
 					</ul>
 				</li>
+				
 			</ul>		
 		</li>
+
+
 
 
 		<li id="about" class="full-width section">
@@ -46,12 +51,12 @@
 			</ul>	
 		</li>
 
-
+<!--PROJECTS SECTION -->
 		<li id="projects" class="full-width section">
 			<ul class="col center align-center full-width-height">
 				<li class="section-title">projects. </li>
 
-				<!--project container -->
+				<!--AUDIO VIZ project container -->
 				<li class="row full-width project-container">
 					<ul class="row align-center full-width-height">
 						<!--img container -->
@@ -59,8 +64,8 @@
 							<ul class="img-container-inner">
 								<a href="https://misspia.github.io/d3-audio-visualizer/"
 									target="_blank" 
-									class="img-link-demo">OPEN</a>
-								<img src="media/projects/placeholder.png">
+									class="row center align-center bold img-link-demo"></a>
+								<img src="media/projects/project-audio-viz.png">
 							</ul>							
 						</li> <!--img container end -->
 						<!--info container -->
@@ -69,7 +74,7 @@
 								<li class="title">D3 Audio Visualizer</li>
 								<li class="description">description</li>
 								<li class="row technology-stack">
-									Technology: D3.js, JavaScript, Sass, HTML5
+									Technology: D3.js, JavaScript, Sass, HTML5, Gulp
 								</li>
 								<li class="row project-links">
 									<a href="https://misspia.github.io/d3-audio-visualizer/" 
@@ -84,13 +89,49 @@
 						</li> <!--info container end -->
 					</ul>
 				</li> 
-				<!--project container -->
+				<!--AUDIO VIZ project container end -->
+
+					<!--REACT LOL project container -->
+				<li class="row full-width project-container">
+					<ul class="row align-center full-width-height">
+						<!--img container -->
+						<li class="col center full-height img-container">
+							<ul class="img-container-inner">
+								<a href="https://misspia.github.io/3D-lol-champion-selector-reactjs/"
+									target="_blank" 
+									class="row center align-center bold img-link-demo"></a>
+								<img src="media/projects/project-lol-champs.png">
+							</ul>							
+						</li> <!--img container end -->
+						<!--info container -->
+						<li class="col center full-height info-container">
+							<ul class="col info-container-inner">
+								<li class="title">React 3D League of Legends Champion Selector</li>
+								<li class="description">description</li>
+								<li class="row technology-stack">
+									Technology: React.js, Node.js, Sass, HTML5, Gulp
+								</li>
+								<li class="row project-links">
+									<a href="https://github.com/misspia/3D-lol-champion-selector-reactjs" 
+										target = "_blank"
+										class="row center align-center link demo"></a>
+									<a href="https://misspia.github.io/3D-lol-champion-selector-reactjs/"
+										target = "_blank"
+										class="row center align-center link code"></a>
+								</li>
+							</ul>
+								
+						</li> <!--info container end -->
+					</ul>
+				</li> 
+				<!--REACT LOL project container -->
 
 			</ul>	
 		</li>
+		<!--PROJECTS SECTION END -->
 	</ul>
 </body>
-	
+	<script type="text/javascript" src = "node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 
 </html>
