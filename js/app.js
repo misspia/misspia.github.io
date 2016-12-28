@@ -14,6 +14,7 @@ $(function() {
 }
   }); //smooth scroll end
 
+// https://github.com/lukehaas/Scrollify
 
 
 });

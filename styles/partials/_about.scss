@@ -2,22 +2,64 @@
 	min-height: 100vh;
 	background-color:$baseBgColor;
 
-
-	.social-link-container{
-		
+	.content-inner{
+		font-size:2em;
+		line-height: 1.5;
+		letter-spacing: 0.5px;
+		width: 90%;
+		max-width: 60em;
 	}
-	.social-link{
-		font-size:1.5em;
-		padding: 0 0.1em;
-
-		&.github{
-			color:$github;
-		}
-		&.linkedin{
-			color:$linkedin;
-		}
-		&.codepen{
-			color: $codepen;
+	.content-inner, .regular-text, .highlighted-text{
+		transition: $transition;
+	}
+	.content-inner{
+		&:hover{
+			.regular-text{
+				opacity:0;
+			}
 		}
 	}
+	.highlighted-text{
+		// text-decoration: underline;
+		border-bottom: solid 0.1em #000;
+
+		&:hover{
+			border-color: inherit;
+
+			&.github{color:$github;}
+			&.linkedin{color:$linkedin;}
+			&.codepen{color:$codepen;}
+			&.misc-link{color: $miscLink;}
+		}
+	}
+	// .social-link{
+	// 	font-size:1.5em;
+	// 	padding: 0 0.1em;
+
+	// 	&.github{
+	// 		color:$github;
+	// 	}
+	// 	&.linkedin{
+	// 		color:$linkedin;
+	// 	}
+	// 	&.codepen{
+	// 		color: $codepen;
+	// 	}
+	// }
 }
+
+/*
+animate numbers:
+http://www.umwelt.dk/about
+
+short bio
+http://www.ignaciomacri.com/about.html
+
+min design
+http://www.samdallyn.co.uk/Contact
+
+contact/social links like th nav:
+http://www.ostmodern.co.uk/
+
+
+*/

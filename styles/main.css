@@ -81,7 +81,8 @@ a {
   font-family: "Montserrat", sans-serif; }
 
 .section-title {
-  font-size: 3.5em; }
+  font-size: 3.5em;
+  height: 4em; }
 
 .shadow-text {
   color: #fff;
@@ -127,6 +128,9 @@ a {
     padding: 0.5em 0; }
 
 /*
+********** animate name text shadows on load
+
+
 http://chdmlr.com/index.html
 http://anaiszamboni.com/#work
 http://www.smashurbanmedia.com/
@@ -150,10 +154,7 @@ color
 https://senator-tour.travel/#tourism
 http://www.eleganza.ca/?lang=en
 
-canvas
-https://www.collectivei.com/join-us/
-http://strandfuif.be/2016/
-http://www.dtsi.de/home/
+
 
 hero
 http://visitmy.country/
@@ -169,16 +170,44 @@ https://www.siteinspire.com/websites/2609-helloauan
 #about {
   min-height: 100vh;
   background-color: #fff; }
-  #about .social-link {
-    font-size: 1.5em;
-    padding: 0 0.1em; }
-    #about .social-link.github {
-      color: #cb70d7; }
-    #about .social-link.linkedin {
-      color: #0e85c9; }
-    #about .social-link.codepen {
-      color: #4c4c4c; }
+  #about .content-inner {
+    font-size: 2em;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    width: 90%;
+    max-width: 60em; }
+  #about .content-inner, #about .regular-text, #about .highlighted-text {
+    transition: all 0.3s; }
+  #about .content-inner:hover .regular-text {
+    opacity: 0; }
+  #about .highlighted-text {
+    border-bottom: solid 0.1em #000; }
+    #about .highlighted-text:hover {
+      border-color: inherit; }
+      #about .highlighted-text:hover.github {
+        color: #b18abf; }
+      #about .highlighted-text:hover.linkedin {
+        color: #0e85c9; }
+      #about .highlighted-text:hover.codepen {
+        color: #455a64; }
+      #about .highlighted-text:hover.misc-link {
+        color: #f19200; }
 
+/*
+animate numbers:
+http://www.umwelt.dk/about
+
+short bio
+http://www.ignaciomacri.com/about.html
+
+min design
+http://www.samdallyn.co.uk/Contact
+
+contact/social links like th nav:
+http://www.ostmodern.co.uk/
+
+
+*/
 #projects {
   min-height: 100vh;
   background-color: #fff; }
@@ -209,7 +238,7 @@ https://www.siteinspire.com/websites/2609-helloauan
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       opacity: 0; }
       .project-container .img-container-inner .img-link-demo:after {
-        content: 'CHECK IF OUT';
+        content: 'CHECK IT OUT';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -271,10 +300,10 @@ https://www.siteinspire.com/websites/2609-helloauan
       .project-container .link.demo:after {
         content: 'DEMO'; }
     .project-container .link.code {
-      border-color: #cb70d7;
-      color: #cb70d7; }
+      border-color: #b18abf;
+      color: #b18abf; }
       .project-container .link.code:before {
-        background-color: #cb70d7; }
+        background-color: #b18abf; }
       .project-container .link.code:after {
         content: 'CODE'; }
     .project-container .link:hover {
@@ -290,3 +319,9 @@ body {
   overflow-x: hidden;
   font-family: "Nunito Sans", sans-serif;
   background-image: url("../media/bg.gif"); }
+
+/*
+footer 
+http://phdl.co/
+
+*/
