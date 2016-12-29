@@ -84,9 +84,33 @@ a {
   font-size: 3.5em;
   height: 4em; }
 
-.shadow-text {
+.textShadow {
   color: #fff;
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26); }
+
+.loading {
+  overflow: hidden; }
+  .loading .modal {
+    display: flex;
+    animation: revealContents 3s forwards; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff; }
+
+@keyframes revealContents {
+  0% {
+    opacity: 1; }
+  30% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 #nav {
   position: fixed;
@@ -128,7 +152,7 @@ a {
     padding: 0.5em 0; }
 
 /*
-********** animate name text shadows on load
+
 
 
 http://chdmlr.com/index.html
@@ -290,7 +314,7 @@ http://www.ostmodern.co.uk/
       background-color: #F26798; }
     .project-container .link:after {
       display: block;
-      z-index: 99999;
+      z-index: 1;
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
     .project-container .link.demo {
       border-color: #5bd999;
@@ -313,6 +337,12 @@ http://www.ostmodern.co.uk/
         left: -10%; }
       .project-container .link:hover:after {
         transform: scale(1.2); }
+
+#footer {
+  height: 15vh;
+  background-color: #fff; }
+  #footer a {
+    text-decoration: underline; }
 
 body {
   background-color: #fff;

@@ -5,7 +5,7 @@
 	<title>Pia Leung</title>
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
-<body class="full-width-height">
+<body class="full-width-height loading">
 	<ul id="main" class="col align-center full-width">
 
 		<!--NAV-->
@@ -18,13 +18,17 @@
 
 		<li id="hero" class="full-width section">
 			<ul class="col center align-center full-width-height">
-				<video id="bgVid" playsinline autoplay muted loop  >
-					<source src="media/bg-vid.mp4" type="video/mp4">
+
+				<video id="bgVid" 
+					poster="./media/bg-vid-poster.PNG" 
+					playsinline autoplay muted loop  >
+					<source src="media/ink.mp4" type="video/mp4">
 				</video>
+			
 				<li class="section-content">
 					<ul class="col center align-center full-width-height">
 						<li class="col center align-center box">
-							<span class="row title shadow-text">PIA LEUNG</span>
+							<span class="row title textShadow">PIA LEUNG</span>
 							<span class="subtitle row">WEB DEVELOPER</span>
 						</li>
 						<!-- <li class="row center align-center title">
@@ -100,7 +104,7 @@
 								<a href="https://misspia.github.io/d3-audio-visualizer/"
 									target="_blank" 
 									class="row center align-center bold img-link-demo"></a>
-								<img src="./media/projects/project-audio-viz.png">
+								<img src="./media/projects/project-audio-viz.PNG">
 							</ul>							
 						</li> <!--img container end -->
 						<!--info container -->
@@ -137,7 +141,7 @@
 								<a href="https://misspia.github.io/3D-lol-champion-selector-reactjs/"
 									target="_blank" 
 									class="row center align-center bold img-link-demo"></a>
-								<img src="./media/projects/project-lol-champs.png">
+								<img src="./media/projects/project-lol-champs.PNG">
 							</ul>							
 						</li> <!--img container end -->
 						<!--info container -->
@@ -174,7 +178,7 @@
 								<a href="https://misspia.github.io/Pokedex-angularjs/"
 									target="_blank" 
 									class="row center align-center bold img-link-demo"></a>
-								<img src="./media/projects/project-pokedex.png">
+								<img src="./media/projects/project-pokedex.PNG">
 							</ul>							
 						</li> <!--img container end -->
 						<!--info container -->
@@ -204,8 +208,22 @@
 			</ul>	
 		</li>
 		<!--PROJECTS SECTION END -->
+<!--FOOTER SECTION -->
+		<li id="footer" class="full-width">
+			<ul class="col center align-center full-width-height">
+				<li class="bold">Developed by Pia Leung</li>
+				<li>
+					Original video belongs to 
+					<a href="https://www.youtube.com/watch?v=pGbIOC83-So" target="_blank">
+						Leonid Livingstone
+					</a>  
+				</li>
+			</ul>
+		</li>
+<!--FOOTER SECTION END -->
 
 	</ul>
+	<div class="modal"></div>
 </body>
 	<script type="text/javascript" src = "node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>

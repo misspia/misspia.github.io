@@ -1,20 +1,28 @@
-$(function() {
+$body = $('body');
+loaderClass = 'loading';
 
-  //smooth scroll
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-      }, 500);
-        return false;
-    }
-}
-  }); //smooth scroll end
+$(document).ready(function(){
 
-// https://github.com/lukehaas/Scrollify
+  setTimeout(function() {
 
+    $body.removeClass(loaderClass);
+  
+  }, 3500);
+
+
+
+  $('a[href*=\\#]').on('click', function(event){     
+
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+
+  
+  });
 
 });
+
+
+
+
+// // https://github.com/lukehaas/Scrollify
+
