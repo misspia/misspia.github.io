@@ -18,14 +18,12 @@ body {
 	overflow-x:hidden;
 	font-family: $bodyFont;
 	background-image: url('../media/bg.gif');
+
+	@media #{$media-phone} {
+	  	font-size:2em;
+	}
 }
 
 #main{
 
 }
-
-/*
-footer 
-http://phdl.co/
-
-*/

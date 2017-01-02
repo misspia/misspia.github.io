@@ -83,6 +83,9 @@ a {
 .section-title {
   font-size: 3.5em;
   height: 4em; }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 720px) and (-webkit-min-device-pixel-ratio: 2) {
+    .section-title {
+      height: 2.3em; } }
 
 .textShadow {
   color: #fff;
@@ -238,8 +241,17 @@ http://www.ostmodern.co.uk/
 
 .project-container {
   height: 50vh; }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 720px) and (-webkit-min-device-pixel-ratio: 2) {
+    .project-container {
+      height: 95vh; } }
   .project-container .img-container, .project-container .info-container {
     flex: 1; }
+    @media only screen and (min-device-width: 300px) and (max-device-width: 720px) and (-webkit-min-device-pixel-ratio: 2) {
+      .project-container .img-container, .project-container .info-container {
+        height: 50%; } }
+  .project-container .info-container {
+    justify-content: flex-start;
+    align-items: center; }
   .project-container .img-container-inner, .project-container .info-container-inner {
     height: 20em; }
   .project-container .img-container-inner {
@@ -286,6 +298,9 @@ http://www.ostmodern.co.uk/
     font-size: 1.8em; }
   .project-container .description {
     flex: 2.5; }
+    @media only screen and (min-device-width: 300px) and (max-device-width: 720px) and (-webkit-min-device-pixel-ratio: 2) {
+      .project-container .description {
+        font-size: 1.1em; } }
   .project-container .technology-stack {
     flex: 1; }
   .project-container .project-links {
@@ -300,6 +315,9 @@ http://www.ostmodern.co.uk/
     border-width: 0.2em;
     border-style: solid;
     overflow: hidden; }
+    @media only screen and (min-device-width: 300px) and (max-device-width: 720px) and (-webkit-min-device-pixel-ratio: 2) {
+      .project-container .link {
+        font-size: 1em; } }
     .project-container .link:before {
       content: '';
       display: block;
@@ -349,9 +367,6 @@ body {
   overflow-x: hidden;
   font-family: "Nunito Sans", sans-serif;
   background-image: url("../media/bg.gif"); }
-
-/*
-footer 
-http://phdl.co/
-
-*/
+  @media only screen and (min-device-width: 300px) and (max-device-width: 720px) and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+      font-size: 2em; } }

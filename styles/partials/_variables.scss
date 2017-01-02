@@ -2,6 +2,12 @@ $titleFont: 'Montserrat', sans-serif;
 $bodyFont: 'Nunito Sans', sans-serif;
 // https://fonts.google.com/specimen/Maven+Pro
 
+//media queries
+$media-phone: "only screen  and (min-device-width: 300px) 
+						  and (max-device-width: 720px)
+						  and (-webkit-min-device-pixel-ratio: 2)";
+
+//color pallette
 $baseBgColor: #fff;
 $baseTextColor: #000;
 $lightTextColor: #707070;
