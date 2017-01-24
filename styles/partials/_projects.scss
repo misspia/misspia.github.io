@@ -5,23 +5,26 @@
 
 .project-container{
 	height:50vh;
-	@media #{$media-phone} {
+	@media #{$media-phone}, #{$media-narrow-screen} {
 	  	height: 95vh;
 	}
-	
+
 	.img-container, .info-container{
 		flex:1;
-		@media #{$media-phone} { height:50%; }
-	}
-	.img-container{
 
+		@media #{$media-phone} , #{$media-narrow-screen} { height:50%; }
 	}
+
 	.info-container{
 		justify-content: flex-start;
 		align-items: center;
+		@media #{$media-phone}  , #{$media-narrow-screen} {
+			align-items: flex-start;
+		}
 	}
 	.img-container-inner, .info-container-inner {
 		height: 20em;
+		width:30em;
 	}
 
 	.img-container-inner{
@@ -64,10 +67,6 @@
 			}
 		}
 	}		
-	.info-container-inner{
-		width:90%;
-	}
-
 	.title{
 		flex:1;
 		font-size:1.8em;
