@@ -1,89 +1,56 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300");
 .row, .col {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
 
 .row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
+  flex-direction: row; }
 
 .col {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  flex-direction: column; }
 
 .cover {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
+  flex: 1; }
 
 .center {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  justify-content: center; }
 
 .flex-end {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
+  justify-content: flex-end; }
 
 .flex-start {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start; }
+  justify-content: flex-start; }
 
 .space-around {
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  justify-content: space-around; }
 
 .space-between {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  justify-content: space-between; }
 
 .align-center {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  align-items: center; }
 
 .align-start {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start; }
+  align-items: flex-start; }
 
 .align-end {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end; }
+  align-items: flex-end; }
 
 .align-stretch {
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch; }
+  align-items: stretch; }
 
 .align-base {
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline; }
+  align-items: baseline; }
 
 .self-end {
-  -ms-flex-item-align: end;
-      align-self: flex-end; }
+  align-self: flex-end; }
 
 .wrap {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
 
 .wrap-reverse {
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse; }
+  flex-wrap: wrap-reverse; }
 
 .full-width {
   width: 100%; }
@@ -127,11 +94,8 @@ a {
 .loading {
   overflow: hidden; }
   .loading .modal {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-animation: revealContents 3s forwards;
-            animation: revealContents 3s forwards; }
+    animation: revealContents 3s forwards; }
 
 .modal {
   display: none;
@@ -142,14 +106,6 @@ a {
   height: 100%;
   width: 100%;
   background-color: #fff; }
-
-@-webkit-keyframes revealContents {
-  0% {
-    opacity: 1; }
-  30% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
 
 @keyframes revealContents {
   0% {
@@ -166,7 +122,6 @@ a {
   height: 4em; }
   #nav .nav-item {
     padding: 0 0.8em;
-    -webkit-transition: all 0.3s;
     transition: all 0.3s; }
     #nav .nav-item:hover {
       color: #707070; }
@@ -249,7 +204,6 @@ https://www.siteinspire.com/websites/2609-helloauan
     width: 90%;
     max-width: 60em; }
   #about .content-inner, #about .regular-text, #about .highlighted-text {
-    -webkit-transition: all 0.3s;
     transition: all 0.3s; }
   #about .content-inner:hover .regular-text {
     opacity: 0; }
@@ -291,27 +245,22 @@ http://www.ostmodern.co.uk/
     .project-container {
       height: 95vh; } }
   .project-container .img-container, .project-container .info-container {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
+    flex: 1; }
     @media only screen and (min-device-width: 300px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 870px) {
       .project-container .img-container, .project-container .info-container {
         height: 50%; } }
   .project-container .info-container {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    justify-content: flex-start;
+    align-items: center; }
     @media only screen and (min-device-width: 300px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 870px) {
       .project-container .info-container {
-        -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start; } }
+        align-items: flex-start; } }
   .project-container .img-container-inner, .project-container .info-container-inner {
     height: 20em;
     width: 30em; }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 870px) {
+    .project-container .info-container-inner {
+      padding-left: 0.3em; } }
   .project-container .img-container-inner {
     position: relative;
     width: 30em;
@@ -321,7 +270,6 @@ http://www.ostmodern.co.uk/
       height: 110%;
       width: auto;
       border-radius: 0;
-      -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
     .project-container .img-container-inner .img-link-demo {
       cursor: pointer;
@@ -330,20 +278,13 @@ http://www.ostmodern.co.uk/
       width: 100%;
       border-radius: 0;
       z-index: 1;
-      -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       opacity: 0; }
       .project-container .img-container-inner .img-link-demo:after {
         content: 'CHECK IT OUT';
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        justify-content: center;
+        align-items: center;
         height: 10em;
         width: 10em;
         border-radius: 50%;
@@ -352,33 +293,23 @@ http://www.ostmodern.co.uk/
         color: #fff;
         background-color: rgba(0, 0, 0, 0.3); }
     .project-container .img-container-inner:hover {
-      -webkit-filter: grayscale(80%);
-              filter: grayscale(80%); }
+      filter: grayscale(80%); }
       .project-container .img-container-inner:hover img, .project-container .img-container-inner:hover .img-link-demo {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1); }
+        transform: scale(1.1); }
       .project-container .img-container-inner:hover .img-link-demo {
         opacity: 1; }
   .project-container .title {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
     font-size: 1.8em; }
   .project-container .description {
-    -webkit-box-flex: 2.5;
-        -ms-flex: 2.5;
-            flex: 2.5; }
+    flex: 2.5; }
     @media only screen and (min-device-width: 300px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
       .project-container .description {
         font-size: 1.1em; } }
   .project-container .technology-stack {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
+    flex: 1; }
   .project-container .project-links {
-    -webkit-box-flex: 1.5;
-        -ms-flex: 1.5;
-            flex: 1.5; }
+    flex: 1.5; }
   .project-container .link {
     position: relative;
     margin: 0 0.5em;
@@ -396,20 +327,17 @@ http://www.ostmodern.co.uk/
       content: '';
       display: block;
       position: absolute;
-      -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       height: 120%;
       width: 120%;
       border-radius: 0;
       top: 100%;
       left: -110%;
-      -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
+      transform: rotate(45deg);
       background-color: #F26798; }
     .project-container .link:after {
       display: block;
       z-index: 1;
-      -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
     .project-container .link.demo {
       border-color: #5bd999;
@@ -431,8 +359,7 @@ http://www.ostmodern.co.uk/
         top: -10%;
         left: -10%; }
       .project-container .link:hover:after {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); }
+        transform: scale(1.2); }
 
 #footer {
   height: 15vh;

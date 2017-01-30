@@ -26,6 +26,11 @@
 		height: 20em;
 		width:30em;
 	}
+	.info-container-inner{
+		@media #{$media-phone}  , #{$media-narrow-screen} {
+			padding-left: 0.3em;
+		}
+	}
 
 	.img-container-inner{
 		position:relative;
