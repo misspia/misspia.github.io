@@ -25,6 +25,7 @@ body {
 	}
 }
 
-#main{
-
+#about, #projects {
+	background-color: $baseBgColor;
+	min-height: 100vh;
 }
