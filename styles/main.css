@@ -248,8 +248,8 @@ https://www.siteinspire.com/websites/2609-helloauan
     border-radius: 0; }
     @media only screen and (min-device-width: 300px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
       #projects .img-container img {
-        transform: translateX(-11em); } }
-  #projects .img-container .img-link-demo {
+        transform: translateX(-18em); } }
+  #projects .img-container .project-link-demo {
     cursor: pointer;
     position: absolute;
     height: 100%;
@@ -258,7 +258,7 @@ https://www.siteinspire.com/websites/2609-helloauan
     z-index: 1;
     transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     opacity: 0; }
-    #projects .img-container .img-link-demo:after {
+    #projects .img-container .project-link-demo:after {
       content: 'CHECK IT OUT';
       display: flex;
       justify-content: center;
@@ -271,8 +271,11 @@ https://www.siteinspire.com/websites/2609-helloauan
       color: #fff;
       background-color: rgba(0, 0, 0, 0.3); }
       @media only screen and (min-device-width: 300px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
-        #projects .img-container .img-link-demo:after {
+        #projects .img-container .project-link-demo:after {
           transform: translateY(-3em); } }
+
+#projects .img-container img, #projects .info-container, #projects .info-container-inner, #projects .project-link-code {
+  transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
 
 #projects .info-container {
   position: absolute; }
@@ -280,22 +283,44 @@ https://www.siteinspire.com/websites/2609-helloauan
 #projects .info-container-inner {
   width: 90%;
   margin-left: 1em;
-  opacity: 0; }
+  opacity: 0;
+  transition-delay: 0.1s; }
 
-#projects .img-container img, #projects .info-container, #projects .info-container-inner {
-  transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
+#projects .project-link-code {
+  position: absolute;
+  bottom: 0em;
+  right: 1em;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 10;
+  transition-delay: 0.3s; }
+  #projects .project-link-code:after {
+    display: block;
+    content: "code";
+    font-size: 0.5em; }
 
 #projects .project-container:hover {
   filter: grayscale(85%); }
-  #projects .project-container:hover img, #projects .project-container:hover .img-link-demo {
+  #projects .project-container:hover img, #projects .project-container:hover .project-link-demo {
     transform: scale(1.1); }
-  #projects .project-container:hover .img-link-demo {
+  #projects .project-container:hover .project-link-demo {
     opacity: 1; }
   #projects .project-container:hover .info-container {
     background-color: rgba(255, 255, 255, 0.7); }
   #projects .project-container:hover .info-container-inner {
     transform: translateY(-2em);
     opacity: 1; }
+  #projects .project-container:hover .project-link-code {
+    bottom: 1em;
+    opacity: 1; }
+
+#projects .project-link-code:hover {
+  box-shadow: 0.1em 0.1em 0.5em 0.01em rgba(0, 0, 0, 0.26);
+  color: #9b69ad;
+  transition-delay: 0s;
+  background-color: rgba(255, 255, 255, 0.8); }
 
 #footer {
   height: 15vh;
