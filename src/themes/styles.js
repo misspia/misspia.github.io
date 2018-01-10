@@ -6,6 +6,12 @@ const Styles = {
     font-size: ${Fonts.sizeTitle};
     font-weight: ${Fonts.weightBold};
   `,
+  Icon: styled.img`
+    height: ${props => props.size ? props.size : '1em'};
+    width: ${props => props.size ? props.size : '1em'};
+    color: ${props => props.color ? props.color : '#000'};
+    background-color: transparent;
+  `,
 
 }
 

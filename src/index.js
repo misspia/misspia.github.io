@@ -10,12 +10,12 @@ const Body = styled.div`
   margin: 0;
   padding: 0;
   font-family: ${Fonts.family};
+  font-size: ${Fonts.sizeRegular};
 `;
 
 class App extends Component {
 	render() {
 		return <Body>
-      app.js
       <Projects />
     </Body>
 	}

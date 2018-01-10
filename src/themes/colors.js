@@ -2,7 +2,8 @@
 const Colors = {
     white: '#fff',
     black: '#000',
-    red: 'red',
+    shadow: 'rgba(0,0,0,0.26)',
+
 };
 
 export default Colors;
