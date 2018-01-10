@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Colors, Fonts, Styles } from '../themes/themes.js'
 
-export const Container = styled.div`
-  border: solid red 1px;
+export const Container = Styles.SectionContainer.extend`
+
 `;
 
 export const Content = styled.div`

@@ -4,9 +4,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Fonts } from './themes/themes.js'
 
+import Hero from './hero/hero.jsx'
+import About from './about/about.jsx'
 import Projects from './projects/projects.jsx'
 
-const Body = styled.div`
+const Container = styled.div`
   margin: 0;
   padding: 0;
   font-family: ${Fonts.family};
@@ -15,9 +17,11 @@ const Body = styled.div`
 
 class App extends Component {
 	render() {
-		return <Body>
+		return <Container>
+      <Hero />
+      <About />
       <Projects />
-    </Body>
+    </Container>
 	}
 }
 
