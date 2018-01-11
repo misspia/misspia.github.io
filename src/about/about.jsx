@@ -37,7 +37,7 @@ class About extends Component {
           <div>
             {`Hi there, my name is `}
             {this.renderKeyword('Pia')}
-            {'. I strive to delivery beautiful experiences over to web '}
+            {'. I strive to deliver beautiful experiences over to web '}
             {`and am always up for new challenges. Feel free to reach out at `}
             {this.renderKeyword(Metadata.email.url)}
           </div>

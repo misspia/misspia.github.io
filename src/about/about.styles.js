@@ -12,6 +12,8 @@ export const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  max-width: 1150px;
+
   font-size: 1.5em;
   line-height: 1.5;
   letter-spacing: 1px;
@@ -22,7 +24,6 @@ const keyword = css`
   border-bottom: solid ${Colors.black};
   color: ${Colors.black};
 
-  cursor: pointer;
   transition: 0.3s all;
 
   &:hover {

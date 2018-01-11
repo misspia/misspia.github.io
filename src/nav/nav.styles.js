@@ -39,6 +39,18 @@ export const Subheading = styled.div`
 
 const tab = css`
   padding: 0 0.5em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: ${Colors.black};
+  text-decoration: none;
+
+  transition: 0.2s all;
+  &:hover {
+    color: ${Colors.pink};
+  }
+  &:active, &:visited {
+    outline: none;
+  }
 
   cursor: pointer;
 `;

@@ -4,8 +4,8 @@ class ParticleSystem {
   constructor(canvas) {
     this.canvas = canvas;
     this.context = canvas.getContext('2d');
-    this.windowWidth = this.canvas.width = document.documentElement.clientWidth;
-    this.windowHeight = this.canvas.height = document.documentElement.clientHeight;
+    this.windowWidth = this.canvas.width = this.getDimensions().x;
+    this.windowHeight = this.canvas.height = this.getDimensions().y;
 
     this.numberParticlesStart = 100;
     this.growthRate = 2.5;
@@ -13,6 +13,12 @@ class ParticleSystem {
 
     this.radius = this.canvas.height * 0.25;
     this.particles = [];
+  }
+  getDimensions() {
+    return {
+      x: document.documentElement.clientWidth,
+      y: document.documentElement.clientHeight
+    }
   }
   render() {
     const length = this.particles.length;
@@ -44,8 +50,8 @@ class ParticleSystem {
   }
   setResizeHandler() {
     window.addEventListener('resize', () => {
-      this.windowWidth = this.canvas.width = document.documentElement.clientWidth;
-      this.windowHeight = this.canvas.height = document.documentElement.clientHeight;
+      this.windowWidth = this.canvas.width = this.getDimensions().x;
+      this.windowHeight = this.canvas.height = this.getDimensions().y;
       this.particles = [];
       this.context.clearRect(0, 0, this.windowWidth, this.windowHeight);
       this.init();

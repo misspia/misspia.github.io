@@ -9,12 +9,18 @@ const Metadata = {
     //   demo: '',
     //   image: Images. ,
     // },
-    // {
-    //   title: '',
-    //   github: '',
-    //   demo: '',
-    //   image: Images. ,
-    // },
+    {
+      title: 'ThreeJS Solar System',
+      github: 'https://github.com/misspia/threejs-solar-system',
+      demo: 'http://misspia.me/threejs-solar-system/',
+      image: Images.projectThreeSS ,
+    },
+    {
+      title: 'Pokedex Web App + API',
+      github: 'https://github.com/SEAKING-LOVE/pk-web',
+      demo: 'http://pk-web.jasonmh.me/',
+      image: Images.projectPokedex,
+    },
     {
       title: 'Processing Audio Visualizer',
       github: 'http://misspia.me/audio-visualizer-v2/',
