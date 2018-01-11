@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
   Section, Title, Content,
-  PlainKeyword, LinkKeyword
+  Keyword, LinksContainer, Link
 } from './about.styles.js'
 import Metadata from './about.metadata.js'
 
@@ -9,39 +9,41 @@ class About extends Component {
   constructor() {
     super();
   }
-  renderKeyword(key) {
-    const { label, color } = Metadata[key];
-
-    return <PlainKeyword color={color}>
-      {label}
-    </PlainKeyword>;
+  renderKeyword(word) {
+    return <Keyword>
+      {word}
+    </Keyword>;
   }
-  renderLink(key) {
-    const { label, color, url } = Metadata[key];
+  renderLinks() {
+    return Object.keys(Metadata).map((key, index) => {
+      const link = Metadata[key];
+      return this.renderLink(link, index);
+    })
+  }
+  renderLink(link, index) {
+    const { label, color, url } = link;
 
-    return <LinkKeyword color={color} href={url} target='_blank'>
+    return <Link
+          key={index}
+          color={color}
+          href={url} target='_blank'>
       {label}
-    </LinkKeyword>;
+    </Link>;
   }
   render() {
     return <Section>
         <Title>about</Title>
         <Content>
-          {`Hi there, my name is `}
-          {this.renderKeyword('name')}
-          {` and I am currently studying at the University of Waterloo.
-            Here, take a copy of my `}
-          {this.renderLink('resume')}
-          {` and feel free to contact me at `}
-          {this.renderKeyword('email')}
-          {`. I am well versed in both client and server side web development.
-            My passions lie in generative art and data visualization.
-            Checkout some of my projects or find me at `}
-          {this.renderLink('github')}
-          {` - `}
-          {this.renderLink('linkedin')}
-          {` - `}
-          {this.renderLink('codepen')}
+          <div>
+            {`Hi there, my name is `}
+            {this.renderKeyword('Pia')}
+            {'. I strive to delivery beautiful experiences over to web '}
+            {`and am always up for new challenges. Feel free to reach out at `}
+            {this.renderKeyword(Metadata.email.url)}
+          </div>
+          <LinksContainer>
+            {this.renderLinks()}
+          </LinksContainer>
         </Content>
     </Section>
   }
