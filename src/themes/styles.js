@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import Fonts from './fonts.js'
 
+// border: solid red 1px;
 const Styles = {
   SectionContainer: styled.div`
-    border: solid red 1px;
+
     min-height: 100vh;
   `,
-  SectionTitle: styled.div`
+  SectionTitle: styled.h1`
+    margin-bottom: 1em;
     font-size: ${Fonts.sizeTitle};
     font-weight: ${Fonts.weightBold};
   `,

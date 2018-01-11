@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Fonts } from './themes/themes.js'
 
+import Nav from './nav/nav.jsx'
 import Hero from './hero/hero.jsx'
 import About from './about/about.jsx'
 import Projects from './projects/projects.jsx'
@@ -18,6 +19,7 @@ const Container = styled.div`
 class App extends Component {
 	render() {
 		return <Container>
+      <Nav />
       <Hero />
       <About />
       <Projects />
