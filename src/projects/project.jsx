@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import Ionicon from 'react-ionicons'
-// import { Icons } from '../themes/themes.js'
+
 import {
   ProjectContainer,
   BGImage,
@@ -16,7 +15,9 @@ class Project extends Component {
       github: '',
       demo: '',
       image: '',
-
+  }
+  componentDidMount() {
+    console.log('mounted', this.props.title)
   }
   renderBGImage() {
     return <BGImage
@@ -43,7 +44,6 @@ class Project extends Component {
     </LinkButton>
   }
   renderGithubLink() {
-    // <Ionicon icon={Icons.github} color='#fff' fontSize='30px'/>
     return <LinkButton
           target='_blank'
           href={this.props.github}>

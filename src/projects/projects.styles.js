@@ -12,10 +12,10 @@ export const Content = styled.div`
 export const Title = Styles.SectionTitle;
 
 export const ProjectContainer = styled.div`
-  margin: 2em 0;
+  margin: 0;
   position: relative;
   width: 95%;
-  height: 14em;
+  height: 90%;
   overflow: hidden;
 
   box-shadow: 0em 0em 3em 0.1em ${Colors.shadow};

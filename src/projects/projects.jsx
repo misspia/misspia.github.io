@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import LazyLoad from 'react-lazy-load';
+
 import { Container, Title, Content } from './projects.styles.js'
 import Project from './project.jsx'
 import Metadata from './projects.metadata.js'
@@ -13,12 +15,19 @@ class Projects extends Component {
     })
   }
   renderProject(project, index) {
-    return <Project
-          key={index}
+    const height = '14em';
+    const offset = this.calcLoadOffet();
+
+    return <LazyLoad key={index} height={height} offsetVertical={offset}>
+      <Project
           title={project.title}
           image={project.image}
           github={project.github}
           demo={project.demo}/>
+    </LazyLoad>
+  }
+  calcLoadOffet() {
+    return window.innerHeight / 3;
   }
   render() {
     return <Container>
