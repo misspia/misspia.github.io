@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { projectAnimateIn, projectHover } from './animations.js'
 
 import {
   ProjectContainer,
@@ -17,7 +18,7 @@ class Project extends Component {
       image: '',
   }
   componentDidMount() {
-    console.log('mounted', this.props.title)
+    projectAnimateIn(this.container)
   }
   renderBGImage() {
     return <BGImage
@@ -50,11 +51,16 @@ class Project extends Component {
       {`< / >`}
     </LinkButton>
   }
+  handleMouseMove(e) {
+    // console.log(e.target);
+  }
   render() {
-    return <ProjectContainer>
-      {this.renderBGImage()}
-      {this.renderHiddenInfo()}
-    </ProjectContainer>
+    return <ProjectContainer
+        innerRef={(ref) => this.container = ref}
+        onMouseOver={(e) => this.handleMouseMove(e)}>
+        {this.renderBGImage()}
+        {this.renderHiddenInfo()}
+      </ProjectContainer>
   }
 }
 

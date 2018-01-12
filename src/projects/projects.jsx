@@ -27,7 +27,7 @@ class Projects extends Component {
     </LazyLoad>
   }
   calcLoadOffet() {
-    return window.innerHeight / 3;
+    return window.innerHeight * 0.8;
   }
   render() {
     return <Container>

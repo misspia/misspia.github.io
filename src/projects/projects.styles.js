@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { Colors, Fonts, Styles } from '../themes/themes.js'
 
 export const Container = Styles.SectionContainer.extend`
@@ -11,6 +11,16 @@ export const Content = styled.div`
 
 export const Title = Styles.SectionTitle;
 
+const transformIn = keyframes`
+  0%     {transform: translateY(150px) rotateX(-180deg);}
+  100% { transfrom: translate(0px);}
+`;
+
+const transformOut = keyframes`
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+`;
+
 export const ProjectContainer = styled.div`
   margin: 0;
   position: relative;
@@ -18,9 +28,11 @@ export const ProjectContainer = styled.div`
   height: 90%;
   overflow: hidden;
 
+  pointer: cursor;
   box-shadow: 0em 0em 3em 0.1em ${Colors.shadow};
   transition: 0.4s all;
 
+  perspective: 800px;
   &:hover {
     transform: translateX(5%);
   }
@@ -30,7 +42,7 @@ export const BGImage = styled.img`
   z-index: -1;
   position: absolute;
   margin: auto;
-  top: -50%;
+  top: 0%;
   width: 100%;
   height: auto;
 `;
@@ -50,11 +62,15 @@ export const HiddenInfo = styled.div`
   color: ${Colors.white};
   text-transform: uppercase;
 
+  cursor: pointer;
   transition 0.4s all;
   opacity: 0;
 
+  animation: ${transformOut} 0.5s linear;
+
   ${ProjectContainer}:hover & {
     opacity: 1;
+    animation: ${transformIn} 0.4s linear forwards;
   }
 `;
 
