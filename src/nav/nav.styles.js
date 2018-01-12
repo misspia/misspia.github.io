@@ -22,8 +22,18 @@ export const Container = styled.div`
 `;
 
 export const Brand = styled.div`
+  position: relative;
   cursor: pointer;
 
+  a {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
 `;
 
 export const Heading = styled.div`

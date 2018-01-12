@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+
 import {
   Container,
   Brand, Heading, Subheading,
@@ -13,6 +15,7 @@ class Nav extends Component {
   }
   renderBrand() {
     return <Brand>
+      <NavLink to={Metadata.brand.to}/>
       <Heading>{Metadata.brand.heading}</Heading>
       <Subheading>{Metadata.brand.subheading}</Subheading>
     </Brand>
@@ -26,10 +29,11 @@ class Nav extends Component {
     </Tabs>
   }
   renderTab(tab, index) {
-    return <div
-      key={index}>
+    return <NavLink
+            key={index}
+            to={tab.to}>
       {tab.label}
-    </div>
+    </NavLink>
   }
   render() {
     return <Container>
