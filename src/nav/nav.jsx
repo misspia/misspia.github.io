@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import scrollToComponent from 'react-scroll-to-component';
 
 import {
   Container,
@@ -10,14 +10,11 @@ import {
 import Metadata from './nav.metadata.js'
 
 class Nav extends Component {
-  constructor() {
-    super();
-  }
   renderBrand() {
-    return <Brand>
-      <NavLink to={Metadata.brand.to}/>
-      <Heading>{Metadata.brand.heading}</Heading>
-      <Subheading>{Metadata.brand.subheading}</Subheading>
+    const brand = Metadata.brand
+    return <Brand onClick={() => this.clickHandler(brand.key)}>
+      <Heading>{brand.heading}</Heading>
+      <Subheading>{brand.subheading}</Subheading>
     </Brand>
   }
   renderTabs() {
@@ -29,11 +26,20 @@ class Nav extends Component {
     </Tabs>
   }
   renderTab(tab, index) {
-    return <NavLink
-            key={index}
-            to={tab.to}>
+    return <div
+          key={index}
+          onClick={() => this.clickHandler(tab.key)}>
       {tab.label}
-    </NavLink>
+    </div>
+  }
+  clickHandler(key) {
+    const config = {
+      align: 'top',
+      offset: 0,
+      duration: 500,
+      ease:'inOutSine'
+    };
+    scrollToComponent(this.props[key], config);
   }
   render() {
     return <Container>
