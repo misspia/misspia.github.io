@@ -1,25 +1,25 @@
 import styled, { css, keyframes } from 'styled-components'
-import { Colors, Fonts, Styles } from '../themes/themes.js'
+import { Colors, Fonts, Styles, Metrics } from '../themes/themes.js'
 
 export const Container = Styles.SectionContainer.extend`
 
 `;
 
 export const Content = styled.div`
+  &>div {
+    border: red 1px solid;
+    height: 30vh;
+    
+    transition: 0.4s all;
 
+    @media ${Metrics.mobileBreakPoint} {
+      height: 40vh;
+    }
+  }
 `;
 
 export const Title = Styles.SectionTitle;
 
-const transformIn = keyframes`
-  0%     {transform: translateY(150px) rotateX(-180deg);}
-  100% { transfrom: translate(0px);}
-`;
-
-const transformOut = keyframes`
-  0% { opacity: 1;}
-  100% { opacity: 0;}
-`;
 
 export const ProjectContainer = styled.div`
   margin: 0;
@@ -27,14 +27,15 @@ export const ProjectContainer = styled.div`
   width: 95%;
   height: 90%;
   overflow: hidden;
-
-  pointer: cursor;
+  
   box-shadow: 0em 0em 3em 0.1em ${Colors.shadow};
   transition: 0.4s all;
 
-  perspective: 800px;
   &:hover {
-    transform: translateX(5%);
+    transform: translateY(1em);
+  }
+  @media ${Metrics.mobileBreakPoint} {
+    justify-content: flex-end;
   }
 `;
 
@@ -45,6 +46,12 @@ export const BGImage = styled.img`
   top: 0%;
   width: 100%;
   height: auto;
+  
+  transition: all 0.2s;
+
+  ${ProjectContainer}:hover & {
+    transform: scale(1.2);
+  }
 `;
 
 export const HiddenInfo = styled.div`
@@ -53,32 +60,56 @@ export const HiddenInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
 
   height: 100%;
   width: 100%;
   box-sizing: border-box;
   padding: 1em;
-  background-color: ${Colors.black};
+  
   color: ${Colors.white};
   text-transform: uppercase;
 
-  cursor: pointer;
   transition 0.4s all;
   opacity: 0;
 
   transform-origin: right bottom;
-  animation: ${transformOut} 0.5s linear;
-
+  transform: translateY(150px) rotateX(-180deg);
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: ${Colors.black};
+    transition: 0.4s all;
+  }
   ${ProjectContainer}:hover & {
     opacity: 1;
-    animation: ${transformIn} 0.4s linear forwards;
-  }
+    transform: none;
+    &:before {
+      width: 100%;
+    }
 `;
 
 export const Subtitle = styled.div`
   font-size: 1.5em;
   font-weight: ${Fonts.weightBold};
   letter-spacing: 0.2em;
+
+  opacity: 0;
+  transform: translate(-1em, 1em);
+  transition: all 0.4s;
+  transition-delay: 0.4s;
+
+  ${ProjectContainer}:hover & {
+    opacity: 1;
+    transform: none;
+  }
 `;
 
 export const LinksRow = styled.div`
@@ -88,7 +119,7 @@ export const LinksRow = styled.div`
   height 2.5em;
 `;
 
-export const LinkButton = styled.a`
+const LinkButton = styled.a`
   margin-right: 0.5em;
   display: flex;
   justify-content: center;
@@ -104,17 +135,27 @@ export const LinkButton = styled.a`
   border: solid 0.1em ${Colors.white};
   text-decoration: none;
 
-  transition: 0.4s all;
-
-  &:hover {
-      color: ${Colors.black};
-      background-color: ${Colors.white};
-  }
   &:visited, &:active {
     outline: none;
   }
 
+  opacity: 0;
+  transform: translateY(1em);
+  transition: all 0.4s;
+  transition-delay: 0.5s;
+
+  ${ProjectContainer}:hover & {
+    opacity: 1;
+    transform: none;
+  }
 `;
 
+export const DemoButton = LinkButton.extend`
+  transition-delay: 0.5s;
+`;
+
+export const SourceCodeButton = LinkButton.extend`
+  transition-delay: 0.6s;
+`;
 
 export const Icon = Styles.Icon;

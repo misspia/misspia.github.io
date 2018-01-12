@@ -4,7 +4,8 @@ import { projectAnimateIn, projectHover } from './animations.js'
 import {
   ProjectContainer,
   BGImage,
-  HiddenInfo, Subtitle, LinksRow, LinkButton
+  HiddenInfo, Subtitle, LinksRow,
+  DemoButton, SourceCodeButton
 } from './projects.styles.js'
 
 class Project extends Component {
@@ -18,6 +19,7 @@ class Project extends Component {
       image: '',
   }
   componentDidMount() {
+    console.log('mount', this.props.title)
     projectAnimateIn(this.container)
   }
   renderBGImage() {
@@ -38,18 +40,18 @@ class Project extends Component {
     </LinksRow>
   }
   renderDemoLink() {
-    return <LinkButton
+    return <DemoButton
           target='_blank'
           href={this.props.demo}>
           Demo
-    </LinkButton>
+    </DemoButton>
   }
   renderGithubLink() {
-    return <LinkButton
+    return <SourceCodeButton
           target='_blank'
           href={this.props.github}>
       {`< / >`}
-    </LinkButton>
+    </SourceCodeButton>
   }
   handleMouseMove(e) {
     // console.log(e.target);
