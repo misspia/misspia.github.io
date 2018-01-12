@@ -10,8 +10,8 @@ class Hero extends Component {
   componentDidMount() {
     const PS = new ParticleSystem(this.canvas);
     PS.init();
-    PS.setResizeHandler()
-    PS.render()
+    PS.setResizeHandler();
+    PS.render();
   }
   renderModal() {
     return <Modal>

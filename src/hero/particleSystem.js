@@ -32,6 +32,7 @@ class ParticleSystem {
     if(this.particleTotal > 0) requestAnimationFrame(() => this.render());
   }
   init() {
+    this.particleTotal = this.getInitialParticleTotal();
     for(let i = 0; i < this.particleTotal; i ++) {
       const config = {
         coord: this.getRandomCoord(),
