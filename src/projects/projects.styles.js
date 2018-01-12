@@ -66,6 +66,7 @@ export const HiddenInfo = styled.div`
   transition 0.4s all;
   opacity: 0;
 
+  transform-origin: right bottom;
   animation: ${transformOut} 0.5s linear;
 
   ${ProjectContainer}:hover & {

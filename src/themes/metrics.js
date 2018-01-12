@@ -1,6 +1,10 @@
+const mobileWidth = '800px';
+
+
 const Metrics = {
-  mobileBreakPoint: '700px',
+  mobileWidth: mobileWidth,
   minWidth: '350px',
+  mobileBreakPoint: `(max-width: ${mobileWidth})`,
 
   verticalPadding: '3em,'
 }

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Colors, Fonts } from '../themes/themes.js'
+import { Colors, Fonts, Metrics } from '../themes/themes.js'
 
 export const Container = styled.div`
   font-size: 1em;
@@ -19,6 +19,10 @@ export const Container = styled.div`
 
   background-color: ${Colors.white};
   background-color: transparent;
+
+  @media ${Metrics.mobileBreakPoint} {
+    justify-content: flex-end;
+  }
 `;
 
 export const Brand = styled.div`
@@ -33,6 +37,9 @@ export const Brand = styled.div`
     width: 100%;
     height: 100%;
     cursor: pointer;
+  }
+  @media ${Metrics.mobileBreakPoint} {
+    display: none;
   }
 `;
 
