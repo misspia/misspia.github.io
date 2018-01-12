@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Section } from './hero.styles.js'
+import { Section, Modal, Heading, Subheading } from './hero.styles.js'
 
 import ParticleSystem from './particleSystem.js'
 
@@ -13,8 +13,15 @@ class Hero extends Component {
     PS.setResizeHandler()
     PS.render()
   }
+  renderModal() {
+    return <Modal>
+      <Heading>pia leung</Heading>
+      <Subheading>art + code</Subheading>
+    </Modal>
+  }
   render() {
     return <Section>
+        {this.renderModal()}
         <canvas ref={(ref) => this.canvas = ref}></canvas>
     </Section>
   }

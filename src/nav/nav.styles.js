@@ -8,7 +8,7 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  height: 5em;
+  height: 3.5em;
   width: 100%;
 
   box-sizing: border-box;
@@ -18,6 +18,7 @@ export const Container = styled.div`
   align-items: center;
 
   background-color: ${Colors.white};
+  background-color: transparent;
 `;
 
 export const Brand = styled.div`
