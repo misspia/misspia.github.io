@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Colors, Fonts, Metrics } from '../themes/themes.js'
 
-export const Container = styled.div`
+export const Container = styled.nav`
   font-size: 1em;
 
   z-index: 999;

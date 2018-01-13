@@ -16,7 +16,7 @@ class Hero extends Component {
   renderModal() {
     return <Modal>
       <Heading>pia leung</Heading>
-      <Subheading>art + code</Subheading>
+      <Subheading>art+code</Subheading>
     </Modal>
   }
   render() {

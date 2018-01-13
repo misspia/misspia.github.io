@@ -7,10 +7,11 @@ class ParticleSystem {
     this.canvas.height = this.getDimensions().y;
     this.context = canvas.getContext('2d');
 
+    this.radius = this.getInitialRadius();
     this.particleTotal = this.getInitialParticleTotal();
-    this.particleDecrement = this.particleTotal * 0.0005
+    this.particleDecrement = this.particleTotal * 0.0005;
     this.velocity = 0.01;
-    this.radius = this.canvas.height * 0.16;
+
     this.particles = [];
   }
   getDimensions() {
@@ -19,9 +20,13 @@ class ParticleSystem {
       y: document.documentElement.clientHeight
     }
   }
+  getInitialRadius() {
+    const smallestDimension = Math.min(this.canvas.width, this.canvas.height);
+    return smallestDimension * 0.12;
+  }
   getInitialParticleTotal() {
-    const greatestDimension = Math.max(this.canvas.width, this.canvas.height)
-    return greatestDimension * 2;
+    const circleArea = Math.PI * Math.pow(this.radius, 2);
+    return circleArea * 2;
   }
   render() {
     this.particles.forEach(particle => {

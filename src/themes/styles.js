@@ -1,12 +1,18 @@
 import styled, { css } from 'styled-components'
 import Fonts from './fonts.js'
+import Metrics from './metrics.js'
 
-// border: solid red 1px;
 const Styles = {
-  SectionContainer: styled.div`
-    padding: 0 1em;
+  SectionContainer: styled.section`
+    padding: 0em;
     box-sizing: border-box;
     min-height: 100vh;
+    width: 80%;
+
+    @media ${Metrics.mobileBreakPoint} {
+      width: 100%;
+
+    }
   `,
   SectionTitle: styled.h1`
     margin-bottom: 1em;

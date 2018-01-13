@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import {
   Section, Title, Content,
   Keyword, LinksContainer, Link
@@ -22,11 +23,11 @@ class About extends Component {
   }
   renderLink(link, index) {
     const { label, color, url } = link;
-
+    const urlPrefix = url.includes('@') ? 'mailto:' : '';
     return <Link
           key={index}
           color={color}
-          href={url} target='_blank'>
+          href={urlPrefix +url} target='_blank'>
       {label}
     </Link>;
   }

@@ -14,7 +14,7 @@ export const Content = styled.div`
   flex-direction: column;
   max-width: 1150px;
 
-  font-size: 1.5em;
+  font-size: 1.1em;
   line-height: 1.5;
   letter-spacing: 1px;
 
@@ -34,6 +34,7 @@ const keyword = css`
 export const LinksContainer = styled.div`
   margin-top: 5%;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 
 `;
@@ -45,6 +46,7 @@ export const Keyword = styled.span`
 
 export const Link = styled.a`
   position: relative;
+  margin: 0.1em 0;
   padding: 0em 0.6em;
   font-size: 0.9em;
   font-weight: ${Fonts.weightBold};

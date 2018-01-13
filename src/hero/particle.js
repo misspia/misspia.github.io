@@ -5,7 +5,6 @@ const getRandomFloat = (min, max) => {
 
 class Particle {
   constructor({coord, context, velocity}) {
-
     this.context = context;
     this.velocity = velocity;
     this.canvasWidth = this.context.canvas.width;
@@ -23,14 +22,11 @@ class Particle {
       max: getRandomFloat(1, 50),
     }
     this.color = 'rgba(0, 0, 0, 0.7)';
-
   }
   render() {
     this.context.beginPath();
     this.context.fillStyle = this.color;
     this.context.fillRect(this.x, this.y, 0.5, 0.5);
-    this.context.shadowBlur = 0;
-    this.context.shadowColor = 'rgb(0, 0, 0)';
     this.context.fill();
 
   }

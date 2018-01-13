@@ -6,9 +6,10 @@ export const Section = Styles.SectionContainer.extend`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 
-export const Modal = styled.div`
+export const Modal = styled.header`
   position: absolute;
   margin: 0 auto;
   display: flex;
@@ -16,16 +17,14 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
 
-
   font-size: 1em;
   color: ${Colors.white};
-
 `;
 
 
 export const Heading = styled.h1`
-
-  font-size: 1.5em;
+  margin: 0.5em 0;
+  font-size: 1.8em;
   font-weight: ${Fonts.weightBold};
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -34,6 +33,7 @@ export const Heading = styled.h1`
 
 export const Subheading = styled.h2`
   margin: 0;
-  font-size: 0.8em;
-  letter-spacing: 0.5em;
+  font-size: 1.1em;
+  font-weight: ${Fonts.weightRegular};
+  letter-spacing: 0.8em;
 `;

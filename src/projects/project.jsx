@@ -19,7 +19,6 @@ class Project extends Component {
       image: '',
   }
   componentDidMount() {
-    console.log('mount', this.props.title)
     projectAnimateIn(this.container)
   }
   renderBGImage() {
@@ -50,16 +49,12 @@ class Project extends Component {
     return <SourceCodeButton
           target='_blank'
           href={this.props.github}>
-      {`< / >`}
+      source code
     </SourceCodeButton>
-  }
-  handleMouseMove(e) {
-    // console.log(e.target);
   }
   render() {
     return <ProjectContainer
-        innerRef={(ref) => this.container = ref}
-        onMouseOver={(e) => this.handleMouseMove(e)}>
+        innerRef={(ref) => this.container = ref}>
         {this.renderBGImage()}
         {this.renderHiddenInfo()}
       </ProjectContainer>

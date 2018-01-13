@@ -9,11 +9,15 @@ import Hero from './hero/hero.jsx'
 import About from './about/about.jsx'
 import Projects from './projects/projects.jsx'
 
-const Container = styled.div`
+const Container = styled.main`
   margin: 0;
   padding: 0;
   font-family: ${Fonts.family};
   font-size: ${Fonts.sizeRegular};
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 class App extends Component {
@@ -30,7 +34,6 @@ class App extends Component {
       <Hero ref={ (ref) => this.hero = ref}/>
       <About ref={ (ref) => this.about = ref}/>
       <Projects ref={ (ref) => this.projects = ref}/>
-
     </Container>
 	}
 }

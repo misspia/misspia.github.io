@@ -7,13 +7,11 @@ export const Container = Styles.SectionContainer.extend`
 
 export const Content = styled.div`
   &>div {
-    border: red 1px solid;
-    height: 30vh;
-    
+    height: 45vh;
     transition: 0.4s all;
 
     @media ${Metrics.mobileBreakPoint} {
-      height: 40vh;
+      height: 60vh;
     }
   }
 `;
@@ -24,16 +22,13 @@ export const Title = Styles.SectionTitle;
 export const ProjectContainer = styled.div`
   margin: 0;
   position: relative;
-  width: 95%;
+  width: 100%;
   height: 90%;
   overflow: hidden;
-  
+
   box-shadow: 0em 0em 3em 0.1em ${Colors.shadow};
   transition: 0.4s all;
-
-  &:hover {
-    transform: translateY(1em);
-  }
+  perspective: 800px;
   @media ${Metrics.mobileBreakPoint} {
     justify-content: flex-end;
   }
@@ -46,11 +41,16 @@ export const BGImage = styled.img`
   top: 0%;
   width: 100%;
   height: auto;
-  
+
   transition: all 0.2s;
 
   ${ProjectContainer}:hover & {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    filter: brightness(200%);
+  }
+  @media ${Metrics.mobileBreakPoint} {
+    height: 100%;
+    width: auto;
   }
 `;
 
@@ -66,7 +66,7 @@ export const HiddenInfo = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: 1em;
-  
+
   color: ${Colors.white};
   text-transform: uppercase;
 
@@ -75,7 +75,7 @@ export const HiddenInfo = styled.div`
 
   transform-origin: right bottom;
   transform: translateY(150px) rotateX(-180deg);
-  
+
   &:before {
     content: '';
     display: block;

@@ -1,15 +1,10 @@
 import { Colors } from '../themes/themes.js'
 
 const Metadata = {
-  // name: {
-  //   label: 'Pia',
-  //   color: Colors.pink,
-  //   url: 'https://youtu.be/D10kgKpFv-Q?t=7s4'
-  // },
   email: {
     label: 'Email',
     color: Colors.pink,
-    url: 'miss.pialeung@gmail.com'
+    url: 'miss.pialeung@gmail.com',
   },
   resume: {
     label: 'Resume',
