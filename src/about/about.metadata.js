@@ -1,4 +1,5 @@
 import { Colors } from '../themes/themes.js'
+import resumePDF from './pialeung.pdf'
 
 const Metadata = {
   email: {
@@ -9,7 +10,7 @@ const Metadata = {
   resume: {
     label: 'Resume',
     color: Colors.pink,
-    url: ''
+    url: resumePDF
   },
   github: {
     label: 'Github',
