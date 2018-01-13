@@ -27,10 +27,6 @@ module.exports = {
 					'file-loader',
 				],
 			},
-      {
-  			test: /\.(glsl|vert|frag)$/,
-  			loader: 'webpack-glsl-loader'
-  		},
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,

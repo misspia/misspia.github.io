@@ -25,8 +25,8 @@ class ParticleSystem {
     return smallestDimension * 0.12;
   }
   getInitialParticleTotal() {
-    const circleArea = Math.PI * Math.pow(this.radius, 2);
-    return circleArea * 2;
+    const greatestDimmension = Math.max(this.canvas.width, this.canvas.height);
+    return greatestDimmension * 2;
   }
   render() {
     this.particles.forEach(particle => {

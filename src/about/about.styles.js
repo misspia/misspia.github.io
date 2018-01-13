@@ -14,8 +14,8 @@ export const Content = styled.div`
   flex-direction: column;
   max-width: 1150px;
 
-  font-size: 1.1em;
-  line-height: 1.5;
+  font-size: 1.3em;
+  line-height: 2;
   letter-spacing: 1px;
 
 `;
@@ -48,7 +48,7 @@ export const Link = styled.a`
   position: relative;
   margin: 0.1em 0;
   padding: 0em 0.6em;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: ${Fonts.weightBold};
   color: ${Colors.black};
   text-decoration: none;

@@ -14,6 +14,7 @@ export const Content = styled.div`
       height: 60vh;
     }
   }
+  font-size: 1.1em;
 `;
 
 export const Title = Styles.SectionTitle;
@@ -26,7 +27,7 @@ export const ProjectContainer = styled.div`
   height: 90%;
   overflow: hidden;
 
-  box-shadow: 0em 0em 3em 0.1em ${Colors.shadow};
+  box-shadow: 0em 0.2em 3em 0.1em ${Colors.shadow};
   transition: 0.4s all;
   perspective: 800px;
   @media ${Metrics.mobileBreakPoint} {
@@ -38,7 +39,7 @@ export const BGImage = styled.img`
   z-index: -1;
   position: absolute;
   margin: auto;
-  top: 0%;
+  top: 0; bottom: 0; left: 0; right: 0;
   width: 100%;
   height: auto;
 

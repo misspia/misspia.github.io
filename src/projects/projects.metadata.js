@@ -23,8 +23,8 @@ const Metadata = {
     },
     {
       title: 'Processing Audio Visualizer',
-      github: 'http://misspia.me/audio-visualizer-v2/',
-      demo: 'https://github.com/misspia/audio-visualizer-v2',
+      github: 'https://github.com/misspia/audio-visualizer-v2',
+      demo: 'http://misspia.me/audio-visualizer-v2/',
       image: Images.projectAudioViz2,
     },
     {

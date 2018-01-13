@@ -1,10 +1,10 @@
 const Images = {
-  projectLOLChamps: require('./images/project_lol_champs.png'),
-  projectAudioViz: require('./images/project_audio_viz.png'),
-  projectAudioViz2: require('./images/project_audio_viz2.png'),
-  projectEsportsViz: require('./images/project_esports_earnings.png'),
-  projectThreeSS: require('./images/project_threejs_ss.png'),
-  projectPokedex: require('./images/project_pokedex.png'),
+  projectLOLChamps: require('./images/project_lol_champs.jpg'),
+  projectAudioViz: require('./images/project_audio_viz.jpg'),
+  projectAudioViz2: require('./images/project_audio_viz2.jpg'),
+  projectEsportsViz: require('./images/project_esports_earnings.jpg'),
+  projectThreeSS: require('./images/project_three_ss.jpg'),
+  projectPokedex: require('./images/project_pokedex.jpg'),
 };
 
 export default Images;

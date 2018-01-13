@@ -2,7 +2,6 @@ const getRandomFloat = (min, max) => {
     return Math.random() * (max - min) + min;
 }
 
-
 class Particle {
   constructor({coord, context, velocity}) {
     this.context = context;
@@ -21,14 +20,13 @@ class Particle {
       min: getRandomFloat(0.1, 1),
       max: getRandomFloat(1, 50),
     }
-    this.color = 'rgba(0, 0, 0, 0.7)';
+    // this.color = 'rgba(0, 0, 0, 0.7)';
+    this.context.fillStyle = 'rgba(0, 0, 0, 0.7)';
   }
   render() {
-    this.context.beginPath();
-    this.context.fillStyle = this.color;
+    this.context.beginPath(); 
     this.context.fillRect(this.x, this.y, 0.5, 0.5);
     this.context.fill();
-
   }
   update() {
     const forceDirection = {
@@ -65,10 +63,6 @@ class Particle {
       this.setPosition(this.y, 'y');
     } else if(this.y < 0) {
       this.setPosition(this.canvasHeight, 'y')
-    }
-    if(this.x == this.canvasCenterX && this.y == this.canvasCenterY) {
-      this.setPosition(this.canvasHeight - 1, 'y');
-      this.setPosition(this.canvasWidth / 2, 'x')
     }
   }
   setPosition(pos, axis) {

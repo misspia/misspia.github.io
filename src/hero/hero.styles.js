@@ -24,7 +24,7 @@ export const Modal = styled.header`
 
 export const Heading = styled.h1`
   margin: 0.5em 0;
-  font-size: 1.8em;
+  font-size: 2em;
   font-weight: ${Fonts.weightBold};
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -33,7 +33,7 @@ export const Heading = styled.h1`
 
 export const Subheading = styled.h2`
   margin: 0;
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: ${Fonts.weightRegular};
   letter-spacing: 0.8em;
 `;

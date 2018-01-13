@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { Colors, Fonts, Metrics } from '../themes/themes.js'
 
 export const Container = styled.nav`
-  font-size: 1em;
+  font-size: 1.5em;
 
   z-index: 999;
   position: fixed;
@@ -22,6 +22,7 @@ export const Container = styled.nav`
 
   @media ${Metrics.mobileBreakPoint} {
     justify-content: flex-end;
+    font-size: 1.1em;
   }
 `;
 
