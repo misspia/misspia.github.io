@@ -5,6 +5,7 @@ const Images = {
   projectEsportsViz: require('./images/project_esports_earnings.jpg'),
   projectThreeSS: require('./images/project_three_ss.jpg'),
   projectPokedex: require('./images/project_pokedex.jpg'),
+  projectSketchbook: require('./images/project_sketchbook.jpg'),
 };
 
 export default Images;

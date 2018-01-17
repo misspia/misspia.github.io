@@ -16,8 +16,8 @@ class About extends Component {
     </Keyword>;
   }
   renderLinks() {
-    return Object.keys(Metadata).map((key, index) => {
-      const link = Metadata[key];
+    return Object.keys(Metadata.links).map((key, index) => {
+      const link = Metadata.links[key];
       return this.renderLink(link, index);
     })
   }
@@ -37,10 +37,10 @@ class About extends Component {
         <Content>
           <div>
             {`Hi there, my name is `}
-            {this.renderKeyword('Pia')}
+            {this.renderKeyword(Metadata.bio.name)}
             {'. I strive to deliver beautiful experiences over to web '}
             {`and am always up for new challenges. Feel free to reach out at `}
-            {this.renderKeyword(Metadata.email.url)}
+            {this.renderKeyword(Metadata.bio.email)}
           </div>
           <LinksContainer>
             {this.renderLinks()}

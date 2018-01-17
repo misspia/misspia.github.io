@@ -2,31 +2,38 @@ import { Colors } from '../themes/themes.js'
 import resumePDF from './pialeung.pdf'
 
 const Metadata = {
-  email: {
-    label: 'Email',
-    color: Colors.pink,
-    url: 'miss.pialeung@gmail.com',
+  bio: {
+    name: 'Pia',
+    email: 'miss.pialeung@gmail.com'
   },
-  resume: {
-    label: 'Resume',
-    color: Colors.pink,
-    url: resumePDF
-  },
-  github: {
-    label: 'Github',
-    color: Colors.github,
-    url: 'https://github.com/misspia'
-  },
-  codepen: {
-    label: 'Codepen',
-    color: Colors.codepen,
-    url: 'https://codepen.io/misspia/'
-  },
-  linkedin: {
-    label: 'LinkedIn',
-    color: Colors.linkedin,
-    url: 'https://www.linkedin.com/in/pia-leung'
-  },
+  links: {
+    resume: {
+      label: 'Resume',
+      color: Colors.pink,
+      url: resumePDF
+    },
+    github: {
+      label: 'Github',
+      color: Colors.github,
+      url: 'https://github.com/misspia'
+    },
+    linkedin: {
+      label: 'LinkedIn',
+      color: Colors.linkedin,
+      url: 'https://www.linkedin.com/in/pia-leung'
+    },
+    codepen: {
+      label: 'Codepen',
+      color: Colors.codepen,
+      url: 'https://codepen.io/misspia/'
+    },
+    poly: {
+      label: 'Google Poly',
+      color: Colors.poly,
+      url: 'https://poly.google.com/user/04engSSutGE'
+    }
+  }
+
 }
 
 export default Metadata;

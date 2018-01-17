@@ -9,6 +9,7 @@ const Colors = {
     github: '#6d5c80',
     linkedin: '#325d80',
     codepen: '#ffa34c', //#fd9058
+    poly: '#e0145a',
 
 };
 

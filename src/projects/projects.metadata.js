@@ -10,6 +10,12 @@ const Metadata = {
     //   image: Images. ,
     // },
     {
+      title: 'WebGL Sketchbook',
+      github: 'https://github.com/misspia/sketchbook',
+      demo: 'http://misspia.me/sketchbook/#/',
+      image: Images.projectSketchbook,
+    },
+    {
       title: 'ThreeJS Solar System',
       github: 'https://github.com/misspia/threejs-solar-system',
       demo: 'http://misspia.me/threejs-solar-system/',
