@@ -23,7 +23,7 @@ const Metadata = {
     },
     {
       title: 'Pokedex Web App + API',
-      github: 'https://github.com/SEAKING-LOVE/pk-web',
+      github: 'https://github.com/SEAKING-LOVE/pk-about',
       demo: 'http://pk-web.jasonmh.me/',
       image: Images.projectPokedex,
     },
