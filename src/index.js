@@ -20,12 +20,18 @@ const Container = styled.main`
   align-items: center;
 `;
 
+const InspectorMsg = `
+  (¬‿¬) I see you have taken interest in my site.
+  Send me a message at miss.pialeung@gmail.com and
+  I'd be more than happy to chat about it
+`;
 class App extends Component {
   constructor() {
     super();
     this.state = { mounted: false }
   }
   componentDidMount() {
+    console.log(InspectorMsg);
     this.setState({ mounted: true })
   }
 	render() {
