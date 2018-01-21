@@ -40,7 +40,7 @@ class About extends Component {
             {this.renderKeyword(Metadata.bio.name)}
             {'. I strive to deliver beautiful experiences over to web '}
             {`and am always up for new challenges. Currently open for full `}
-            {`time oppertunities. Feel free to reach out at `}
+            {`time opportunities. Feel free to reach out at `}
             {this.renderKeyword(Metadata.bio.email)}
           </div>
           <LinksContainer>
