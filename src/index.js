@@ -1,7 +1,9 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+
 import { Colors, Fonts } from './themes';
+import Landing from './components/Landing/Landing';
 
 const GlobalStyle = createGlobalStyle`
   @import url('${Fonts.url}');
@@ -14,12 +16,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <React.Fragment>
         <GlobalStyle />
-        hihi
+        <Landing />
       </React.Fragment>
     )
   }
