@@ -1,9 +1,4 @@
-const Fonts = {
-  family: `'Montserrat', sans-serif`,
-  sizeTitle: '5em',
-  sizeBody: '1em',
-  weightRegular: '400',
-  weightBold: '600'
+export default {
+  url: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP',
+  family: `'Noto Sans JP', sans-serif`,
 }
-
-export default Fonts;

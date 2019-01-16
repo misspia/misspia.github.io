@@ -20,23 +20,34 @@ module.exports = {
 			{
 				test: /\.(pdf|png|jpg|jpeg|gif|ico)$/,
 				use: [
-					'file-loader',
+					{
+						loader: 'file-loader',
+						options: {},
+					}
 				],
 			},
+			{
+        test: /\.(glsl|vert|frag)$/,
+				use: [
+					{
+						loader: 'raw-loader',
+						options: {},
+					},
+					{
+						loader: 'glslify-loader',
+						options: {},
+					},
+				],
+      },
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: [
-					'babel-loader',
-				],
-			},
-			{
-				test: /\.scss$/,
-				use: [
-					'style-loader',
-					'css-loader',
-					'sass-loader'
-				]
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env'],
+					}
+				}
 			},
 		],
 	},
