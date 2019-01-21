@@ -23,7 +23,7 @@ export default class SketchManager {
       stencil: false
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor( 0x29233b );
+    this.renderer.setClearColor( 0xffffff );
     const dpr = Math.min(1.5, window.devicePixelRatio);
     this.renderer.setPixelRatio(dpr);
 

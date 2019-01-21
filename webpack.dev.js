@@ -6,7 +6,6 @@ module.exports = merge(common, {
 	mode: 'development',
 	plugins: [
 		new webpack.DefinePlugin({
-			API_HOST: '',
 			'process.env': {
 				'NODE_ENV': JSON.stringify('development')
 			}
