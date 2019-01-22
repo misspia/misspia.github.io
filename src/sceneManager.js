@@ -12,7 +12,7 @@ export default class SketchManager {
     this.startTime = Date.now();
 
     this.canvas = canvas;
-    this.mouse = {};
+    this.mouse = { x: 0, y: 0 };
     this.gui = {};
     this.scene = {};
     this.camaera = {};
@@ -50,7 +50,6 @@ export default class SketchManager {
     this.init();
     this.draw();
   }
-    
   createDatGUI() {
     this.gui = new dat.GUI();
   }
@@ -67,6 +66,14 @@ export default class SketchManager {
 
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
+  }
+  updateMousePosition(e) {
+    const { height, width } = this.canvas;
+    this.mouse = {
+      x: e.clientX - width / 2,
+      y: -e.clientY + height / 2,
+    }
+    // console.log(this.mouse);
   }
   setCameraPos(x, y, z) {
     this.camera.position.set(x, y, z);
