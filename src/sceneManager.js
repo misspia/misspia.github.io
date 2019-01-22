@@ -18,9 +18,9 @@ export default class SketchManager {
     this.camaera = {};
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      antialis: true,
-      alpha: false,
-      stencil: false
+      antialias: true,
+      alpha: true,
+      stencil: false,
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor( 0xffffff );

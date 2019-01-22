@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: ${Fonts.family};
     background-color: ${Colors.white};
-    
   }
 `;
 
