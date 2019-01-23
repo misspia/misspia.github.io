@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import * as S from './Landing.styles';
 import Scene from './scene';
 
@@ -51,19 +52,24 @@ export default class Landing extends React.Component {
   }
   render() {
     return (
-      <S.Container>
-        <S.Canvas ref={ canvas => this.canvas = canvas }/>
-        <S.Title>
-          pia leung
-        </S.Title>
-        <S.LinksContainer>
-          <S.Link onClick={() => this.props.toProjects()}>
-            {projectsPage.label}
-          </S.Link>
-          {this.renderLinks()}
-        </S.LinksContainer>
-        <S.ContactLink>{email.label}</S.ContactLink>
-      </S.Container>
+      <CSSTransitionGroup
+        transitionName='fade'
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}>
+        <S.Container>
+          <S.Canvas ref={ canvas => this.canvas = canvas }/>
+          <S.Title>
+            pia leung
+          </S.Title>
+          <S.LinksContainer>
+            <S.Link onClick={() => this.props.toProjects()}>
+              {projectsPage.label}
+            </S.Link>
+            {this.renderLinks()}
+          </S.LinksContainer>
+          <S.ContactLink>{email.label}</S.ContactLink>
+        </S.Container>
+      </CSSTransitionGroup>
     )
   }
 }

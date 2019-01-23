@@ -8,10 +8,6 @@ export const projectsPage = {
 };
 
 export const socialLinks = [
-  // {
-  //   label: 'projects',
-  //   href: 'http://misspia.me/sketchbook/#/',
-  // },
   {
     label: 'github',
     href: 'https://github.com/misspia',

@@ -9,7 +9,23 @@ export const Container = styled.div`
 
   width: 100vw;
   height: 100vh;
-  overflow: hidden; ////////////////////
+
+  &.fade-enter {
+    opacity: 0.01;
+  }
+  &.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+
+  }
+  &.fade-leave {
+    opacity: 1;
+  }
+  &.fade-leave {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+
 `;
 
 export const Canvas = styled.canvas`
@@ -62,6 +78,8 @@ export const ContactLink = styled(Link)`
   z-index: 1;
   margin-top: 1.5em;
   border-width: 0 0 0.05em 0;
+
+  cursor: auto;
 
   &:hover {
     background-color: transparent;

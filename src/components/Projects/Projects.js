@@ -36,9 +36,9 @@ export default class Projects extends React.Component {
 }
 
 /**
+ * transition
+ * https://stackoverflow.com/questions/42660907/using-reactcsstransitiongroup-with-styled-component
  * https://itnext.io/anime-js-react-transition-group-5f6d0055a3a0
- * https://reactjs.org/docs/animation.html
- * https://www.reddit.com/r/reactjs/comments/76yqup/how_to_animate_switching_between_the_components/
  * 
  * hover
  * https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/

@@ -16,22 +16,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <GlobalStyle />
-//         <Landing />
-//       </React.Fragment>
-//     )
-//   }
-// }
-
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      landing: false,
+      landing: true,
     };
   }
   togglePage() {
