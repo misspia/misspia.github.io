@@ -3,11 +3,15 @@ export const email = {
   href: 'miss.pialeung@gmail.com'
 };
 
+export const projectsPage = {
+  label: 'projects',
+};
+
 export const socialLinks = [
-  {
-    label: 'projects',
-    href: 'http://misspia.me/sketchbook/#/',
-  },
+  // {
+  //   label: 'projects',
+  //   href: 'http://misspia.me/sketchbook/#/',
+  // },
   {
     label: 'github',
     href: 'https://github.com/misspia',

@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './Landing.styles';
 import Scene from './scene';
 
-import { email, socialLinks } from './Landing.metadata';
+import { email, projectsPage, socialLinks } from './Landing.metadata';
 
 export default class Landing extends React.Component {
   constructor() {
@@ -57,6 +57,9 @@ export default class Landing extends React.Component {
           pia leung
         </S.Title>
         <S.LinksContainer>
+          <S.Link onClick={() => this.props.toProjects()}>
+            {projectsPage.label}
+          </S.Link>
           {this.renderLinks()}
         </S.LinksContainer>
         <S.ContactLink>{email.label}</S.ContactLink>

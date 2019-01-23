@@ -27,6 +27,7 @@ export default class Projects extends React.Component {
   render() {
     return (
       <S.Container>
+        <S.HomeButton onClick={() => this.props.toLanding()}>x</S.HomeButton>
         <S.Title>selected works</S.Title>
         {this.renderProjects()}
       </S.Container>

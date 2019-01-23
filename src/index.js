@@ -28,11 +28,24 @@ const GlobalStyle = createGlobalStyle`
 // }
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      landing: false,
+    };
+  }
+  togglePage() {
+    this.setState( prevState => ({ landing: !prevState.landing }));
+  }
   render() {
     return (
       <React.Fragment>
         <GlobalStyle />
-        <Projects />
+        {
+          this.state.landing ?
+          <Landing toProjects={() => this.togglePage()} /> :
+          <Projects toLanding={() => this.togglePage()}/>
+        }
       </React.Fragment>
     )
   }

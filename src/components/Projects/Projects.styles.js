@@ -7,11 +7,33 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const HomeButton = styled.div`
+  z-index: 999;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+
+  font-size: 1.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 2em;
+  width: 2em;
+
+  border-radius: 50%;
+  border: solid 0.1em ${Colors.black};
+  background-color: ${Colors.white};
+
+  cursor: pointer;
+
+  
+`;
+
 export const Title = styled.h1`
   letter-spacing: 0.3em;
 `;
-
-
 
 export const ImageContainer = styled.div`
   height: 60%;
