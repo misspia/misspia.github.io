@@ -112,10 +112,10 @@ export default class Scene extends SceneManager {
 
 /**
  * material
- * https://hub.packtpub.com/working-basic-components-make-threejs-scene/
- * http://blog.cjgammon.com/threejs-materials
- * https://codepen.io/Hornebom/pen/dVLbvr?editors=1010
+ * https://dustinpfister.github.io/2018/04/30/threejs-materials/
  * 
  * colors
  * https://codepen.io/mnmxmx/pen/BdjdMz
+ * 
+ * 
  */

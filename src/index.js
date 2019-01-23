@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { Colors, Fonts } from './themes';
 import Landing from './components/Landing/Landing';
+import Projects from './components/Projects/Projects';
 
 const GlobalStyle = createGlobalStyle`
   @import url('${Fonts.url}');
@@ -15,12 +16,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <React.Fragment>
+//         <GlobalStyle />
+//         <Landing />
+//       </React.Fragment>
+//     )
+//   }
+// }
+
 class App extends React.Component {
   render() {
     return (
       <React.Fragment>
         <GlobalStyle />
-        <Landing />
+        <Projects />
       </React.Fragment>
     )
   }

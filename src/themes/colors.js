@@ -1,4 +1,7 @@
 export default {
   white: '#fff',
-  black: '#000'
+  whiteTinted: '#fbf0f3',
+  black: '#000',
+
+  shadow: 'rgba(0, 0, 0, 0.26)',
 }
