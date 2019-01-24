@@ -11,6 +11,9 @@ import realityVert from '../../shaders/reality.vert';
 import realityFrag from '../../shaders/reality.frag';
 import dreamVert from '../../shaders/dream.vert';
 import dreamFrag from '../../shaders/dream.frag';
+import tintVert from '../../shaders/tint.vert';
+import tintFrag from '../../shaders/tint.frag';
+
 
 export default class Scene extends SceneManager {
   constructor(canvas) {
@@ -35,6 +38,7 @@ export default class Scene extends SceneManager {
     this.createRealCenterpiece();
     this.createReflectedCenterpiece();
     this.createRefractor();
+    this.createTintedSurface();
   }
   offsetCamera(e) {
     this.updateMousePosition(e);
@@ -98,8 +102,21 @@ export default class Scene extends SceneManager {
     this.refractor.material.uniforms.tDudv.value = dudvMap;
 
     this.refractor.position.set( 0, 0, 0 );
-    this.refractor.rotateX(-90 * Math.PI / 180)
+    this.refractor.rotation.x -= utils.toRadians(90);
     this.scene.add(this.refractor);
+  }
+  createTintedSurface() {
+    const geometry = new THREE.CircleGeometry(3, 15);
+    const material = new THREE.RawShaderMaterial({
+      vertexShader: tintVert,
+      fragmentShader: tintFrag,
+      side: THREE.DoubleSide,
+      transparent: true,
+    });
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.rotation.x -= utils.toRadians(90);
+    mesh.position.set(0, -0.1, 0);
+    this.scene.add(mesh);
   }
   draw() {
     this.renderer.render(this.scene, this.camera);
