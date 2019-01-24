@@ -78,7 +78,7 @@ export default class Scene extends SceneManager {
       vertexShader: dreamVert, 
     });
     this.refractedBox = new THREE.Mesh(geometry, material);
-    this.refractedBox.rotation.y -= 90 * Math.PI / 180;
+    this.refractedBox.rotation.y += 90 * Math.PI / 180;
     this.refractedBox.position.set(0, -1, 0);
     this.scene.add(this.refractedBox);
   }

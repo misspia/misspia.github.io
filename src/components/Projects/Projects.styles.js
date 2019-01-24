@@ -76,7 +76,7 @@ export const InfoContainer = styled.div`
   background-color: ${Colors.whiteTinted};
   opacity: 0;
   
-  transition: 0.3s all;
+  transition: 0.25s all;
   transition-delay: 0.1s;
 `;
 
@@ -99,13 +99,9 @@ export const Link = styled.a`
 
   color: ${Colors.black};
   border: solid 0.05em ${Colors.black};
-  text-decoration: none;
 
   transition: 0.3s all;
 
-  &:visited, &:focus {
-    color: ${Colors.black};
-  }
   &:hover {
     background-color: ${Colors.black};
     color: ${Colors.white};

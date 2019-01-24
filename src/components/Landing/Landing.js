@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
-import * as S from './Landing.styles';
+
+import Routes from '../../routes';
 import Scene from './scene';
+
+import * as S from './Landing.styles';
 
 import { email, projectsPage, socialLinks } from './Landing.metadata';
 
@@ -54,21 +58,27 @@ export default class Landing extends React.Component {
     return (
       <CSSTransitionGroup
         transitionName='fade'
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}>
+        transitionAppear={true}
+        transitionAppearTimeout={500}
+        transitionEnter={false}
+        transitionLeave={false}>
+
         <S.Container>
-          <S.Canvas ref={ canvas => this.canvas = canvas }/>
+         <S.Canvas ref={ canvas => this.canvas = canvas }/>
           <S.Title>
             pia leung
           </S.Title>
           <S.LinksContainer>
-            <S.Link onClick={() => this.props.toProjects()}>
-              {projectsPage.label}
-            </S.Link>
+            <Link to={Routes.projects}>
+              <S.ProjectLink>
+                {projectsPage.label}
+              </S.ProjectLink>
+            </Link>
             {this.renderLinks()}
           </S.LinksContainer>
           <S.ContactLink>{email.label}</S.ContactLink>
         </S.Container>
+      
       </CSSTransitionGroup>
     )
   }

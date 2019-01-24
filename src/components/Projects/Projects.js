@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 import * as S from './Projects.styles';
 import Metadata from './Projects.metadata';
+import Routes from '../../routes';
 
 export default class Projects extends React.Component {
   renderProjects() {
@@ -26,20 +29,27 @@ export default class Projects extends React.Component {
   }
   render() {
     return (
-      <S.Container>
-        <S.HomeButton onClick={() => this.props.toLanding()}>x</S.HomeButton>
-        <S.Title>selected works</S.Title>
-        {this.renderProjects()}
-      </S.Container>
+      <CSSTransitionGroup
+        transitionName='fade'
+        transitionAppear={true}
+        transitionAppearTimeout={500}
+        transitionEnter={false}
+        transitionLeave={false}>
+
+        <S.Container>
+          <Link to={Routes.home}>
+            <S.HomeButton>x</S.HomeButton>
+          </Link>
+          <S.Title>selected works</S.Title>
+          {this.renderProjects()}
+        </S.Container>
+
+      </CSSTransitionGroup>
     )
   }
 }
 
 /**
- * transition
- * https://stackoverflow.com/questions/42660907/using-reactcsstransitiongroup-with-styled-component
- * https://itnext.io/anime-js-react-transition-group-5f6d0055a3a0
- * 
  * hover
  * https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/
  * 
