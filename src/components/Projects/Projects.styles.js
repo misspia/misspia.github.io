@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors, Fonts } from '../../themes';
+import { Colors, Fonts, Metrics } from '../../themes';
 
 export const Container = styled.div`
   display: flex;
@@ -19,20 +19,33 @@ export const HomeButton = styled.div`
   justify-content: center;
   align-items: center;
   
-  height: 2em;
-  width: 2em;
+  height: 1.8em;
+  width: 1.8em;
 
-  border-radius: 50%;
+  border-radius: 0.1em;
   border: solid 0.1em ${Colors.black};
-  background-color: ${Colors.white};
+  background-color: ${Colors.black};
+  color: ${Colors.white};
 
   cursor: pointer;
 
-  
+  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+    left: 0.3em;
+    top: 0.3em;
+    
+    height: 1em;
+    width: 1em;
+    
+  }
 `;
 
 export const Title = styled.h1`
+  text-align: center;
   letter-spacing: 0.3em;
+
+  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+   margin-top: 1em;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -78,6 +91,10 @@ export const InfoContainer = styled.div`
   
   transition: 0.25s all;
   transition-delay: 0.1s;
+
+  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+    width: 100%;
+  }
 `;
 
 export const Name = styled.div`
@@ -120,8 +137,6 @@ export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  cursor: pointer;
 
   &:hover {
     ${InfoContainer} {

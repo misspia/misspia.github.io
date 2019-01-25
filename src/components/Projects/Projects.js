@@ -38,7 +38,7 @@ export default class Projects extends React.Component {
 
         <S.Container>
           <Link to={Routes.home}>
-            <S.HomeButton>x</S.HomeButton>
+            <S.HomeButton>×</S.HomeButton>
           </Link>
           <S.Title>selected works</S.Title>
           {this.renderProjects()}

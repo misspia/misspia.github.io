@@ -1,9 +1,11 @@
 # portfolio site
 
-Hiya! My name is Pia and this is the repo for my portfolio site
+Concept inspiration:
 
-[Check it out here!](http://misspia.me/)
+> I saw the angel in the marble and carved until I set him free -- Michelangelo 
 
-You can check out past versions of my site in the `archive` folder
 
-Enjoy! :)
+
+[Check it out here](http://misspia.me/)
+
+Archived versions of my portfolio site can be found [here](https://github.com/misspia/portfolio-archive)

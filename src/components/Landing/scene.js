@@ -7,8 +7,6 @@ import Refractor from '../../lib/refractor';
 import { Images } from '../../themes';
 import utils from '../../utils';
 
-import realityVert from '../../shaders/reality.vert';
-import realityFrag from '../../shaders/reality.frag';
 import dreamVert from '../../shaders/dream.vert';
 import dreamFrag from '../../shaders/dream.frag';
 import tintVert from '../../shaders/tint.vert';
@@ -58,7 +56,8 @@ export default class Scene extends SceneManager {
     }
   }
   createRealCenterpiece() {
-    const geometry = new THREE.BoxGeometry(1, 1.7, 1);
+    const geometry = new THREE.BoxGeometry(1, 1.7, 1, 10, 17, 10);
+
   //   const material = new THREE.MeshStandardMaterial({
   //     color: 0x000000,
   //     roughness: 0.5,
