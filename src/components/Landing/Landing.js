@@ -83,8 +83,3 @@ export default class Landing extends React.Component {
     )
   }
 }
-
-/**
- * https://mnmxmx.github.io/self-introduction/dst/
- * http://www.tplh.net/
- */

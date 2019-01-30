@@ -30,7 +30,7 @@ export default class Scene extends SceneManager {
     this.scene.add( directionalLight );
 
     const spotLight = new THREE.SpotLight(0xffffff, 0.9);
-    spotLight.position.set(-3, 2, -2);
+    spotLight.position.set(-3.0, 2, 2);
     this.scene.add(spotLight);
 
     this.createRealCenterpiece();
@@ -44,7 +44,7 @@ export default class Scene extends SceneManager {
     const degrees = utils.clamp(-40, 40, this.mouse.x * 0.1);
     const angle = utils.toRadians(degrees);
     const { x, z } = this.getCircleCoord(centerCoord, 5, angle);
-    const posY = utils.clamp(0.5, 2.5, this.mouse.y * 0.01);
+    const posY = utils.clamp(0.5, 5.0, this.mouse.y * 0.01);
     this.setCameraPos(x, posY, -z);
     this.lookAt(0, 0, 0);
   }
@@ -55,24 +55,35 @@ export default class Scene extends SceneManager {
       z: centerCoord.y + radius * Math.cos(angle),
     }
   }
-  createRealCenterpiece() {
-    const geometry = new THREE.BoxGeometry(1, 1.7, 1, 10, 17, 10);
+  createObeliskGeometry() {
+    const baseTopRadius = 0.3;
 
-  //   const material = new THREE.MeshStandardMaterial({
-  //     color: 0x000000,
-  //     roughness: 0.5,
-  //     metalness: 1,
-  //     emissive: 0xb6b1a0,
-  //   });
-    const material = new THREE.MeshLambertMaterial({
-      color: 0xb6b1a0,
+    const baseGeometry = new THREE.CylinderGeometry(baseTopRadius, 0.45, 1.9, 4);
+    baseGeometry.translate(0, 0.0, 0);
+    
+    const tipGeometry = new THREE.CylinderGeometry(0, baseTopRadius, 0.3, 4);
+    tipGeometry.translate(0, 1.1, 0);
+    
+    const geometry = new THREE.Geometry();
+    geometry.merge(baseGeometry);
+    geometry.merge(tipGeometry);
+    return geometry;
+  }
+  createRealCenterpiece() {
+    const geometry = this.createObeliskGeometry();
+    const material = new THREE.MeshStandardMaterial({
+      color:  0x0a0a0a,
+      roughness: 0.5,
+      metalness: 1,
+      emissive: 0x222222,
     });
-    this.box = new THREE.Mesh(geometry, material);
-    this.box.position.set(0, 1.1, 0);
-    this.scene.add(this.box);
+
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(0, 1.0, 0);
+    this.scene.add(mesh)
   }
   createReflectedCenterpiece() {
-    const geometry = new THREE.BoxGeometry(1, 1.7, 1);
+    const geometry = new THREE.BoxGeometry(0.8, 1.7, 0.8);
     const material = new THREE.RawShaderMaterial({
       uniforms: {
         time: { type: 'f', value: 0.9 },
@@ -81,8 +92,9 @@ export default class Scene extends SceneManager {
       vertexShader: dreamVert, 
     });
     this.refractedBox = new THREE.Mesh(geometry, material);
-    this.refractedBox.rotation.y += 90 * Math.PI / 180;
-    this.refractedBox.position.set(0, -1, 0);
+    this.refractedBox.rotation.x += 180 * Math.PI / 180;
+    this.refractedBox.rotation.y -= 90 * Math.PI / 180;
+    this.refractedBox.position.set(0, -1.2, 0);
     this.scene.add(this.refractedBox);
   }
   createRefractor() {

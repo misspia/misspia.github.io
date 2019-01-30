@@ -9,7 +9,7 @@ import Routes from '../../routes';
 export default class Projects extends React.Component {
   renderProjects() {
     return Metadata.map(project => (
-      <S.ProjectContainer key={project.name}>
+      <S.Project key={project.name}>
         <S.ImageContainer>
           <S.Image src={project.img} alt={project.name}/>
         </S.ImageContainer>
@@ -24,7 +24,7 @@ export default class Projects extends React.Component {
             </S.Link>
           </S.Links>
         </S.InfoContainer>
-      </S.ProjectContainer>
+      </S.Project>
     ))
   }
   render() {
@@ -41,7 +41,9 @@ export default class Projects extends React.Component {
             <S.HomeButton>×</S.HomeButton>
           </Link>
           <S.Title>selected works</S.Title>
-          {this.renderProjects()}
+          <S.Projects>
+            {this.renderProjects()}
+          </S.Projects>
         </S.Container>
 
       </CSSTransitionGroup>
@@ -49,10 +51,9 @@ export default class Projects extends React.Component {
   }
 }
 
+
 /**
  * hover
  * https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/
  * 
- * layout
- * https://dribbble.com/shots/4030826-Portfolio-Home-Navigation 
  */

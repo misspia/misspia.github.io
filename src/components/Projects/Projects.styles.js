@@ -1,10 +1,15 @@
 import styled from 'styled-components';
-import { Colors, Fonts, Metrics } from '../../themes';
+import { Colors, Metrics } from '../../themes';
 
 export const Container = styled.div`
+  padding: 1em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+    padding: 1em;
+  }
 `;
 
 export const HomeButton = styled.div`
@@ -44,40 +49,35 @@ export const Title = styled.h1`
   letter-spacing: 0.3em;
 
   @media only screen and (max-width: ${Metrics.mobileWidth}) {
-   margin-top: 1em;
+  //  margin-top: 1em;
   }
 `;
 
 export const ImageContainer = styled.div`
-  height: 60%;
-  width: 100%;
+  height: 100%;
+  width: auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
   transition: 0.4s all;
 `;
 
 export const Image = styled.img`
-  height: auto;
-  width: 100;
+  height: 100%;
+  width: auto;
 
   transition: 0.4s all;
 `;
 
-
 export const InfoContainer = styled.div`
   position: absolute;
-  margin: auto auto;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 40%;
 
-  height: 40%;
-  width: 60%;
+  height: 100%;
+  width: 100%;
 
   padding: 0.2em 0.2em 0.2em 1em;
   box-sizing: border-box;
@@ -85,28 +85,32 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
-  background-color: ${Colors.whiteTinted};
+  background-color: rgba(255, 245, 245, 0.6);
   opacity: 0;
   
-  transition: 0.25s all;
-  transition-delay: 0.1s;
-
-  @media only screen and (max-width: ${Metrics.mobileWidth}) {
-    width: 100%;
+  transition: 0.25s all ease-in-out 0.1s;
+  & > * {
+    opacity: 0;
+    transition: 0.25s all ease-in-out 0.1s;
   }
 `;
 
 export const Name = styled.div`
-  font-family: ${Fonts.familyAccent};
   font-size: 2em;
   letter-spacing: 0.2em;
+  text-align: center;
 
+  transform: translateY(0.3em);
 `;
 
 export const Links = styled.div`
   margin: 0.5em 0 0 0;
   display: flex;
+
+  transform: translateY(0.7em);
+  transition-delay: 0.2s;
 `;
 
 export const Link = styled.a`
@@ -125,31 +129,39 @@ export const Link = styled.a`
   }
 `;
 
-export const ProjectContainer = styled.div`
-  //border: solid red 0.1em;
+export const Projects = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: ${Metrics.maxWidth};
 
+  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const Project = styled.div`
   position: relative;
-  margin: 0.7em 0;
-  height: 30em;
-  width: 95%;
-  max-width: 800px; 
+  height: 25em;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  overflow: hidden;
+
   &:hover {
     ${InfoContainer} {
       opacity: 1;
+      & > * {
+        opacity: 1;
+        transform: translateY(0em);
+      }
     }
     ${ImageContainer} {
-      height: 100%;
-      width: 60%;
 
       ${Image} {
         filter: grayscale(70%) brightness(150%);
       }
     }
   }
-
 `;

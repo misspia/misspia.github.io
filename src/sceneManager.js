@@ -73,7 +73,6 @@ export default class SketchManager {
       x: e.clientX - width / 2,
       y: -e.clientY + height / 2,
     }
-    // console.log(this.mouse);
   }
   setCameraPos(x, y, z) {
     this.camera.position.set(x, y, z);

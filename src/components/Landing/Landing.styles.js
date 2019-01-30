@@ -26,7 +26,7 @@ export const Title = styled.h1`
 
   font-weight: 100;
   color: ${Colors.blackTranslucent};
-  text-shadow: 0em 0.05em 0em ${Colors.whiteTinted};
+  text-shadow: 0.02em 0.05em 0em ${Colors.whiteTinted};
 `;
 
 export const LinksContainer = styled.div`
