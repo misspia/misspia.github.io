@@ -9,6 +9,13 @@ export default [
   //   stack: [],
   // },
   {
+    name: 'Energy (Unity Audio Visualization)',
+    img: Images.projectEnergy,
+    demo: 'https://www.youtube.com/watch?v=5EF1WkW8Zck',
+    github: 'https://github.com/misspia/energy',
+    stack: [],
+  },
+  {
     name: 'sketchbook',
     img: Images.projectSketchbook,
     demo: 'http://misspia.me/sketchbook',
