@@ -1,9 +1,5 @@
 # portfolio site
 
-Hiya! My name is Pia and this is the repo for my portfolio site
+See it live [here](http://misspia.me/)
 
-[Check it out here!](http://misspia.me/)
-
-You can check out past versions of my site in the `archive` folder
-
-Enjoy! :)
+Archived versions of my portfolio site can be found [here](https://github.com/misspia/portfolio-archive)

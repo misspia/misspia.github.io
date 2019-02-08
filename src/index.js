@@ -1,47 +1,57 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react'
+import React from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 
-import styled from 'styled-components'
-import { Fonts } from './themes/themes.js'
+import Routes from './routes';
+import { Colors, Fonts } from './themes';
+import Landing from './components/Landing/Landing';
+import Projects from './components/Projects/Projects';
 
-import Nav from './nav/nav.jsx'
-import Hero from './hero/hero.jsx'
-import About from './about/about.jsx'
-import Projects from './projects/projects.jsx'
+const GlobalStyle = createGlobalStyle`
+  @import url('${Fonts.url}');
 
-const Container = styled.main`
-  margin: 0;
-  padding: 0;
-  font-family: ${Fonts.family};
-  font-size: ${Fonts.sizeRegular};
+  body {
+    margin: 0;
+    font-family: ${Fonts.family};
+    background-color: ${Colors.white};
+  }
+  a {
+    text-decoration: none;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    &:visited, &:focus {
+      color: ${Colors.black};
+      outline: none;
+      text-decoration: none;
+    }
+  }
+  .fade-appear {
+    opacity: 0.01;
+  }
+  .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
 `;
 
-const InspectorMsg = `
-  (¬‿¬) I see you have taken interest in my site.
-  Send me a message at miss.pialeung@gmail.com and
-  I'd be more than happy to chat about it
-`;
-class App extends Component {
-  constructor() {
-    super();
-    this.state = { mounted: false }
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Route render={({ location }) => (
+          <React.Fragment>
+            <GlobalStyle />
+            <Switch location={location}>
+              <Route exact path={Routes.home} component={Landing}/>
+              <Route exact path={Routes.projects} component={Projects}/>
+              <Route render={() => <div>Not Found</div>}/>
+            </Switch>
+          </React.Fragment>
+        )}>
+        </Route>
+      </Router>
+    )
   }
-  componentDidMount() {
-    console.log(InspectorMsg);
-    this.setState({ mounted: true })
-  }
-	render() {
-		return <Container>
-      <Nav hero={this.hero} about={this.about} projects={this.projects}/>
-      <Hero ref={ (ref) => this.hero = ref}/>
-      <About ref={ (ref) => this.about = ref}/>
-      <Projects ref={ (ref) => this.projects = ref}/>
-    </Container>
-	}
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('root'));
