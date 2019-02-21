@@ -50,10 +50,3 @@ export default class Projects extends React.Component {
     )
   }
 }
-
-
-/**
- * hover
- * https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/
- * 
- */
