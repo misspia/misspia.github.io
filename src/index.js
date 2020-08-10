@@ -32,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// https://hoang.moe/
+// https://thibautfoussard.com/
 function App({ }) {
   return (
     <Router>
