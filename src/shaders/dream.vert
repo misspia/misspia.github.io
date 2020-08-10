@@ -9,7 +9,6 @@ uniform mat4 projectionMatrix;
 uniform mat4 modelViewMatrix;
 
 varying vec3 vColor;
-varying vec3 vNormal;
 
 //
 // Description : Array and textureless GLSL 2D/3D/4D simplex
@@ -104,7 +103,6 @@ void main() {
    float noise = snoise(vec3(position + update_time * 2.0));
    vec4 mv_position = modelViewMatrix * vec4(position * (noise * 0.3 + 1.0), 1.0);
 
-   vNormal = normal;
    vColor = hsv2rgb(vec3(noise * 0.6 + update_time, 0.5, 1.0));
 
    gl_Position = projectionMatrix * mv_position;

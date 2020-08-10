@@ -5,12 +5,10 @@ import { createGlobalStyle } from 'styled-components';
 
 import Routes from './routes';
 import { Colors, Fonts } from './themes';
-import Landing from './components/Landing/Landing';
-import Projects from './components/Projects/Projects';
+import Landing from './components/Landing';
+import Projects from './components/Projects';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('${Fonts.url}');
-
   body {
     margin: 0;
     font-family: ${Fonts.family};
@@ -34,24 +32,22 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <Route render={({ location }) => (
-          <React.Fragment>
-            <GlobalStyle />
-            <Switch location={location}>
-              <Route exact path={Routes.home} component={Landing}/>
-              <Route exact path={Routes.projects} component={Projects}/>
-              <Route render={() => <div>Not Found</div>}/>
-            </Switch>
-          </React.Fragment>
-        )}>
-        </Route>
-      </Router>
-    )
-  }
+function App({ }) {
+  return (
+    <Router>
+      <Route render={({ location }) => (
+        <React.Fragment>
+          <GlobalStyle />
+          <Switch location={location}>
+            <Route exact path={Routes.home} component={Landing} />
+            <Route exact path={Routes.projects} component={Projects} />
+            <Route render={() => <div>Not Found</div>} />
+          </Switch>
+        </React.Fragment>
+      )}>
+      </Route>
+    </Router>
+  )
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
