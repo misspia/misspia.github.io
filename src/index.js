@@ -6,6 +6,8 @@ import { Fonts, Colors } from './themes';
 
 import Router from './router';
 import Canvas from './components/Canvas';
+import { AppProvider } from './context';
+import { WebGLStates } from './types';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -41,13 +43,15 @@ const CanvasWrapper = styled.div`
 // https://thibautfoussard.com/
 function App({ }) {
   return (
-    <>
+    <AppProvider value={{
+      webGLState: WebGLStates.CENTER
+    }}>
       <GlobalStyle />
       <Router/>
       <CanvasWrapper>
         <Canvas />
       </CanvasWrapper>
-    </>
+    </AppProvider>
   )
 }
 
