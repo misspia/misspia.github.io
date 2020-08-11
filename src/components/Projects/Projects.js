@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as S from './Projects.styles';
 import Metadata from './Projects.metadata';
-import Routes from '../../routes';
+import Routes from '../../router/routes';
 
 export default function Projects({ }) {
   return (

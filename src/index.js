@@ -1,12 +1,11 @@
 import ReactDOM from 'react-dom'
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import Routes from './routes';
-import { Colors, Fonts } from './themes';
-import Landing from './components/Landing';
-import Projects from './components/Projects';
+import { Fonts, Colors } from './themes';
+
+import Router from './router';
+import Canvas from './components/Canvas';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,23 +31,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const CanvasWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 // https://hoang.moe/
 // https://thibautfoussard.com/
 function App({ }) {
   return (
-    <Router>
-      <Route render={({ location }) => (
-        <React.Fragment>
-          <GlobalStyle />
-          <Switch location={location}>
-            <Route exact path={Routes.home} component={Landing} />
-            <Route exact path={Routes.projects} component={Projects} />
-            <Route render={() => <div>Not Found</div>} />
-          </Switch>
-        </React.Fragment>
-      )}>
-      </Route>
-    </Router>
+    <>
+      <GlobalStyle />
+      <Router/>
+      <CanvasWrapper>
+        <Canvas />
+      </CanvasWrapper>
+    </>
   )
 }
 

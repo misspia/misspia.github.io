@@ -5,17 +5,20 @@ import OrbitControls from 'three-orbit-controls';
 const OrbitController = OrbitControls(THREE);
 
 export default class SketchManager {
-  constructor(canvas) {
+  constructor() {
     this.frag = '';
     this.vert = '';
 
     this.startTime = Date.now();
-
-    this.canvas = canvas;
     this.mouse = { x: 0, y: 0 };
     this.gui = {};
     this.scene = {};
     this.camaera = {};
+    this.renderer = {};
+  }
+
+  setup(canvas) {
+    this.canvas = canvas;
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
@@ -37,12 +40,14 @@ export default class SketchManager {
 
     this.controls = new OrbitController(this.camera, this.renderer.domElement);
 
-    // initial resize
-    this.resize();
+    // // initial resize
+    // this.resize();
 
-    // event listeners
-    window.addEventListener('resize', () => this.resize());
+    // // event listeners
+    // window.addEventListener('resize', () => this.resize());
+
   }
+
   unmount() {}
   init() {}
   draw() {}
@@ -53,17 +58,8 @@ export default class SketchManager {
   createDatGUI() {
     this.gui = new dat.GUI();
   }
-  resize() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
+  resize(width, height) {
     this.renderer.setSize(width, height);
-    this.updateProjectionMatrix();
-  }
-  updateProjectionMatrix() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
   }

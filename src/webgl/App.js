@@ -1,19 +1,19 @@
 import * as THREE from 'three';
 
-import WaterRefractionShader from '../../lib/waterRefractionShader';
-import SceneManager from '../../sceneManager';
+import WaterRefractionShader from '../lib/waterRefractionShader';
+import SceneManager from './sceneManager';
 
-import Refractor from '../../lib/refractor';
-import { Images } from '../../themes';
-import utils from '../../utils';
+import Refractor from '../lib/refractor';
+import { Images } from '../themes';
+import utils from '../utils';
 
-import dreamVert from '../../shaders/dream.vert';
-import dreamFrag from '../../shaders/dream.frag';
-import tintVert from '../../shaders/tint.vert';
-import tintFrag from '../../shaders/tint.frag';
+import dreamVert from './shaders/dream.vert';
+import dreamFrag from './shaders/dream.frag';
+import tintVert from './shaders/tint.vert';
+import tintFrag from './shaders/tint.frag';
 
 
-export default class Scene extends SceneManager {
+export default class App extends SceneManager {
   constructor(canvas) {
     super(canvas);
     this.clock = new THREE.Clock();
@@ -25,9 +25,9 @@ export default class Scene extends SceneManager {
     this.setCameraPos(0, 0.5, -5);
     this.lookAt(0, 0, 0);
 
-    const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.2 );
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
     directionalLight.position.set(-3, 5, -6);
-    this.scene.add( directionalLight );
+    this.scene.add(directionalLight);
 
     const spotLight = new THREE.SpotLight(0xffffff, 0.9);
     spotLight.position.set(-3.0, 2, 2);
@@ -40,7 +40,7 @@ export default class Scene extends SceneManager {
   }
   offsetCamera(e) {
     this.updateMousePosition(e);
-    const centerCoord = {x: 0, y: 0, z: 0 };
+    const centerCoord = { x: 0, y: 0, z: 0 };
     const degrees = utils.clamp(-40, 40, this.mouse.x * 0.1);
     const angle = utils.toRadians(degrees);
     const { x, z } = this.getCircleCoord(centerCoord, 5, angle);
@@ -60,10 +60,10 @@ export default class Scene extends SceneManager {
 
     const baseGeometry = new THREE.CylinderGeometry(baseTopRadius, 0.45, 1.9, 4);
     baseGeometry.translate(0, 0.0, 0);
-    
+
     const tipGeometry = new THREE.CylinderGeometry(0, baseTopRadius, 0.3, 4);
     tipGeometry.translate(0, 1.1, 0);
-    
+
     const geometry = new THREE.Geometry();
     geometry.merge(baseGeometry);
     geometry.merge(tipGeometry);
@@ -72,7 +72,7 @@ export default class Scene extends SceneManager {
   createRealCenterpiece() {
     const geometry = this.createObeliskGeometry();
     const material = new THREE.MeshStandardMaterial({
-      color:  0x0a0a0a,
+      color: 0x0a0a0a,
       roughness: 0.5,
       metalness: 1,
       emissive: 0x222222,
@@ -89,7 +89,7 @@ export default class Scene extends SceneManager {
         time: { type: 'f', value: 0.9 },
       },
       fragmentShader: dreamFrag,
-      vertexShader: dreamVert, 
+      vertexShader: dreamVert,
     });
     this.refractedBox = new THREE.Mesh(geometry, material);
     this.refractedBox.rotation.x += 180 * Math.PI / 180;
@@ -106,13 +106,13 @@ export default class Scene extends SceneManager {
       shader: WaterRefractionShader,
     };
     this.refractor = new Refractor(geometry, options);
-    
+
     const dudvMap = new THREE.TextureLoader().load(Images.water);
     dudvMap.wrapS = THREE.RepeatWrapping;
     dudvMap.wrapT = THREE.RepeatWrapping;
     this.refractor.material.uniforms.tDudv.value = dudvMap;
 
-    this.refractor.position.set( 0, 0, 0 );
+    this.refractor.position.set(0, 0, 0);
     this.refractor.rotation.x -= utils.toRadians(90);
     this.scene.add(this.refractor);
   }
@@ -141,9 +141,9 @@ export default class Scene extends SceneManager {
 /**
  * material
  * https://dustinpfister.github.io/2018/04/30/threejs-materials/
- * 
+ *
  * colors
  * https://codepen.io/mnmxmx/pen/BdjdMz
- * 
- * 
+ *
+ *
  */
