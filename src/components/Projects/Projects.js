@@ -8,7 +8,7 @@ import Routes from '../../router/routes';
 export default function Projects({ }) {
   return (
     <S.Container>
-      <Link to={Routes.home}>
+      <Link to={Routes.HOME}>
         <S.HomeButton>×</S.HomeButton>
       </Link>
       <S.Title>selected works</S.Title>

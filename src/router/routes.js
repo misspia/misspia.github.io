@@ -1,4 +1,4 @@
 export default {
-    home: '/',
-    projects: '/projects',
+    HOME: '/',
+    PROJECTS: '/projects',
 }

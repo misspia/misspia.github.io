@@ -1,4 +1,4 @@
-import { createContext, useState } from'react';
+import React, { createContext, useState } from'react';
 
 import { WebGLStates } from '../types';
 export const AppContext = createContext({});

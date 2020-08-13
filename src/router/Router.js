@@ -5,6 +5,9 @@ import Routes from './routes';
 import { Colors, Fonts } from '../themes';
 import Landing from '../components/Landing';
 import Projects from '../components/Projects';
+import Canvas from '../components/Canvas';
+
+import * as S from './Router.styles';
 
 
 // https://hoang.moe/
@@ -14,9 +17,12 @@ export default function AppRouter({ }) {
     <Router>
       <Route render={({ location }) => (
         <React.Fragment>
+          <S.CanvasWrapper>
+            <Canvas />
+          </S.CanvasWrapper>
           <Switch location={location}>
-            <Route exact path={Routes.home} component={Landing} />
-            <Route exact path={Routes.projects} component={Projects} />
+            <Route exact path={Routes.HOME} component={Landing} />
+            <Route exact path={Routes.PROJECTS} component={Projects} />
             <Route render={() => <div>Not Found</div>} />
           </Switch>
         </React.Fragment>

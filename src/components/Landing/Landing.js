@@ -14,7 +14,7 @@ export default function Landing({}) {
         pia leung
           </S.Title>
       <S.LinksContainer>
-        <Link to={Routes.projects}>
+        <Link to={Routes.PROJECTS}>
           <S.ProjectLink>
             {projectsPage.label}
           </S.ProjectLink>

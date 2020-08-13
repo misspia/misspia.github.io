@@ -1,11 +1,10 @@
 import ReactDOM from 'react-dom'
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import { Fonts, Colors } from './themes';
 
 import Router from './router';
-import Canvas from './components/Canvas';
 import { AppProvider } from './context';
 import { WebGLStates } from './types';
 
@@ -33,12 +32,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const CanvasWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
 // https://hoang.moe/
 // https://thibautfoussard.com/
 function App({ }) {
@@ -48,9 +41,6 @@ function App({ }) {
     }}>
       <GlobalStyle />
       <Router/>
-      <CanvasWrapper>
-        <Canvas />
-      </CanvasWrapper>
     </AppProvider>
   )
 }
