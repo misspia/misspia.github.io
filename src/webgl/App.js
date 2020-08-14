@@ -5,10 +5,8 @@ import SceneManager from './sceneManager';
 import utils from '../utils';
 import Water from './Water';
 import RealityPiece from './RealityPiece';
+import DreamPiece from './DreamPiece';
 import Lights from './Lights';
-
-import dreamVert from './shaders/dream.vert';
-import dreamFrag from './shaders/dream.frag';
 
 export default class App extends SceneManager {
   constructor(canvas) {
@@ -17,6 +15,7 @@ export default class App extends SceneManager {
     this.lights = new Lights();
     this.water = new Water();
     this.realityPiece = new RealityPiece();
+    this.dreamPiece = new DreamPiece();
   }
   init() {
     document.addEventListener('mousemove', e => this.offsetCamera(e), false);
@@ -27,8 +26,8 @@ export default class App extends SceneManager {
     this.scene.add(this.lights.directional);
     this.scene.add(this.lights.spot);
 
-    this.createReflectedCenterpiece();
     this.scene.add(this.realityPiece.pivot);
+    this.scene.add(this.dreamPiece.pivot);
     this.scene.add(this.water.pivot);
   }
   setState(state) {
@@ -52,21 +51,6 @@ export default class App extends SceneManager {
     }
   }
 
-  createReflectedCenterpiece() {
-    const geometry = new THREE.BoxGeometry(0.8, 1.7, 0.8);
-    const material = new THREE.RawShaderMaterial({
-      uniforms: {
-        time: { type: 'f', value: 0.9 },
-      },
-      fragmentShader: dreamFrag,
-      vertexShader: dreamVert,
-    });
-    this.refractedBox = new THREE.Mesh(geometry, material);
-    this.refractedBox.rotation.x += 180 * Math.PI / 180;
-    this.refractedBox.rotation.y -= 90 * Math.PI / 180;
-    this.refractedBox.position.set(0, -1.2, 0);
-    this.scene.add(this.refractedBox);
-  }
   draw() {
     this.renderer.render(this.scene, this.camera);
 

@@ -2,7 +2,6 @@ import * as THREE from 'three';
 
 export default class Lights {
   constructor() {
-
     this.directional = new THREE.DirectionalLight(0xffffff, 1.2);
     this.directional.position.set(-3, 5, -6);
 
