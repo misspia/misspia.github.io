@@ -5,6 +5,7 @@ import SceneManager from './sceneManager';
 import utils from '../utils';
 import Water from './Water';
 import RealityPiece from './RealityPiece';
+import Lights from './Lights';
 
 import dreamVert from './shaders/dream.vert';
 import dreamFrag from './shaders/dream.frag';
@@ -13,6 +14,7 @@ export default class App extends SceneManager {
   constructor(canvas) {
     super(canvas);
     this.clock = new THREE.Clock();
+    this.lights = new Lights();
     this.water = new Water();
     this.realityPiece = new RealityPiece();
   }
@@ -22,13 +24,8 @@ export default class App extends SceneManager {
     this.setCameraPos(0, 0.5, -5);
     this.lookAt(0, 0, 0);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
-    directionalLight.position.set(-3, 5, -6);
-    this.scene.add(directionalLight);
-
-    const spotLight = new THREE.SpotLight(0xffffff, 0.9);
-    spotLight.position.set(-3.0, 2, 2);
-    this.scene.add(spotLight);
+    this.scene.add(this.lights.directional);
+    this.scene.add(this.lights.spot);
 
     this.createReflectedCenterpiece();
     this.scene.add(this.realityPiece.pivot);
