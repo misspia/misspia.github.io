@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 import { Colors, Metrics } from '../../themes';
 
-export const Title = styled.h1`
-  text-align: center;
-  letter-spacing: 0.3em;
-
-  @media only screen and (max-width: ${Metrics.mobileWidth}) {
-  //  margin-top: 1em;
-  }
-`;
-
 export const ImageContainer = styled.div`
   height: 100%;
   width: auto;
@@ -83,16 +74,6 @@ export const Link = styled.a`
   &:hover {
     background-color: ${Colors.black};
     color: ${Colors.white};
-  }
-`;
-
-export const Projects = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: ${Metrics.maxWidth};
-
-  @media only screen and (max-width: ${Metrics.mobileWidth}) {
-
   }
 `;
 

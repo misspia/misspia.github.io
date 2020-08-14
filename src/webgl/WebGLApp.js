@@ -14,7 +14,7 @@ export default class WebGLApp {
   }
 
   setState(state) {
-    console.debug('[setState]', state)
+    this.app.setState(state);
   }
 
   resize = (width, height) => {
