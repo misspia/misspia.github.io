@@ -4,6 +4,7 @@ import SceneManager from './sceneManager';
 
 import utils from '../utils';
 import Water from './Water';
+import RealityPiece from './RealityPiece';
 
 import dreamVert from './shaders/dream.vert';
 import dreamFrag from './shaders/dream.frag';
@@ -13,6 +14,7 @@ export default class App extends SceneManager {
     super(canvas);
     this.clock = new THREE.Clock();
     this.water = new Water();
+    this.realityPiece = new RealityPiece();
   }
   init() {
     document.addEventListener('mousemove', e => this.offsetCamera(e), false);
@@ -28,8 +30,8 @@ export default class App extends SceneManager {
     spotLight.position.set(-3.0, 2, 2);
     this.scene.add(spotLight);
 
-    this.createRealCenterpiece();
     this.createReflectedCenterpiece();
+    this.scene.add(this.realityPiece.pivot);
     this.scene.add(this.water.pivot);
   }
   setState(state) {
@@ -52,33 +54,7 @@ export default class App extends SceneManager {
       z: centerCoord.y + radius * Math.cos(angle),
     }
   }
-  createObeliskGeometry() {
-    const baseTopRadius = 0.3;
 
-    const baseGeometry = new THREE.CylinderGeometry(baseTopRadius, 0.45, 1.9, 4);
-    baseGeometry.translate(0, 0.0, 0);
-
-    const tipGeometry = new THREE.CylinderGeometry(0, baseTopRadius, 0.3, 4);
-    tipGeometry.translate(0, 1.1, 0);
-
-    const geometry = new THREE.Geometry();
-    geometry.merge(baseGeometry);
-    geometry.merge(tipGeometry);
-    return geometry;
-  }
-  createRealCenterpiece() {
-    const geometry = this.createObeliskGeometry();
-    const material = new THREE.MeshStandardMaterial({
-      color: 0x0a0a0a,
-      roughness: 0.5,
-      metalness: 1,
-      emissive: 0x222222,
-    });
-
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(0, 1.0, 0);
-    this.scene.add(mesh)
-  }
   createReflectedCenterpiece() {
     const geometry = new THREE.BoxGeometry(0.8, 1.7, 0.8);
     const material = new THREE.RawShaderMaterial({
@@ -97,7 +73,7 @@ export default class App extends SceneManager {
   draw() {
     this.renderer.render(this.scene, this.camera);
 
-    this.water.uniforms.time.value = this.clock.getElapsedTime();
+    this.water.update(this.clock.getElapsedTime());
 
     requestAnimationFrame(() => this.draw());
   }

@@ -51,4 +51,8 @@ export default class Water {
   get uniforms() {
     return this.refraction.material.uniforms;
   }
+
+  update(time) {
+    this.uniforms.time.value = time;
+  }
 }
