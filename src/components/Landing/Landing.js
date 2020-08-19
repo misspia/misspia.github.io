@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Routes from '../../router/routes';
 
+import Canvas from '../Canvas';
 import * as S from './Landing.styles';
 
 import { email, projectsPage, socialLinks } from './Landing.metadata';
@@ -10,6 +11,9 @@ import { email, projectsPage, socialLinks } from './Landing.metadata';
 export default function Landing({}) {
   return (
     <S.Container>
+      <S.CanvasWrapper>
+        <Canvas />
+      </S.CanvasWrapper>
       <S.Title>
         pia leung
           </S.Title>

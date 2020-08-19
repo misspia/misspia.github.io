@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
 
   ${Metrics.mobileQuery} {
     width: 100%;
@@ -52,17 +51,19 @@ export const Title = styled.h1`
   letter-spacing: 0.3em;
 
   @media only screen and (max-width: ${Metrics.mobileWidth}) {
-  //  margin-top: 1em;
+   margin-top: 1em;
   }
 `;
 
 export const Projects = styled.div`
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   max-width: ${Metrics.maxWidth};
 
   @media only screen and (max-width: ${Metrics.mobileWidth}) {
-
+    grid-template-columns: 1fr;
   }
 `;
 

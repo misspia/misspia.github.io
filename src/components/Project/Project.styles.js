@@ -13,8 +13,8 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
 
   transition: 0.4s all;
 `;
@@ -79,7 +79,7 @@ export const Link = styled.a`
 
 export const Wrapper = styled.div`
   position: relative;
-  height: 18em;
+  height: 25em;
 
   display: flex;
   align-items: center;

@@ -7,6 +7,7 @@ import Water from './Water';
 import RealityPiece from './RealityPiece';
 import DreamPiece from './DreamPiece';
 import Lights from './Lights';
+import Petals from './Petals';
 
 export default class App extends SceneManager {
   constructor(canvas) {
@@ -16,6 +17,7 @@ export default class App extends SceneManager {
     this.water = new Water();
     this.realityPiece = new RealityPiece();
     this.dreamPiece = new DreamPiece();
+    this.petals = new Petals();
   }
   init() {
     document.addEventListener('mousemove', e => this.offsetCamera(e), false);
@@ -26,9 +28,10 @@ export default class App extends SceneManager {
     this.scene.add(this.lights.directional);
     this.scene.add(this.lights.spot);
 
-    this.scene.add(this.realityPiece.pivot);
-    this.scene.add(this.dreamPiece.pivot);
+    // this.scene.add(this.realityPiece.pivot);
+    // this.scene.add(this.dreamPiece.pivot);
     this.scene.add(this.water.pivot);
+    this.scene.add(this.petals.pivot);
   }
   setState(state) {
 
@@ -54,7 +57,9 @@ export default class App extends SceneManager {
   draw() {
     this.renderer.render(this.scene, this.camera);
 
-    this.water.update(this.clock.getElapsedTime());
+    const time = this.clock.getElapsedTime();
+    this.water.update(time);
+    this.petals.update(time);
 
     requestAnimationFrame(() => this.draw());
   }

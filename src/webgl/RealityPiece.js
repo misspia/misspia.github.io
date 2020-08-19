@@ -2,7 +2,8 @@ import * as THREE from 'three';
 
 export default class RealityPiece {
   constructor() {
-    this.geometry = this.createObeliskGeometry();
+    // this.geometry = this.createObeliskGeometry();
+    this.geometry = new THREE.SphereGeometry(0.5, 32, 32);
     this.material = new THREE.MeshStandardMaterial({
       color: 0x0a0a0a,
       roughness: 0.5,
@@ -13,7 +14,6 @@ export default class RealityPiece {
     this.pivot = new THREE.Mesh(this.geometry, this.material);
     this.position.set(0, 1.0, 0);
   }
-
 
   get position() {
     return this.pivot.position;

@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const utils = {
+export default {
   clamp: (min, max, value) => (
     Math.min(Math.max(value, min), max)
   ),
@@ -18,7 +18,8 @@ const utils = {
   ),
   randomIntBetween: (min, max) => (
     Math.round(utils.randomFloatBetween(min, max))
-  )
+  ),
+  remap: (min1, max1, min2, max2, value) => (
+    min2 + (max2 - min2) * (value - min1) / (max1 - min1)
+  ),
 }
-
-export default utils;
