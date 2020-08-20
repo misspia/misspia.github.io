@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Colors, Metrics } from '../../themes';
+import { Colors, Metrics, Fonts } from '../../themes';
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const Canvas = styled.canvas`
+export const CanvasWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -19,21 +19,26 @@ export const Canvas = styled.canvas`
 
 export const Title = styled.h1`
   z-index: 1;
-  margin-bottom: em;
   font-size: 3em;
   text-align: center;
   letter-spacing: 0.4em;
 
-  font-weight: 100;
+  font-family: ${Fonts.familyAccent};
+  font-weight: 400;
   color: ${Colors.blackTranslucent};
-  text-shadow: 0.02em 0.05em 0em ${Colors.whiteTinted};
+  text-shadow: 0px 5px 10px ${Colors.whiteTinted};
+
+  ${Metrics.mobileQuery} {
+    font-size: 2.8em;
+    letter-spacing: 0.3em;
+  }
 `;
 
 export const LinksContainer = styled.div`
   display: flex;
   z-index: 1;
 
-  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+  ${Metrics.mobileQuery} {
     flex-direction: column;
   }
 `;
@@ -67,7 +72,7 @@ export const ProjectLink = styled.div`
   ${linkStyles}
 `;
 
-export const ContactLink = styled.div`
+export const ContactLink = styled.a`
   ${linkStyles}
 
   z-index: 1;
@@ -75,7 +80,7 @@ export const ContactLink = styled.div`
   border-width: 0 0 0.05em 0;
   color: ${Colors.blackTranslucent};
 
-  cursor: auto;
+  cursor: pointer;
 
   &:hover {
     background-color: transparent;

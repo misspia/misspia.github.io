@@ -1,12 +1,12 @@
 import ReactDOM from 'react-dom'
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import Routes from './routes';
-import { Colors, Fonts } from './themes';
-import Landing from './components/Landing';
-import Projects from './components/Projects';
+import { Fonts, Colors } from './themes';
+
+import Router from './router';
+import { AppProvider } from './context';
+import { WebGLStates } from './types';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -36,19 +36,12 @@ const GlobalStyle = createGlobalStyle`
 // https://thibautfoussard.com/
 function App({ }) {
   return (
-    <Router>
-      <Route render={({ location }) => (
-        <React.Fragment>
-          <GlobalStyle />
-          <Switch location={location}>
-            <Route exact path={Routes.home} component={Landing} />
-            <Route exact path={Routes.projects} component={Projects} />
-            <Route render={() => <div>Not Found</div>} />
-          </Switch>
-        </React.Fragment>
-      )}>
-      </Route>
-    </Router>
+    <AppProvider value={{
+      webGLState: WebGLStates.CENTER
+    }}>
+      <GlobalStyle />
+      <Router/>
+    </AppProvider>
   )
 }
 

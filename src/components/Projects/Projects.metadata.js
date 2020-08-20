@@ -9,13 +9,6 @@ export default [
   //   stack: [],
   // },
   {
-    name: 'Energy (Unity Audio Visualization)',
-    img: Images.projectEnergy,
-    demo: 'https://www.youtube.com/watch?v=5EF1WkW8Zck',
-    github: 'https://github.com/misspia/energy',
-    stack: [],
-  },
-  {
     name: 'sketchbook',
     img: Images.projectSketchbook,
     demo: 'http://misspia.me/sketchbook',
@@ -25,8 +18,15 @@ export default [
   {
     name: 'pokedex',
     img: Images.projectPokedex,
-    demo: 'http://pk-web.jasonmh.me/',
-    github: 'https://github.com/SEAKING-LOVE/pk-web',
+    demo: 'http://misspia.me/pokedex-webgl/',
+    github: 'https://github.com/misspia/pokedex-webgl',
+    stack: [],
+  },
+  {
+    name: 'Energy (Unity Audio Visualization)',
+    img: Images.projectEnergy,
+    demo: 'https://www.youtube.com/watch?v=5EF1WkW8Zck',
+    github: 'https://github.com/misspia/energy',
     stack: [],
   },
   {
