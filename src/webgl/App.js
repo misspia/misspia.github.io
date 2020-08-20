@@ -22,7 +22,7 @@ export default class App extends SceneManager {
   init() {
     document.addEventListener('mousemove', e => this.offsetCamera(e), false);
     this.disableOrbitControls();
-    this.setCameraPos(0, 0.5, -5);
+    this.setCameraPos(0, 1, -5);
     this.lookAt(0, 0, 0);
 
     this.scene.add(this.lights.directional);
@@ -42,7 +42,7 @@ export default class App extends SceneManager {
     const degrees = utils.clamp(-40, 40, this.mouse.x * 0.1);
     const angle = utils.toRadians(degrees);
     const { x, z } = this.getCircleCoord(centerCoord, 5, angle);
-    const posY = utils.clamp(0.5, 5.0, this.mouse.y * 0.01);
+    const posY = utils.clamp(1, 5.0, this.mouse.y * 0.01);
     this.setCameraPos(x, posY, -z);
     this.lookAt(0, 0, 0);
   }

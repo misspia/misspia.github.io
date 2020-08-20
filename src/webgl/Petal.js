@@ -5,17 +5,28 @@ import utils from '../utils';
 
 export default class Petal {
   constructor() {
-    this.minY = utils.randomFloatBetween(0, 0.5);
-    this.maxY = utils.randomFloatBetween(2, 3);
-    this.positionYVelocity = utils.randomFloatBetween(0.005, 0.02);
+    this.alphaVelocity = 0.15;
+    this.endY = utils.randomFloatBetween(0, 0.2);
+    this.start = {
+      x: utils.randomFloatBetween(-3.2, 0),
+      y: utils.randomFloatBetween(1.5, 2.8),
+      z: utils.randomFloatBetween(-2, 1),
+    }
+    this.positionVelocity = {
+      x: utils.randomFloatBetween(0.008, 0.02),
+      y: utils.randomFloatBetween(0.005, 0.02),
+      z: utils.randomFloatBetween(0.008, 0.02),
+    }
     this.rotationVelocity = {
       x: utils.randomFloatBetween(0.01, 0.05),
       y: utils.randomFloatBetween(0.01, 0.05),
       z: utils.randomFloatBetween(0.01, 0.05),
     };
 
-    const scale = utils.randomFloatBetween(0.0001, 0.001);
-    this.geometry = this.createPetalGeometry(0.001);
+    const scale = utils.randomFloatBetween(0.0004, 0.0012);
+    this.geometry = this.createPetalGeometry(scale);
+    this.geometry.center();
+
     this.material = new THREE.RawShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -27,12 +38,12 @@ export default class Petal {
     });
 
     this.pivot = new THREE.Mesh(this.geometry, this.material);
-    // this.position.set(
-    //   utils.randomFloatBetween(-2, 2),
-    //   utils.randomFloatBetween(this.minY + 0.1, this.maxY),
-    //   utils.randomFloatBetween(-2, 2),
-    // );
-    this.position.set(0, this.maxY, 0);
+
+    this.position.set(
+      this.start.x,
+      utils.randomFloatBetween(this.endY + 0.1, this.start.y),
+      this.start.z,
+    );
   }
 
   get position() {
@@ -40,11 +51,15 @@ export default class Petal {
   }
 
   get rotation() {
-    return this.pivot.position;
+    return this.pivot.rotation;
   }
 
   get uniforms() {
     return this.material.uniforms;
+  }
+
+  get uAlpha() {
+    return this.material.uniforms.uAlpha;
   }
 
   createPetalGeometry(size = 1) {
@@ -66,28 +81,31 @@ export default class Petal {
     return geometry;
   }
 
-  remapAlpha(min, max, value) {
+  remapAlpha(min, max) {
     return utils.remap(min, max, 0, 1, this.position.y);
   }
 
   update(time) {
-    // this.rotation.x += this.rotationVelocity.x;
-    // this.rotation.y += this.rotationVelocity.y;
-    // this.rotation.z += this.rotationVelocity.z;
+    this.rotation.x += this.rotationVelocity.x;
+    this.rotation.y += this.rotationVelocity.y;
+    this.rotation.z += this.rotationVelocity.z;
 
-    if (this.position.y <= this.minY) {
-      this.position.y = this.maxY;
+    if (this.position.y <= this.endY) {
+      this.position.y = this.start.y;
+      this.position.x = this.start.x;
+      this.position.z = this.start.z;
     } else {
-      this.position.y -= this.positionYVelocity;
+      this.position.y -= this.positionVelocity.y;
+      this.position.x += this.positionVelocity.x;
+      this.position.z += this.positionVelocity.z;
     }
 
-
-    if (this.position.y <= this.minY + 0.1) {
-      this.uniforms.uAlpha.value = this.remapAlpha(this.minY,  this.minY + 0.1);
+    if (this.position.y <= this.endY + 0.1) {
+      this.uAlpha.value = Math.max(0, this.uAlpha.value - this.alphaVelocity);
     }
 
-    if (this.position.y >= this.maxY - 0.1) {
-      this.uniforms.uAlpha.value = 1 - this.remapAlpha(this.maxY - 0.1, this.maxY);
+    if (this.position.y >= this.start.y - 0.1) {
+      this.uAlpha.value = Math.min(1, this.uAlpha.value + this.alphaVelocity);
     }
   }
 }

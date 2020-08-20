@@ -3,7 +3,7 @@ import Petal from './Petal';
 
 export default class Petals {
   constructor() {
-    this.numPetals = 1;
+    this.numPetals = 12;
     this.petals = [];
 
     this.pivot = new THREE.Group();
