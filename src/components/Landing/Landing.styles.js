@@ -27,13 +27,18 @@ export const Title = styled.h1`
   font-weight: 400;
   color: ${Colors.blackTranslucent};
   text-shadow: 0px 5px 10px ${Colors.whiteTinted};
+
+  ${Metrics.mobileQuery} {
+    font-size: 2.8em;
+    letter-spacing: 0.3em;
+  }
 `;
 
 export const LinksContainer = styled.div`
   display: flex;
   z-index: 1;
 
-  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+  ${Metrics.mobileQuery} {
     flex-direction: column;
   }
 `;
@@ -67,7 +72,7 @@ export const ProjectLink = styled.div`
   ${linkStyles}
 `;
 
-export const ContactLink = styled.div`
+export const ContactLink = styled.a`
   ${linkStyles}
 
   z-index: 1;
@@ -75,7 +80,7 @@ export const ContactLink = styled.div`
   border-width: 0 0 0.05em 0;
   color: ${Colors.blackTranslucent};
 
-  cursor: auto;
+  cursor: pointer;
 
   &:hover {
     background-color: transparent;

@@ -9,8 +9,7 @@ export const Container = styled.div`
 
   ${Metrics.mobileQuery} {
     width: 100%;
-    background-color: red;
-    padding: 1em;
+    padding: 0.1em;
   }
 `;
 
@@ -56,13 +55,11 @@ export const Title = styled.h1`
 `;
 
 export const Projects = styled.div`
-  // display: flex;
-  // flex-direction: column;
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: ${Metrics.maxWidth};
 
-  @media only screen and (max-width: ${Metrics.mobileWidth}) {
+ ${Metrics.mobileQuery} {
     grid-template-columns: 1fr;
   }
 `;

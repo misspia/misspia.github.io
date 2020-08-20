@@ -80,6 +80,7 @@ export const Link = styled.a`
 export const Wrapper = styled.div`
   position: relative;
   height: 25em;
+  width: 25em;
 
   display: flex;
   align-items: center;
@@ -101,5 +102,13 @@ export const Wrapper = styled.div`
         filter: grayscale(70%) brightness(150%);
       }
     }
+  }
+
+  ${Metrics.mobileQuery} {
+    height: 18em;
+    width: 18em;
+
+    margin: 1em 0;
+    box-shadow: 0 2px 10px 0px ${Colors.shadow};
   }
 `;
