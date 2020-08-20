@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import Refractor from '../lib/refractor';
 import WaterRefractionShader from '../lib/waterRefractionShader';
 
-import tintVert from './shaders/tint.vert';
-import tintFrag from './shaders/tint.frag';
+import vertexShader from './shaders/tint.vert';
+import fragmentShader from './shaders/tint.frag';
 
 import { Images } from '../themes';
 import utils from '../utils';
@@ -25,11 +25,11 @@ export default class Water {
     dudvMap.wrapT = THREE.RepeatWrapping;
     this.uniforms.tDudv.value = dudvMap;
 
-    this.tintGeometry = new THREE.CircleGeometry(5, 15);
+    this.tintGeometry = new THREE.CircleGeometry(10, 15);
     this.tintMaterial = new THREE.RawShaderMaterial({
-      vertexShader: tintVert,
-      fragmentShader: tintFrag,
-      side: THREE.DoubleSide,
+      vertexShader,
+      fragmentShader,
+      side: THREE.FrontSide,
       transparent: true,
     });
     this.tintSurface = new THREE.Mesh(this.tintGeometry, this.tintMaterial);

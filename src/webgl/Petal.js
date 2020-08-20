@@ -6,14 +6,14 @@ import utils from '../utils';
 export default class Petal {
   constructor() {
     this.alphaVelocity = 0.15;
-    this.endY = utils.randomFloatBetween(0, 0.2);
+    this.endY = utils.randomFloatBetween(-0.5, -0.1);
     this.start = {
       x: utils.randomFloatBetween(-3.2, 0),
       y: utils.randomFloatBetween(1.5, 2.8),
-      z: utils.randomFloatBetween(-2, 1),
+      z: utils.randomFloatBetween(-2, 2),
     }
     this.positionVelocity = {
-      x: utils.randomFloatBetween(0.008, 0.02),
+      x: utils.randomFloatBetween(0.003, 0.02),
       y: utils.randomFloatBetween(0.005, 0.02),
       z: utils.randomFloatBetween(0.008, 0.02),
     }
@@ -23,7 +23,7 @@ export default class Petal {
       z: utils.randomFloatBetween(0.01, 0.05),
     };
 
-    const scale = utils.randomFloatBetween(0.0004, 0.0012);
+    const scale = utils.randomFloatBetween(0.00045, 0.0013);
     this.geometry = this.createPetalGeometry(scale);
     this.geometry.center();
 
@@ -31,7 +31,7 @@ export default class Petal {
       vertexShader,
       fragmentShader,
       uniforms: {
-        uColor: { value: [1.0, 0.8, 0.8] },
+        uColor: { value: [1.0, 0.75, 0.75] },
         uAlpha: { value: 1.0 },
       },
       side: THREE.DoubleSide,

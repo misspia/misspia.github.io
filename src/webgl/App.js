@@ -22,7 +22,7 @@ export default class App extends SceneManager {
   init() {
     document.addEventListener('mousemove', e => this.offsetCamera(e), false);
     this.disableOrbitControls();
-    this.setCameraPos(0, 1, -5);
+    this.setCameraPos(0, 1.5, -5);
     this.lookAt(0, 0, 0);
 
     this.scene.add(this.lights.directional);

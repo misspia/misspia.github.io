@@ -32,7 +32,7 @@ export default function Landing({}) {
           </S.Link>
         ))}
       </S.LinksContainer>
-      <S.ContactLink>{email.label}</S.ContactLink>
+      {/* <S.ContactLink>{email.label}</S.ContactLink> */}
     </S.Container>
   )
 }
