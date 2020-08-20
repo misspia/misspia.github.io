@@ -1,9 +1,6 @@
 export default {
-  url: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400|Noto+Serif+SC:900',
+  url: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400|Baskervville&display=swap',
   family: `'Noto Sans JP', sans-serif`,
 
-  familyAccent: `'Noto Serif SC', serif`,
-
-  // url: 'https://fonts.googleapis.com/css?family=Ropa+Sans',
-  // family: `'Ropa Sans', sans-serif`,
+  familyAccent: `'Baskervville', serif;`,
 }

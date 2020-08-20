@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Colors, Metrics } from '../../themes';
+import { Colors, Metrics, Fonts } from '../../themes';
 
 export const Container = styled.div`
   display: flex;
@@ -19,14 +19,14 @@ export const CanvasWrapper = styled.div`
 
 export const Title = styled.h1`
   z-index: 1;
-  margin-bottom: em;
   font-size: 3em;
   text-align: center;
   letter-spacing: 0.4em;
 
-  font-weight: 100;
+  font-family: ${Fonts.familyAccent};
+  font-weight: 400;
   color: ${Colors.blackTranslucent};
-  text-shadow: 0.02em 0.05em 0em ${Colors.whiteTinted};
+  text-shadow: 0px 5px 10px ${Colors.whiteTinted};
 `;
 
 export const LinksContainer = styled.div`
