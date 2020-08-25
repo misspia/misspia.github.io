@@ -23,10 +23,10 @@ export default [
     stack: [],
   },
   {
-    name: 'Energy (Unity Audio Visualization)',
-    img: Images.projectEnergy,
-    demo: 'https://www.youtube.com/watch?v=5EF1WkW8Zck',
-    github: 'https://github.com/misspia/energy',
+    name: 'Kaeswap',
+    img: Images.projectKaeswap,
+    demo: 'https://butler.staging.kaeswap.com/',
+    github: 'https://github.com/KaeSwap',
     stack: [],
   },
   {
