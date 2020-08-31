@@ -68,7 +68,7 @@ export default class Petal {
     petalShape.bezierCurveTo(50, 100, -50, 100, 0, 0);
 
     const extrudeSettings = {
-      amount: 1,
+      depth: 1,
       bevelEnabled: true,
       bevelSegments: 2,
       steps: 2,

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Colors, Metrics } from '../../themes';
 
 export const Container = styled.div`
+  opacity: 0;
+
   padding: 1em 0;
   display: flex;
   flex-direction: column;

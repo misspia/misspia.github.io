@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 import { Colors, Metrics, Fonts } from '../../themes';
 
 export const Container = styled.div`
+  opacity: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

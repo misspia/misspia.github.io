@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import Routes from '../../router/routes';
 
 import Canvas from '../Canvas';
 import * as S from './Landing.styles';
+import * as Animations from './Landing.animations';
 
 import { email, projectsPage, socialLinks } from './Landing.metadata';
 
 export default function Landing({}) {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    Animations.fadeIn(containerRef.current);
+  }, []);
+
   return (
-    <S.Container>
+    <S.Container ref={containerRef}>
       <S.CanvasWrapper>
         <Canvas />
       </S.CanvasWrapper>
