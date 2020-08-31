@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import * as S from './Projects.styles';
 import Metadata from './Projects.metadata';
 import Routes from '../../router/routes';
 import Project from '../Project';
 
+import * as S from './Projects.styles';
+import * as Animations from './Projects.animations';
+
 export default function Projects({ }) {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    Animations.fadeIn(containerRef.current);
+  }, []);
+
   return (
-    <S.Container>
+    <S.Container ref={containerRef}>
       <Link to={Routes.HOME}>
         <S.HomeButton>×</S.HomeButton>
       </Link>

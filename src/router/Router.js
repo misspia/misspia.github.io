@@ -12,16 +12,16 @@ import * as S from './Router.styles';
 export default function AppRouter({ }) {
   return (
     <Router>
-      <Route render={({ location }) => (
-        <React.Fragment>
+      <>
+        <Route render={({ location }) => (
           <Switch location={location}>
             <Route exact path={Routes.HOME} component={Landing} />
             <Route exact path={Routes.PROJECTS} component={Projects} />
             <Route render={() => <div>Not Found</div>} />
           </Switch>
-        </React.Fragment>
-      )}>
-      </Route>
+        )}>
+        </Route>
+      </>
     </Router>
   )
 }
