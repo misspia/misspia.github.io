@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import { Fonts, Colors } from './themes';
@@ -7,6 +7,7 @@ import { Fonts, Colors } from './themes';
 import Router from './router';
 import { AppProvider } from './context';
 import { WebGLStates } from './types';
+import { useTabVisiblity } from './hooks';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -35,6 +36,16 @@ const GlobalStyle = createGlobalStyle`
 // https://hoang.moe/
 // https://thibautfoussard.com/
 function App({ }) {
+  const { isTabVisible } = useTabVisiblity();
+
+  useEffect(() => {
+    if(isTabVisible) {
+      document.title = 'misspia';
+    } else {
+      document.title = 'dood come back T__T';
+    }
+
+  }, [isTabVisible]);
   return (
     <AppProvider value={{
       webGLState: WebGLStates.CENTER
