@@ -17,8 +17,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    
+    /* path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@theme": ["src/theme/index.ts"],
+      "@components": ["src/components/index.ts"],
+    }
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
 }

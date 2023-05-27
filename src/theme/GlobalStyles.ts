@@ -1,10 +1,14 @@
 import { createGlobalStyle } from "styled-components";
+import { fonts } from "./";
 
 const GlobalStyles = createGlobalStyle`
   :root, body, #root {
     min-width: 320px;
     width: 100%;
     min-height: 100vh;
+    font-family: ${fonts.family};
+    font-size: 16px;
+    font-weight: ${fonts.weight.regular};
   }
 
   :root {
