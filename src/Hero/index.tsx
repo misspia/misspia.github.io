@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import styled from "styled-components";
 import { Section } from "@components";
-import { colors } from "@theme";
+import { colors, fonts } from "@theme";
 
 import { WebGLApp } from "../webgl";
 import { useWindowSize } from "./useWindowSize";
@@ -16,8 +16,10 @@ const Canvas = styled.canvas`
 `;
 
 const Title = styled.h1`
+  font-weight: ${fonts.weight.semiBold};
+  font-size: 36px;
   color: ${colors.white};
-  letter-spacing: 0.5em;
+  letter-spacing: 1em;
   text-transform: uppercase;
 `;
 
@@ -28,19 +30,26 @@ const Container = styled(Section)`
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const webgl = useRef<WebGLApp>(new WebGLApp());
   const { width, height } = useWindowSize();
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-
-    webgl.current.setup(canvasRef.current);
-    webgl.current.render();
+  const webgl = useMemo(() => {
+    if (!canvasRef.current) {
+      return;
+    }
+    const app = new WebGLApp();
+    app.setup(canvasRef.current);
+    return app;
   }, [canvasRef.current]);
 
   useEffect(() => {
-    webgl.current.resize(width, height);
+    if (!webgl) return;
+
+    webgl.resize(width, height);
   }, [width, height]);
+
+  useEffect(() => {
+    if (!webgl) return;
+    webgl.render();
+  }, [webgl]);
 
   return (
     <Container>

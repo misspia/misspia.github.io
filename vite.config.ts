@@ -20,6 +20,10 @@ export default defineConfig({
           new URL("./src/components/index.ts", import.meta.url)
         ),
       },
+      {
+        find: "@utils",
+        replacement: fileURLToPath(new URL("./src/utils.ts", import.meta.url)),
+      },
     ],
   },
 });

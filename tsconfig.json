@@ -24,6 +24,7 @@
     "paths": {
       "@theme": ["src/theme/index.ts"],
       "@components": ["src/components/index.ts"],
+      "@utils": ["src/utils.ts"],
     }
   },
   "include": ["src"],
