@@ -25,6 +25,8 @@
       "@theme": ["src/theme/index.ts"],
       "@components": ["src/components/index.ts"],
       "@utils": ["src/utils.ts"],
+      "@constants": ["src/constants/index.ts"],
+      "@assets": ["src/assets/index.ts"],
     }
   },
   "include": ["src"],

@@ -24,6 +24,18 @@ export default defineConfig({
         find: "@utils",
         replacement: fileURLToPath(new URL("./src/utils.ts", import.meta.url)),
       },
+      {
+        find: "@constants",
+        replacement: fileURLToPath(
+          new URL("./src/constants/index.ts", import.meta.url)
+        ),
+      },
+      {
+        find: "@assets",
+        replacement: fileURLToPath(
+          new URL("./src/assets/index.ts", import.meta.url)
+        ),
+      },
     ],
   },
 });

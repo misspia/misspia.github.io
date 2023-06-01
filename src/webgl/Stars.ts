@@ -45,6 +45,9 @@ export class Stars {
     }
     return vertices;
   }
+  enableLayer(layerNumber: number) {
+    this.stars.layers.enable(layerNumber);
+  }
   onResize(height: number) {
     this.material.uniforms.uPointMultiplier.value = getPointMultiplier(height);
   }
