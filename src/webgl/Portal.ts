@@ -43,6 +43,9 @@ export class Portal {
   get width() {
     return this.box.max.x - this.box.min.x;
   }
+  get layers() {
+    return this.mesh.layers;
+  }
   enableLayer(layerNumber: number) {
     this.mesh.layers.enable(layerNumber);
   }

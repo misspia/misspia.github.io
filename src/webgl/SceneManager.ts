@@ -100,8 +100,8 @@ export class SceneManager extends THREE.EventDispatcher {
   setCameraPos(x: number, y: number, z: number) {
     this.camera.position.set(x, y, z);
   }
-  lookAt(x: number, y: number, z: number) {
-    this.camera.lookAt(x, y, z);
+  lookAt(vector: THREE.Vector3) {
+    this.camera.lookAt(vector);
   }
   setClearColor(color: THREE.ColorRepresentation) {
     this.renderer.setClearColor(color);
