@@ -14,6 +14,7 @@ import { Universe } from "./Universe";
 export class PostProcessor {
   context: Universe;
   composer: EffectComposer;
+  renderPass: RenderPass;
 
   constructor(context: Universe) {
     this.context = context;
@@ -21,8 +22,8 @@ export class PostProcessor {
       context.renderer,
       context.glitch.renderTarget
     );
-    this.addPass(new RenderPass(context.scene, context.camera));
-    this.addPass(new RenderPass(context.scene, context.layerCamera));
+    this.renderPass = new RenderPass(context.scene, context.camera);
+    this.addPass(this.renderPass);
   }
 
   resize(width: number, height: number) {

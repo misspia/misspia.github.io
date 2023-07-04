@@ -35,6 +35,10 @@ export class Stars {
     this.group = new THREE.Group();
     this.group.add(this.stars);
   }
+  get layers() {
+    return this.group.layers;
+  }
+
   getVertices() {
     const vertices = [];
     for (let i = 0; i < this.numStars; i++) {
@@ -46,7 +50,7 @@ export class Stars {
     return vertices;
   }
   enableLayer(layerNumber: number) {
-    this.stars.layers.enable(layerNumber);
+    this.group.layers.enable(layerNumber);
   }
   onResize(height: number) {
     this.material.uniforms.uPointMultiplier.value = getPointMultiplier(height);
