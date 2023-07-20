@@ -17,28 +17,25 @@ const RGB_SHIFT_DISPLACEMENT_MULTIPLIER = 1 / 450;
 export class EffectManager {
   pp: PostProcessor;
   context: Universe;
-  glitchPass: GlitchPass;
-  rgbShiftShaderPass: ShaderPass;
+  // glitchPass: GlitchPass;
+  // rgbShiftShaderPass: ShaderPass;
 
   constructor(context: Universe) {
     this.pp = new PostProcessor(context);
     this.context = context;
 
-    this.glitchPass = new GlitchPass(this.context.glitchInterval);
-    this.glitchPass.goWild = true;
-    this.pp.addPass(this.glitchPass);
+    // this.glitchPass = new GlitchPass(this.context.glitchInterval);
+    // this.pp.addPass(this.glitchPass);
 
-    this.rgbShiftShaderPass = new ShaderPass(RGBShiftShader);
-    this.pp.addPass(this.rgbShiftShaderPass);
+    // this.rgbShiftShaderPass = new ShaderPass(RGBShiftShader);
+    // this.pp.addPass(this.rgbShiftShaderPass);
   }
 
   get renderPass() {
     return this.pp.renderPass;
   }
 
-  dispose() {
-    this.glitchPass.dispose();
-  }
+  dispose() {}
 
   render() {
     this.pp.render();
@@ -46,11 +43,11 @@ export class EffectManager {
   }
 
   update() {
-    this.rgbShiftShaderPass.uniforms.amount.value =
-      Math.sin(this.context.clock.elapsedTime * RGB_SHIFT_TIME_MULTIPLIER) *
-      RGB_SHIFT_DISPLACEMENT_MULTIPLIER;
-    this.rgbShiftShaderPass.uniforms.angle.value =
-      Math.sin(this.context.clock.elapsedTime * RGB_SHIFT_TIME_MULTIPLIER) *
-      RGB_SHIFT_DISPLACEMENT_MULTIPLIER;
+    // this.rgbShiftShaderPass.uniforms.amount.value =
+    //   Math.sin(this.context.clock.elapsedTime * RGB_SHIFT_TIME_MULTIPLIER) *
+    //   RGB_SHIFT_DISPLACEMENT_MULTIPLIER;
+    // this.rgbShiftShaderPass.uniforms.angle.value =
+    //   Math.sin(this.context.clock.elapsedTime * RGB_SHIFT_TIME_MULTIPLIER) *
+    //   RGB_SHIFT_DISPLACEMENT_MULTIPLIER;
   }
 }

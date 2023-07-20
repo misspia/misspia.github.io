@@ -1,7 +1,9 @@
-import fragmentShader from "./shaders/clouds.frag?raw";
-import vertexShader from "./shaders/clouds.vert?raw";
+import { Cloud } from "./Cloud";
 
 export class Clouds {
-  constructor() {}
+  clouds: Cloud[];
+  constructor() {
+    this.clouds = [];
+  }
   update() {}
 }

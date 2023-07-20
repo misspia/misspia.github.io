@@ -55,7 +55,7 @@ export const Hero = () => {
   return (
     <Container>
       <Canvas ref={canvasRef} />
-      <Title>misspia</Title>
+      {/* <Title>misspia</Title> */}
     </Container>
   );
 };

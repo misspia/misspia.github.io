@@ -18,10 +18,7 @@ export class PostProcessor {
 
   constructor(context: Universe) {
     this.context = context;
-    this.composer = new EffectComposer(
-      context.renderer,
-      context.glitch.renderTarget
-    );
+    this.composer = new EffectComposer(context.renderer);
     this.renderPass = new RenderPass(context.scene, context.camera);
     this.addPass(this.renderPass);
   }
