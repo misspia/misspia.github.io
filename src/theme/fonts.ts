@@ -1,5 +1,5 @@
 export default {
-  family: `'Quicksand', sans-serif`,
+  family: ` "Noto Serif Display", serif`,
   weight: {
     light: 300,
     regular: 400,
