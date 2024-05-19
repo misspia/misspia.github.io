@@ -7,6 +7,8 @@ import fragmentShader from '@webgl/shaders/leaves.frag'
 
 const NUM_LEAVES = 50;
 
+// https://github.com/mrdoob/three.js/blob/master/examples/webgl_custom_attributes_points.html
+
 export class Leaves {
   private context: Universe
   private leaves: Leaf[];
@@ -22,12 +24,17 @@ export class Leaves {
     this.material = new THREE.RawShaderMaterial({
       fragmentShader,
       vertexShader,
+      depthTest: true,
+      depthWrite: false,
+      transparent: true,
+      vertexColors: true,
+      side: THREE.DoubleSide,
       uniforms: {
         diffuseTexture: {
           value: new THREE.TextureLoader().load(leafTexture),
         },
       },
-      side: THREE.DoubleSide,
+      
     })
     this.group = new THREE.Points(
       this.geometry,

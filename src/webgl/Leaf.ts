@@ -16,8 +16,8 @@ const MAX_X_VELOCITY = 0.1
 const MIN_Y_VELOCITY = 0.01
 const MAX_Y_VELOCITY = 0.1
 
-const MIN_SIZE = 1;
-const MAX_SIZE = 2;
+const MIN_SIZE = 30;
+const MAX_SIZE = 35;
 
 
 export class Leaf {

@@ -31,7 +31,8 @@ export class Universe extends SceneManager {
   }
 
   init() {
-    this.setClearColor(0x111111);
+    // this.setClearColor(0x111111);
+  this.setClearColor(0xffffff);
     this.setCameraPos(0, 0, 5);
     this.lookAt(new Vector3(0, 0, 0));
 
