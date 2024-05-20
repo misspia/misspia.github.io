@@ -21,7 +21,6 @@ const Title = styled.h1`
   color: ${colors.white};
   letter-spacing: 1em;
   text-transform: uppercase;
-  text-shadow: 0 -1px 5px ${colors.black};
 `;
 
 const Container = styled(Section)`

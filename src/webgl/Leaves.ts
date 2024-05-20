@@ -5,7 +5,7 @@ import { Universe } from '@webgl/Universe'
 import vertexShader from '@webgl/shaders/leaves.vert'
 import fragmentShader from '@webgl/shaders/leaves.frag'
 
-const NUM_LEAVES = 50;
+const NUM_LEAVES = 20;
 
 // https://github.com/mrdoob/three.js/blob/master/examples/webgl_custom_attributes_points.html
 
@@ -60,17 +60,13 @@ export class Leaves {
         leaf.position.z, 
       )
 
-      rotations.push(
-        leaf.rotation.x,
-        leaf.rotation.y,
-        leaf.rotation.z,
-      )
+      rotations.push(leaf.rotation)
 
       sizes.push(leaf.size);
     }
 
     this.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 3));
+    this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 1));
     this.geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
 
   }
@@ -87,14 +83,10 @@ export class Leaves {
         leaf.position.z, 
       )
 
-      rotations.push(
-        leaf.rotation.x,
-        leaf.rotation.y,
-        leaf.rotation.z,
-      )
+      rotations.push(leaf.rotation)
     });
 
     this.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 3));
+    this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 1));
   }
 }

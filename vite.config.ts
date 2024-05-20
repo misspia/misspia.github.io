@@ -15,9 +15,6 @@ export default defineConfig({
         new URL("./src/components/index.ts", import.meta.url)
       ),
       "@utils": fileURLToPath(new URL("./src/utils.ts", import.meta.url)),
-      "@constants": fileURLToPath(
-        new URL("./src/constants.ts", import.meta.url)
-      ),
       "@assets": fileURLToPath(
         new URL("./src/assets/index.ts", import.meta.url)
       ),

@@ -25,7 +25,6 @@
       "@theme": ["src/theme/index.ts"],
       "@components": ["src/components/index.ts"],
       "@utils": ["src/utils.ts"],
-      "@constants": ["src/constants.ts"],
       "@assets": ["src/assets/index.ts"],
       "@webgl/*": ["src/webgl/*"],
     }
