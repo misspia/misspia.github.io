@@ -3,6 +3,7 @@ precision highp float;
 uniform sampler2D diffuseTexture;
 
 varying vec2 vAngle;
+varying float vAlpha;
 
 void main() {
     // https://www.shadertoy.com/view/fdjGRD
@@ -12,5 +13,5 @@ void main() {
     vec4 texture = texture2D(diffuseTexture, coords);
     vec3 color = vec3(1.0, 1.0, 1.0);
 
-    gl_FragColor = vec4(color, texture.a);
+    gl_FragColor = vec4(color, vAlpha * texture.a);
 }

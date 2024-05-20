@@ -50,6 +50,7 @@ export class Leaves {
     const positions: number[] = [];
     const rotations: number[] = [];
     const sizes: number[] = [];
+
     for(let i = 0; i < NUM_LEAVES; i++) {
       const leaf = new Leaf();
       this.leaves.push(leaf)
@@ -68,12 +69,12 @@ export class Leaves {
     this.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 1));
     this.geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
-
   }
 
   update() {
     const positions: number[] = [];
     const rotations: number[] = []
+    const sizes: number[] = [];
     this.leaves.forEach((leaf) => {
       leaf.update()
 
@@ -84,9 +85,11 @@ export class Leaves {
       )
 
       rotations.push(leaf.rotation)
+      sizes.push(leaf.size)
     });
 
     this.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 1));
+    this.geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
   }
 }

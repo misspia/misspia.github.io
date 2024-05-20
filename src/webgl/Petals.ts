@@ -1,9 +1,9 @@
 import * as THREE from 'three'
 import { Petal } from '@webgl/Petal';
-import { leafTexture } from '@assets'
+import { petalTexture } from '@assets'
 import { Universe } from '@webgl/Universe'
-import vertexShader from '@webgl/shaders/leaves.vert'
-import fragmentShader from '@webgl/shaders/leaves.frag'
+import vertexShader from '@webgl/shaders/petal.vert'
+import fragmentShader from '@webgl/shaders/petal.frag'
 
 const NUM_LEAVES = 20;
 
@@ -31,7 +31,7 @@ export class Petals {
       side: THREE.DoubleSide,
       uniforms: {
         diffuseTexture: {
-          value: new THREE.TextureLoader().load(leafTexture),
+          value: new THREE.TextureLoader().load(petalTexture),
         },
       },
       
@@ -50,7 +50,7 @@ export class Petals {
     const positions: number[] = [];
     const rotations: number[] = [];
     const sizes: number[] = [];
-    const opacities: number[] = [];
+    const alphas: number[] = [];
 
     for(let i = 0; i < NUM_LEAVES; i++) {
       const petal = new Petal();
@@ -65,20 +65,20 @@ export class Petals {
       rotations.push(petal.rotation)
 
       sizes.push(petal.size);
-      opacities.push(petal.opacity)
+      alphas.push(petal.alpha)
     }
 
     this.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 1));
     this.geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
-    this.geometry.setAttribute('opacity', new THREE.Float32BufferAttribute(opacities, 1));
-
+    this.geometry.setAttribute('alpha', new THREE.Float32BufferAttribute(alphas, 1));
   }
 
   update() {
     const positions: number[] = [];
     const rotations: number[] = []
-    const opacities: number[] = []
+    const sizes: number[] = [];
+    const alphas: number[] = []
     this.petals.forEach((petal) => {
       petal.update()
 
@@ -89,11 +89,13 @@ export class Petals {
       )
 
       rotations.push(petal.rotation)
-      opacities.push(petal.opacity)
+      sizes.push(petal.size);
+      alphas.push(petal.alpha)
     });
 
     this.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     this.geometry.setAttribute('rotation', new THREE.Float32BufferAttribute(rotations, 1));
-    this.geometry.setAttribute('opacity', new THREE.Float32BufferAttribute(opacities, 1));
+    this.geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
+    this.geometry.setAttribute('alpha', new THREE.Float32BufferAttribute(alphas, 1));
   }
 }
