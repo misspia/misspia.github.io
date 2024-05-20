@@ -18,7 +18,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    
+
     /* path aliases */
     "baseUrl": ".",
     "paths": {
@@ -26,9 +26,9 @@
       "@components": ["src/components/index.ts"],
       "@utils": ["src/utils.ts"],
       "@assets": ["src/assets/index.ts"],
-      "@webgl/*": ["src/webgl/*"],
+      "@webgl/*": ["src/webgl/*"]
     }
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

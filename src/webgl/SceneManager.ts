@@ -16,7 +16,7 @@ export class SceneManager extends THREE.EventDispatcher {
 
   constructor(
     canvas: HTMLCanvasElement,
-    { cameraFar = 1000, cameraNear = 0.1, fog }: TSceneManagerOptions
+    { cameraFar = 1000, cameraNear = 0.1, fog }: TSceneManagerOptions,
   ) {
     super();
     this.isInitiated = false;
@@ -35,7 +35,7 @@ export class SceneManager extends THREE.EventDispatcher {
       75,
       aspectRatio,
       cameraNear,
-      cameraFar
+      cameraFar,
     );
     this.camera.position.set(0, 1, -3);
     this.camera.lookAt(new THREE.Vector3());

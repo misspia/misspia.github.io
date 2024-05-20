@@ -8,7 +8,7 @@ export const remap = (
   max1: number,
   min2: number,
   max2: number,
-  value: number
+  value: number,
 ) => min2 + ((max2 - min2) * (value - min1)) / (max1 - min1);
 
 export const reverseRemap = (
@@ -16,7 +16,7 @@ export const reverseRemap = (
   max1: number,
   min2: number,
   max2: number,
-  value: number
+  value: number,
 ): number => remap(min1, max1, min2, max2, max1 - value);
 
 export const remapFreq = (min: number, max: number, value: number): number =>
@@ -25,7 +25,7 @@ export const remapFreq = (min: number, max: number, value: number): number =>
 export const reverseRemapFreq = (
   min: number,
   max: number,
-  value: number
+  value: number,
 ): number => remap(0, 255, min, max, 255 - value);
 
 export const toRadians = (degrees: number): number => (degrees * Math.PI) / 180;
@@ -35,7 +35,7 @@ export const calcCircumference = (radius: number): number =>
 
 export const getCenter = (
   obj3d: THREE.Object3D,
-  target: THREE.Vector3
+  target: THREE.Vector3,
 ): void => {
   new THREE.Box3().setFromObject(obj3d).getCenter(target);
 };
