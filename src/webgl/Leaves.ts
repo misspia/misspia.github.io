@@ -5,7 +5,7 @@ import { Universe } from "@webgl/Universe";
 import vertexShader from "@webgl/shaders/leaves.vert";
 import fragmentShader from "@webgl/shaders/leaves.frag";
 
-const NUM_LEAVES = 20;
+const NUM_LEAVES = 10;
 
 // https://github.com/mrdoob/three.js/blob/master/examples/webgl_custom_attributes_points.html
 

@@ -1,24 +1,24 @@
 import * as THREE from "three";
 import { randomFloatBetween, remap } from "@utils";
 
-const MIN_X_START_POSITION = -5;
-const MAX_X_START_POSITION = 10;
+const MIN_X_START_POSITION = -8;
+const MAX_X_START_POSITION = 8;
 const MIN_X_END_POSITION = -15;
 const MAX_X_END_POSITION = -5;
 
 const MIN_Y_START_POSITION = 10;
-const MAX_Y_START_POSITION = 0;
+const MAX_Y_START_POSITION = -1;
 const MIN_Y_END_POSITION = -10;
 const MAX_Y_END_POSITION = -15;
 
-const MIN_POSITION_VELOCITY = 0.02;
-const MAX_POSITION_VELOCITY = 0.07;
+const MIN_POSITION_VELOCITY = 0.008;
+const MAX_POSITION_VELOCITY = 0.02;
 
 const MIN_ROTATION_VELOCITY = 0.02;
 const MAX_ROTATION_VELOCITY = 0.03;
 
-const MIN_SIZE = 30;
-const MAX_SIZE = 35;
+const MIN_SIZE = 20;
+const MAX_SIZE = 25;
 
 export class Leaf {
   private xStartPosition: number;
@@ -54,23 +54,29 @@ export class Leaf {
    * - randomize rotation and rotation velocity
    */
   reset() {
-    // this.xStartPosition = randomFloatBetween(MIN_X_START_POSITION, MAX_X_START_POSITION);
-    // this.xEndPosition = randomFloatBetween(MIN_X_END_POSITION, MAX_X_END_POSITION);
-    this.xStartPosition = 0;
-    this.xEndPosition = 0;
+    this.xStartPosition = randomFloatBetween(
+      MIN_X_START_POSITION,
+      MAX_X_START_POSITION,
+    );
+    this.xEndPosition = randomFloatBetween(
+      MIN_X_END_POSITION,
+      MAX_X_END_POSITION,
+    );
 
-    // this.yStartPosition = randomFloatBetween(MIN_Y_START_POSITION, MAX_Y_START_POSITION);
-    // this.yEndPosition = randomFloatBetween(MIN_Y_END_POSITION, MAX_Y_END_POSITION);
-    this.yStartPosition = -5;
-    this.yEndPosition = 0;
+    this.yStartPosition = randomFloatBetween(
+      MIN_Y_START_POSITION,
+      MAX_Y_START_POSITION,
+    );
+    this.yEndPosition = randomFloatBetween(
+      MIN_Y_END_POSITION,
+      MAX_Y_END_POSITION,
+    );
 
     this.xVelocity = randomFloatBetween(
       MIN_POSITION_VELOCITY,
       MAX_POSITION_VELOCITY,
     );
-    this.xVelocity = 0.05;
-    // this.yVelocity = randomFloatBetween(MIN_POSITION_VELOCITY, MAX_POSITION_VELOCITY);
-    // this.yVelocity = remap(this.xVelocity, MIN_X_START_POSITION, MIN_X_END_POSITION, MIN_Y_START_POSITION, MIN_Y_END_POSITION);
+    // this.yVelocity = remap(MIN_X_START_POSITION, MIN_X_END_POSITION, MIN_Y_START_POSITION, MIN_Y_END_POSITION, this.xVelocity);
     this.yVelocity = this.xVelocity;
 
     this.position.set(this.xStartPosition, this.yStartPosition, 0);
@@ -83,18 +89,19 @@ export class Leaf {
       MAX_ROTATION_VELOCITY,
       averagePositionVelocity,
     );
-    this.rotationVelocity = 0.1;
     this.rotation = randomFloatBetween(0, Math.PI * 2);
   }
 
   update() {
-    this.rotation -= this.rotationVelocity;
-
-    // if(this.position.x <= this.xEndPosition && this.position.y <= this.yEndPosition) {
-    //   this.reset();
-    // } else {
-    //   this.position.x -= this.xVelocity;
-    //   this.position.y -= this.yVelocity;
-    // }
+    if (
+      this.position.x <= this.xEndPosition &&
+      this.position.y <= this.yEndPosition
+    ) {
+      this.reset();
+    } else {
+      this.position.x -= this.xVelocity;
+      this.position.y -= this.yVelocity;
+      this.rotation -= this.rotationVelocity;
+    }
   }
 }
