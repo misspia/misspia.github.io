@@ -21,6 +21,9 @@ const MAX_ROTATION_VELOCITY = 0.025;
 const MIN_SIZE = 10;
 const MAX_SIZE = 40;
 
+const LOWER_Y_FADE_THRESHOLD = 0.2;
+const UPPER_Y_FADE_THRESHOLD = 0.9;
+
 export class Petal {
   private xStartPosition: number;
   private yStartPosition: number;
@@ -117,10 +120,10 @@ export class Petal {
       1,
       this.position.y,
     );
-    if (yProgress > 0.9) {
-      this.alpha = 1 - remap(0.5, 1, 0, 1, yProgress);
-    } else if (yProgress < 0.2) {
-      this.alpha = remap(0, 0.5, 0, 1, yProgress);
+    if (yProgress > UPPER_Y_FADE_THRESHOLD) {
+      this.alpha = 1 - remap(UPPER_Y_FADE_THRESHOLD, 1, 0, 1, yProgress);
+    } else if (yProgress < LOWER_Y_FADE_THRESHOLD) {
+      this.alpha = remap(0, LOWER_Y_FADE_THRESHOLD, 0, 1, yProgress);
     } else {
       this.alpha = 1;
     }
