@@ -1,18 +1,23 @@
 import * as THREE from "three";
-import { randomFloatBetween } from "@utils";
+import { randomFloatBetween, remap } from "@utils";
 
-const MIN_X_POS = -5;
-const MAX_X_POS = 5;
-const MIN_Z_POS = -5;
+const MIN_X_POS = -3;
+const MAX_X_POS = 3;
+const MIN_Z_POS = 0;
 const MAX_Z_POS = 5;
 
 const PETAL_DIST_FROM_ORIGIN = 0.5;
+
+const MIN_SIZE = 1;
+const MAX_SIZE = 10;
 
 // https://x.com/kchplr/status/1624137747039457284
 export class Flower {
   origin: THREE.Vector3;
   positions: number[];
   rotations: number[];
+  sizes: number[];
+
 
   constructor() {
     this.origin = new THREE.Vector3(
@@ -22,6 +27,7 @@ export class Flower {
     );
     this.positions = [];
     this.rotations = [];
+    this.sizes = [];
     this.createFlowerPetals();
   }
 
@@ -54,6 +60,11 @@ export class Flower {
     this.rotations = Array.from(Array(numPetals)).map(
       (_, i) => i * angleIncrement,
     );
+
+    const size = remap(MIN_Z_POS, MAX_Z_POS, MIN_SIZE, MAX_SIZE, this.origin.z);
+    for(let i = 0; i < numPetals; i ++) {
+      this.sizes.push(size)
+    }
   }
 
   update() {}
