@@ -5,7 +5,6 @@ uniform mat4 modelViewMatrix;
 
 attribute vec2 uv;
 attribute vec3 position;
-attribute float rotation;
 attribute float size;
 attribute float alpha;
 
@@ -20,6 +19,7 @@ void main() {
 
   vUv = uv;
   // https://github.com/misspia/sketch-014/blob/ee86301380c8cb9c0a24961ae66cce3079547afb/src/shaders/smoke.vert#L26C3-L26C41
-  vAngle = vec2(cos(rotation), sin(rotation));
+  // vAngle = vec2(cos(rotation), sin(rotation));
+  vAngle = vec2(cos(3.14), sin(3.14));
   vAlpha = alpha;
 }

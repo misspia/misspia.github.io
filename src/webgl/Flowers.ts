@@ -1,16 +1,22 @@
 import * as THREE from "three";
-import { petalTexture } from "@assets";
-import { Flower } from "@webgl/Flower";
+import { flowerTexture } from "@assets";
 import vertexShader from "@webgl/shaders/flower.vert";
 import fragmentShader from "@webgl/shaders/flower.frag";
-import { toRadians } from '@utils'
+import { toRadians, randomFloatBetween, remap } from "@utils";
 
-const NUM_FLOWERS = 50;
+const NUM_FLOWERS = 500;
+
+const MIN_X_POS = -5;
+const MAX_X_POS = 5;
+const MIN_Z_POS = 0;
+const MAX_Z_POS = 3.8;
+
+const MIN_SIZE = 1;
+const MAX_SIZE = 50;
 
 export class Flowers {
   geometry: THREE.BufferGeometry;
   material: THREE.Material;
-  flowers: Flower[];
   group: THREE.Points;
 
   constructor() {
@@ -25,36 +31,34 @@ export class Flowers {
       side: THREE.DoubleSide,
       uniforms: {
         diffuseTexture: {
-          value: new THREE.TextureLoader().load(petalTexture),
+          value: new THREE.TextureLoader().load(flowerTexture),
         },
       },
     });
-    this.flowers = [];
 
     this.createFlowers();
     this.group = new THREE.Points(this.geometry, this.material);
-    this.group.rotateX(toRadians(15))
+    this.group.rotateX(toRadians(15));
   }
 
   createFlowers() {
     const positions: number[] = [];
-    const rotations: number[] = [];
     const sizes: number[] = [];
 
     for (let i = 0; i < NUM_FLOWERS; i++) {
-      const flower = new Flower();
+      const origin = new THREE.Vector3(
+        randomFloatBetween(MIN_X_POS, MAX_X_POS),
+        0,
+        randomFloatBetween(MIN_Z_POS, MAX_Z_POS),
+      );
+      const size = remap(MIN_Z_POS, MAX_Z_POS, MIN_SIZE, MAX_SIZE, origin.z);
 
-      positions.push(...flower.positions);
-      rotations.push(...flower.rotations);
-      sizes.push(...flower.sizes);
+      positions.push(origin.x, origin.y, origin.z);
+      sizes.push(size);
     }
     this.geometry.setAttribute(
       "position",
       new THREE.Float32BufferAttribute(positions, 3),
-    );
-    this.geometry.setAttribute(
-      "rotation",
-      new THREE.Float32BufferAttribute(rotations, 1),
     );
     this.geometry.setAttribute(
       "size",
