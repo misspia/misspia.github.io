@@ -8,19 +8,20 @@ const distanceFromCenter = (coordA: [number, number], coordB: [number, number]) 
   return Math.sqrt(Math.pow((coordA[0] - coordB[0]), 2) + Math.pow((coordA[1] - coordB[1]), 2))
 }
 
-const NUM_FLOWERS = 2000;
+const NUM_FLOWERS = 1200;
 
-const MIN_X_POS = -5;
-const MAX_X_POS = 5;
+const MIN_X_POS = -3.5;
+const MAX_X_POS = 3.5;
 const MIN_Z_POS = 0;
-const MAX_Z_POS = 3.8;
+const MAX_Z_POS = 3.5;
 
 const MIN_SIZE = 1;
 const MAX_SIZE = 30;
 
 
-const MAX_FADE_RADIUS_THRESHOLD = distanceFromCenter([0, 0], [MAX_X_POS, MAX_Z_POS])
-const MIN_FADE_RADIUS_THRESHOLD = MAX_FADE_RADIUS_THRESHOLD * 0.5
+const MAX_FADE_RADIUS_THRESHOLD = distanceFromCenter([0, 0], [MAX_X_POS, MAX_Z_POS]) * 0.75
+const MIN_FADE_RADIUS_THRESHOLD = MAX_FADE_RADIUS_THRESHOLD * 0.75
+const MAX_FADE_ALPHA = 0.9
 
 export class Flowers {
   origin: THREE.Vector3;
@@ -55,6 +56,7 @@ export class Flowers {
     const positions: number[] = [];
     const sizes: number[] = [];
     const alphas: number[] = [];
+    
 
     for (let i = 0; i < NUM_FLOWERS; i++) {
       const position = new THREE.Vector3(
@@ -69,9 +71,9 @@ export class Flowers {
 
       const distance = distanceFromCenter([this.origin.x, this.origin.z], [position.x, position.z]);
       if(distance >= MIN_FADE_RADIUS_THRESHOLD) {
-        const alpha = remap(MIN_FADE_RADIUS_THRESHOLD, MAX_FADE_RADIUS_THRESHOLD, 0.0, 0.5, distance)
-        console.debug(alpha, distance, position)
-        alphas.push()
+        
+        const alpha = MAX_FADE_ALPHA - remap(MIN_FADE_RADIUS_THRESHOLD, MAX_FADE_RADIUS_THRESHOLD, 0.0, MAX_FADE_ALPHA, distance)
+        alphas.push(alpha)
       } else {
         alphas.push(1)
       }
@@ -86,7 +88,7 @@ export class Flowers {
     );
     this.geometry.setAttribute(
       "alpha",
-      new THREE.Float32BufferAttribute(sizes, 1),
+      new THREE.Float32BufferAttribute(alphas, 1),
     );
   }
 
