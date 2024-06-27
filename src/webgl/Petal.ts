@@ -1,27 +1,27 @@
 import * as THREE from "three";
 import { randomFloatBetween, remap } from "@utils";
 
-const MIN_X_START_POSITION = -10;
-const MAX_X_START_POSITION = 10;
+const MIN_X_START_POSITION = -3.5;
+const MAX_X_START_POSITION = 3.5;
 
-const MIN_Y_START_POSITION = -4.5;
+const MIN_Y_START_POSITION = -1.5;
 const MAX_Y_START_POSITION = -1;
 const MIN_Y_END_POSITION = 5;
 const MAX_Y_END_POSITION = 7;
 
-const MIN_Z_START_POSITION = -10;
+const MIN_Z_START_POSITION = -3;
 const MAX_Z_START_POSITION = 3;
 
-const MIN_POSITION_VELOCITY = 0.008;
-const MAX_POSITION_VELOCITY = 0.02;
+const MIN_POSITION_VELOCITY = 0.002;
+const MAX_POSITION_VELOCITY = 0.01;
 
 const MIN_ROTATION_VELOCITY = 0.008;
 const MAX_ROTATION_VELOCITY = 0.025;
 
-const MIN_SIZE = 10;
+const MIN_SIZE = 5;
 const MAX_SIZE = 40;
 
-const LOWER_Y_FADE_THRESHOLD = 0.2;
+const LOWER_Y_FADE_THRESHOLD = 0.2; // percent
 const UPPER_Y_FADE_THRESHOLD = 0.9;
 
 export class Petal {

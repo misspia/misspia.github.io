@@ -10,16 +10,18 @@ const distanceFromCenter = (coordA: [number, number], coordB: [number, number]) 
 
 const NUM_FLOWERS = 1200;
 
-const MIN_X_POS = -3.5;
-const MAX_X_POS = 3.5;
-const MIN_Z_POS = 0;
-const MAX_Z_POS = 3.5;
+const MIN_X_POS = -3;
+const MAX_X_POS = 3;
+const MIN_Z_POS = -1;
+const MAX_Z_POS = 5;
+const Y_POS = -0.5;
 
-const MIN_SIZE = 1;
-const MAX_SIZE = 30;
+const MIN_SIZE = 5;
+const MAX_SIZE = 70;
 
-
-const MAX_FADE_RADIUS_THRESHOLD = distanceFromCenter([0, 0], [MAX_X_POS, MAX_Z_POS]) * 0.75
+const CENTER_X = (MAX_X_POS + MIN_X_POS) / 2
+const CENTER_Z = (MAX_Z_POS + MIN_Z_POS) / 2
+const MAX_FADE_RADIUS_THRESHOLD = distanceFromCenter([CENTER_X, CENTER_Z], [MAX_X_POS, MAX_Z_POS]) * 0.75
 const MIN_FADE_RADIUS_THRESHOLD = MAX_FADE_RADIUS_THRESHOLD * 0.75
 const MAX_FADE_ALPHA = 0.9
 
@@ -61,7 +63,7 @@ export class Flowers {
     for (let i = 0; i < NUM_FLOWERS; i++) {
       const position = new THREE.Vector3(
         randomFloatBetween(MIN_X_POS, MAX_X_POS),
-        0,
+        Y_POS,
         randomFloatBetween(MIN_Z_POS, MAX_Z_POS),
       );
       const size = remap(MIN_Z_POS, MAX_Z_POS, MIN_SIZE, MAX_SIZE, position.z);

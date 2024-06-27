@@ -1,6 +1,6 @@
 import { useEffect, useRef, useMemo } from "react";
 import styled from "styled-components";
-import { Section } from "@components";
+import { Section, Frame } from "@components";
 import { colors, fonts } from "@theme";
 
 import { WebGLApp } from "../webgl";
@@ -54,7 +54,9 @@ export const Hero = () => {
   return (
     <Container>
       <Canvas ref={canvasRef} />
-      <Title>misspia</Title>
+      <Frame>
+        <Title>misspia</Title>
+      </Frame>
     </Container>
   );
 };
