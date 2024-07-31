@@ -4,10 +4,14 @@ import { randomFloatBetween, remap } from "@utils";
 const MIN_X_POSITION = -10;
 const MAX_X_POSITION = 10;
 
-const MIN_Y_START_POSITION = -5;
-const MAX_Y_START_POSITION = 0;
-const MIN_Y_END_POSITION = 1;
-const MAX_Y_END_POSITION = 5;
+// const MIN_Y_START_POSITION = -5;
+// const MAX_Y_START_POSITION = 0;
+// const MIN_Y_END_POSITION = 1;
+// const MAX_Y_END_POSITION = 5;
+const MIN_Y_START_POSITION = 3;
+const MAX_Y_START_POSITION = 5;
+const MIN_Y_END_POSITION = 0;
+const MAX_Y_END_POSITION = 1;
 
 const MIN_Z_POSITION = -25;
 const MAX_Z_POSITION = 2;
@@ -109,10 +113,10 @@ export class Block {
   }
 
   update() {
-    if (this.position.y >= this.yEndPosition) {
+    if (this.position.y <= this.yEndPosition) {
       this.reset();
     } else {
-      this.position.y += this.yVelocity;
+      this.position.y -= this.yVelocity;
       this.rotation.y += this.yRotationVelocity;
     }
 

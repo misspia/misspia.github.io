@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export type TSceneManagerOptions = {
   cameraNear?: number;
@@ -13,6 +14,7 @@ export class SceneManager extends THREE.EventDispatcher {
   mouse: THREE.Vector2;
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
+  controls: OrbitControls;
 
   constructor(
     canvas: HTMLCanvasElement,
@@ -46,6 +48,8 @@ export class SceneManager extends THREE.EventDispatcher {
       alpha: false,
       stencil: false,
     });
+
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
     ////////////////////////////////////////////////////////
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;

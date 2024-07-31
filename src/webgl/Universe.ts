@@ -9,6 +9,8 @@ import { Flowers } from "@webgl/Flowers";
 // https://github.com/mrdoob/three.js/blob/master/examples/webgl_postprocessing_unreal_bloom_selective.html
 // grass:
 // https://codepen.io/al-ro/pen/GRJzYQK?editors=1010
+// https://jsfiddle.net/felixmariotto/hvrg721n/
+// https://github.com/mrdoob/three.js/blob/master/examples/webgpu_instance_mesh.html
 export class Universe extends SceneManager {
   clock: Clock;
   lights: Lights;
