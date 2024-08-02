@@ -1,10 +1,11 @@
-import { Clock, Vector3 } from "three";
+import { Camera, Clock, Vector3 } from "three";
 import { SceneManager } from "./SceneManager";
 import { Lights } from "@webgl/Lights";
 import { Leaves } from "@webgl/Leaves";
 import { Petals } from "@webgl/Petals";
 import { Blocks } from "@webgl/Blocks";
 import { Flowers } from "@webgl/Flowers";
+import { CameraManager } from '@webgl/CameraManager'
 
 // https://github.com/mrdoob/three.js/blob/master/examples/webgl_postprocessing_unreal_bloom_selective.html
 // grass:
@@ -18,6 +19,7 @@ export class Universe extends SceneManager {
   petals: Petals;
   blocks: Blocks;
   flowers: Flowers;
+  cameraManager: CameraManager;
   constructor(canvas: HTMLCanvasElement) {
     super(canvas, {});
     this.clock = new Clock(true);
@@ -27,6 +29,7 @@ export class Universe extends SceneManager {
     this.petals = new Petals(this);
     this.blocks = new Blocks(this);
     this.flowers = new Flowers();
+    this.cameraManager = new CameraManager(this);
   }
 
   init() {
@@ -35,10 +38,13 @@ export class Universe extends SceneManager {
     this.lookAt(new Vector3(0, 0, 0));
 
     this.scene.add(this.lights.group);
-    this.scene.add(this.leaves.group);
+    // this.scene.add(this.leaves.group);
     this.scene.add(this.petals.group);
     this.scene.add(this.blocks.group);
     this.scene.add(this.flowers.group);
+
+    // Events
+    document.addEventListener('mousemove', this.cameraManager.onMouseMove, false)
   }
 
   customResize(_width: number, height: number): void {}
@@ -52,6 +58,7 @@ export class Universe extends SceneManager {
     this.petals.update();
     this.blocks.update();
     this.flowers.update();
+    this.cameraManager.update();
 
     requestAnimationFrame(() => this.draw());
   }

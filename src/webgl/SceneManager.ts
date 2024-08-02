@@ -14,7 +14,7 @@ export class SceneManager extends THREE.EventDispatcher {
   mouse: THREE.Vector2;
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
-  controls: OrbitControls;
+  // controls: OrbitControls;
 
   constructor(
     canvas: HTMLCanvasElement,
@@ -49,7 +49,7 @@ export class SceneManager extends THREE.EventDispatcher {
       stencil: false,
     });
 
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
     ////////////////////////////////////////////////////////
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
