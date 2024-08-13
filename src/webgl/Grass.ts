@@ -9,7 +9,6 @@ const WIDTH = 6; // half for mobile
 var RESOLUTION = 64;
 var DELTA = WIDTH / RESOLUTION;
 var RADIUS = 240;
-var SPEED = 3;
 
 const NUM_BLADE_INSTANCES = 500;
 const AMBIENT_STRENGTH = 0.7;
@@ -39,11 +38,13 @@ var AZIMUTH = 0.4;
 // https://codepen.io/al-ro/pen/GRJzYQK?editors=1010
 export class Grass {
   context: Universe;
+  viewDirection: THREE.Vector3;
   geometry: THREE.InstancedBufferGeometry;
-  material: THREE.Material;
+  material: THREE.RawShaderMaterial;
   group: THREE.Mesh;
   constructor(context: Universe) {
     this.context = context;
+    this.viewDirection = new THREE.Vector3();
 
     this.geometry = new THREE.InstancedBufferGeometry();
     this.createGrassInstances();
@@ -89,6 +90,10 @@ export class Grass {
 
   get position() {
     return this.group.position;
+  }
+
+  get uniforms() {
+    return this.material.uniforms;
   }
 
   createGrassInstances() {
@@ -223,5 +228,7 @@ export class Grass {
     this.geometry.setAttribute("index", indexAttribute);
   }
 
-  update() {}
+  update() {
+    this.uniforms.time.value = this.context.clock.getElapsedTime();
+  }
 }

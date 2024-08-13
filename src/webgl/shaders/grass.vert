@@ -55,7 +55,7 @@ void main() {
   frc = position.y / float(BLADE_HEIGHT);
 
 	//Scale vertices
-  vec3 vPosition = position;
+  vPosition = position;
   vPosition.y *= scale;
 
 	//Invert scaling for normals

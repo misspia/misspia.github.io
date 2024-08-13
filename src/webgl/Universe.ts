@@ -43,16 +43,17 @@ export class Universe extends SceneManager {
     this.scene.add(this.lights.group);
     // this.scene.add(this.leaves.group);
     this.scene.add(this.petals.group);
-    this.scene.add(this.blocks.group);
+    // this.scene.add(this.blocks.group);
     // this.scene.add(this.flowers.group);
     this.scene.add(this.grass.group);
+    this.grass.position.set(0, -1, 0);
 
     // Events
-    document.addEventListener(
-      "mousemove",
-      this.cameraManager.onMouseMove,
-      false,
-    );
+    // document.addEventListener(
+    //   "mousemove",
+    //   this.cameraManager.onMouseMove,
+    //   false,
+    // );
   }
 
   customResize(_width: number, height: number): void {}

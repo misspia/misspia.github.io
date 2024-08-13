@@ -58,3 +58,18 @@ export const weightedRandomSign = (positiveWeight: number): 1 | -1 =>
 
 export const lerp = (a: number, b: number, t: number): number =>
   a * (1 - t) + b * t;
+
+export const cross = (a: THREE.Vector3, b: THREE.Vector3) => {
+  return {
+    x: a.y * b.z - a.z * b.y,
+    y: a.z * b.x - a.x * b.z,
+    z: a.x * b.y - a.y * b.x,
+  };
+};
+
+export const isMobile =
+  navigator.userAgent.match(/Android/i) ||
+  navigator.userAgent.match(/webOS/i) ||
+  navigator.userAgent.match(/iPhone/i) ||
+  navigator.userAgent.match(/BlackBerry/i) ||
+  navigator.userAgent.match(/Windows Phone/i);
