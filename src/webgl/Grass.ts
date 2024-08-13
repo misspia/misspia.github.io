@@ -1,16 +1,18 @@
 import * as THREE from "three";
+import { isMobile, randomFloatBetween } from "@utils";
 import { Universe } from "@webgl/Universe";
 import { grassBladeAlpha, grassBladeDiffuse, perlinFbm } from "@assets";
 import fragmentShader from "@webgl/shaders/grass.frag";
 import vertexShader from "@webgl/shaders/grass.vert";
 
 //Patch side length
-const WIDTH = 6; // half for mobile
-var RESOLUTION = 64;
-var DELTA = WIDTH / RESOLUTION;
-var RADIUS = 240;
+const WIDTH = 10;
+const RESOLUTION = 64;
+const DELTA = WIDTH / RESOLUTION;
+const MIN_RADIUS = 0.1;
+const MAX_RADIUS = 3.2;
 
-const NUM_BLADE_INSTANCES = 500;
+const NUM_BLADE_INSTANCES = isMobile ? 300 : 900;
 const AMBIENT_STRENGTH = 0.7;
 const TRANSLUCENCY_STRENGTH = 1.5;
 const SPECULAR_STRENGTH = 0.5;
@@ -36,6 +38,7 @@ var ELEVATION = 0.2;
 var AZIMUTH = 0.4;
 
 // https://codepen.io/al-ro/pen/GRJzYQK?editors=1010
+// https://codesandbox.io/s/grass-shader-forked-okub75?file=/src/GrassMaterial.js
 export class Grass {
   context: Universe;
   viewDirection: THREE.Vector3;
@@ -60,7 +63,7 @@ export class Grass {
         delta: { value: DELTA },
         posX: { value: POS.x },
         posZ: { value: POS.y },
-        radius: { value: RADIUS },
+        radius: { value: 0 },
         width: { value: WIDTH },
         map: { value: grassTexture },
         alphaMap: { value: alphaMap },
@@ -188,16 +191,18 @@ export class Grass {
       indices.push(i / NUM_BLADE_INSTANCES);
 
       //Offset of the roots
-      x = Math.random() * WIDTH - WIDTH / 2;
-      z = Math.random() * WIDTH - WIDTH / 2;
-      y = 0;
+      // x = Math.random() * WIDTH - WIDTH / 2;
+      // z = Math.random() * WIDTH - WIDTH / 2;
+      // y = 0;
+      // const radius = randomFloatBetween(MIN_RADIUS, MAX_RADIUS)
+      const { x, y, z } = this.getRandCirclePos();
       offsets.push(x, y, z);
 
       //Random orientation
       let angle = Math.PI - Math.random() * (2 * Math.PI);
       halfRootAngles.push(Math.sin(0.5 * angle), Math.cos(0.5 * angle));
 
-      //Define variety in height
+      // Vary height
       if (i % 3 != 0) {
         scales.push(2.0 + Math.random() * 1.25);
       } else {
@@ -226,6 +231,18 @@ export class Grass {
     this.geometry.setAttribute("scale", scaleAttribute);
     this.geometry.setAttribute("halfRootAngle", halfRootAngleAttribute);
     this.geometry.setAttribute("index", indexAttribute);
+  }
+
+  // https://github.com/misspia/sketch-014/blob/ee86301380c8cb9c0a24961ae66cce3079547afb/src/SpiritParticle.js#L48
+  // https://stackoverflow.com/questions/5300938/calculating-the-position-of-points-in-a-circle
+  getRandCirclePos() {
+    const radius = randomFloatBetween(MIN_RADIUS, MAX_RADIUS);
+    const angle = randomFloatBetween(0, Math.PI * 2);
+    return {
+      x: radius * Math.cos(angle),
+      y: 0,
+      z: radius * Math.sin(angle),
+    };
   }
 
   update() {
