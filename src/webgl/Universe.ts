@@ -6,6 +6,7 @@ import { Petals } from "@webgl/Petals";
 import { Blocks } from "@webgl/Blocks";
 import { Flowers } from "@webgl/Flowers";
 import { Grass } from "@webgl/Grass";
+import { Ground } from "@webgl/Ground";
 import { CameraManager } from "@webgl/CameraManager";
 
 // https://github.com/mrdoob/three.js/blob/master/examples/webgl_postprocessing_unreal_bloom_selective.html
@@ -21,22 +22,25 @@ export class Universe extends SceneManager {
   blocks: Blocks;
   flowers: Flowers;
   grass: Grass;
+  ground: Ground;
   cameraManager: CameraManager;
   constructor(canvas: HTMLCanvasElement) {
     super(canvas, {});
     this.clock = new Clock(true);
 
     this.lights = new Lights();
+    this.flowers = new Flowers();
+    this.ground = new Ground();
     this.leaves = new Leaves(this);
     this.petals = new Petals(this);
     this.blocks = new Blocks(this);
-    this.flowers = new Flowers();
     this.grass = new Grass(this);
     this.cameraManager = new CameraManager(this);
   }
 
   init() {
-    this.setClearColor(0x111111);
+    // this.setClearColor(0x111111);
+    this.setClearColor(0xeeeeaa);
     this.setCameraPos(0, 0, 5);
     // this.setCameraPos(0, 4, 0);
     this.lookAt(new Vector3(0, 0, 0));
@@ -47,6 +51,7 @@ export class Universe extends SceneManager {
     // this.scene.add(this.blocks.group);
     // this.scene.add(this.flowers.group);
     this.scene.add(this.grass.group);
+    this.scene.add(this.ground.group);
     this.grass.position.set(0, -1.3, 0);
 
     // Events
@@ -69,6 +74,7 @@ export class Universe extends SceneManager {
     this.blocks.update();
     this.flowers.update();
     this.grass.update();
+    this.ground.update();
     this.cameraManager.update();
 
     requestAnimationFrame(() => this.draw());
