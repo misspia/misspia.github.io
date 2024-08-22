@@ -9,7 +9,7 @@ export class Ground {
   group: THREE.Mesh;
 
   constructor() {
-    this.geometry = new THREE.CircleGeometry(5, 50);
+    this.geometry = new THREE.CircleGeometry(1.7, 32);
     this.material = new THREE.RawShaderMaterial({
       fragmentShader,
       vertexShader,
@@ -18,7 +18,6 @@ export class Ground {
     });
     this.group = new THREE.Mesh(this.geometry, this.material);
     this.group.rotateX(-toRadians(90));
-    this.position.set(0, -1.5, 0);
   }
 
   get position() {

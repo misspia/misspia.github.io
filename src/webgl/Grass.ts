@@ -10,15 +10,15 @@ const WIDTH = 10;
 const RESOLUTION = 64;
 const DELTA = WIDTH / RESOLUTION;
 const MIN_RADIUS = 0.1;
-const MAX_RADIUS = 3.2;
+const MAX_RADIUS = 1.5;
 
-const NUM_BLADE_INSTANCES = isMobile ? 300 : 900;
+const NUM_BLADE_INSTANCES = isMobile ? 100 : 300;
 const AMBIENT_STRENGTH = 0.7;
 const TRANSLUCENCY_STRENGTH = 1.5;
 const SPECULAR_STRENGTH = 0.5;
 const DIFFUSE_STRENGTH = 1.5;
 const SHININESS = 256;
-const SUN_COLOR = new THREE.Vector3(1.0, 1.0, 1.0);
+const SUN_COLOR = new THREE.Vector3(1.0, 1.0, 0.5);
 const SPECULAR_COLOR = new THREE.Vector3(1.0, 1.0, 1.0);
 
 //The global coordinates

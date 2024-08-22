@@ -15,17 +15,36 @@ const Canvas = styled.canvas`
   z-index: -1;
 `;
 
-const Title = styled.h1`
-  font-weight: ${fonts.weight.semiBold};
-  font-size: 36px;
-  color: ${colors.white};
-  letter-spacing: 1em;
-  text-transform: uppercase;
-`;
-
 const Container = styled(Section)`
   position: relative;
   z-index: 1;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Title = styled.h1`
+  font-weight: ${fonts.weight.semiBold};
+  font-size: 36px;
+  /* color: ${colors.white}; */
+  color: ${colors.black};
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  text-transform: uppercase;
+`;
+
+const Links = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+`;
+
+const Link = styled.a`
+  font-size: 16px;
+  color: ${colors.black};
 `;
 
 export const Hero = () => {
@@ -55,7 +74,15 @@ export const Hero = () => {
     <Container>
       <Canvas ref={canvasRef} />
       {/* <Frame> */}
-      <Title>misspia</Title>
+      <ContentContainer>
+        <Title>m i s s p i a</Title>
+        <Links>
+          <Link>sketchbook</Link>
+          <Link>linkedin</Link>
+          <Link>github</Link>
+        </Links>
+      </ContentContainer>
+
       {/* </Frame> */}
     </Container>
   );

@@ -40,9 +40,9 @@ export class Universe extends SceneManager {
 
   init() {
     // this.setClearColor(0x111111);
-    this.setClearColor(0xeeeeaa);
-    this.setCameraPos(0, 0, 5);
-    // this.setCameraPos(0, 4, 0);
+    this.setClearColor(0xeeeea1);
+    this.setCameraPos(0, 0, 4);
+    // this.setCameraPos(0, 8, 0);
     this.lookAt(new Vector3(0, 0, 0));
 
     this.scene.add(this.lights.group);
@@ -52,7 +52,9 @@ export class Universe extends SceneManager {
     // this.scene.add(this.flowers.group);
     this.scene.add(this.grass.group);
     this.scene.add(this.ground.group);
-    this.grass.position.set(0, -1.3, 0);
+
+    this.grass.position.set(0, -1.2, 0);
+    this.ground.position.set(0, -1.2, 0);
 
     // Events
     // document.addEventListener(

@@ -1,16 +1,16 @@
 import * as THREE from "three";
 import { randomFloatBetween, remap } from "@utils";
 
-const MIN_X_START_POSITION = -3.5;
-const MAX_X_START_POSITION = 3.5;
+const MIN_X_START_POSITION = -1.0;
+const MAX_X_START_POSITION = 1.0;
 
 const MIN_Y_START_POSITION = -1.5;
 const MAX_Y_START_POSITION = -1;
 const MIN_Y_END_POSITION = 5;
 const MAX_Y_END_POSITION = 7;
 
-const MIN_Z_START_POSITION = -3;
-const MAX_Z_START_POSITION = 3;
+const MIN_Z_START_POSITION = -2;
+const MAX_Z_START_POSITION = 2;
 
 const MIN_POSITION_VELOCITY = 0.002;
 const MAX_POSITION_VELOCITY = 0.01;
