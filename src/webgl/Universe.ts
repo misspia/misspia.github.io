@@ -6,6 +6,7 @@ import { Petals } from "@webgl/Petals";
 import { Blocks } from "@webgl/Blocks";
 import { Flowers } from "@webgl/Flowers";
 import { Grass } from "@webgl/Grass";
+import { Sky } from "@webgl/Sky";
 import { Ground } from "@webgl/Ground";
 import { CameraManager } from "@webgl/CameraManager";
 
@@ -21,6 +22,7 @@ export class Universe extends SceneManager {
   petals: Petals;
   blocks: Blocks;
   flowers: Flowers;
+  sky: Sky;
   grass: Grass;
   ground: Ground;
   cameraManager: CameraManager;
@@ -35,6 +37,7 @@ export class Universe extends SceneManager {
     this.petals = new Petals(this);
     this.blocks = new Blocks(this);
     this.grass = new Grass(this);
+    this.sky = new Sky();
     this.cameraManager = new CameraManager(this);
   }
 
@@ -50,9 +53,11 @@ export class Universe extends SceneManager {
     this.scene.add(this.petals.group);
     // this.scene.add(this.blocks.group);
     // this.scene.add(this.flowers.group);
+    this.scene.add(this.sky.group);
     this.scene.add(this.grass.group);
     this.scene.add(this.ground.group);
 
+    this.sky.position.set(0, 0, -2.0);
     this.grass.position.set(0, -1.2, 0);
     this.ground.position.set(0, -1.2, 0);
 
@@ -75,6 +80,7 @@ export class Universe extends SceneManager {
     this.petals.update();
     this.blocks.update();
     this.flowers.update();
+    this.sky.update();
     this.grass.update();
     this.ground.update();
     this.cameraManager.update();

@@ -11,6 +11,7 @@ void main() {
     vec3 color = vec3(0.1, 0.25, 0.02);
     float normalizedDistance = remap(vDistance, 0.0, 1.7, 0.0, 1.0);
     float alpha = 1.0;
+    // float alpha = (0.5 - nUv.y) * (0.5 - nUv.x);
 
     float threshold = 0.8;
     if(normalizedDistance > threshold) {
