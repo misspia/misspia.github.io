@@ -1,13 +1,16 @@
 import * as THREE from "three";
 import fragmentShader from "@webgl/shaders/sky.frag";
 import vertexShader from "@webgl/shaders/sky.vert";
-import { toRadians } from "@utils";
+import { Clouds } from "@webgl/Clouds";
 
 export class Sky {
+  clouds: Clouds;
   geometry: THREE.PlaneGeometry;
   material: THREE.RawShaderMaterial;
-  group: THREE.Mesh;
+  background: THREE.Mesh;
+  group: THREE.Group;
   constructor() {
+    this.clouds = new Clouds();
     this.geometry = new THREE.PlaneGeometry(6.5, 6);
     this.material = new THREE.RawShaderMaterial({
       fragmentShader,
@@ -16,8 +19,11 @@ export class Sky {
       side: THREE.DoubleSide,
       transparent: true,
     });
-    this.group = new THREE.Mesh(this.geometry, this.material);
-    // this.group.rotateY(toRadians(180))
+    this.background = new THREE.Mesh(this.geometry, this.material);
+    this.group = new THREE.Group();
+
+    this.group.add(this.background);
+    this.group.add(this.clouds.group);
   }
 
   get position() {

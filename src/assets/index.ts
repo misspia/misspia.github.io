@@ -6,3 +6,4 @@ export { default as flowerTexture } from "./flower.png";
 export { default as grassBladeAlpha } from "./grass-blade-alpha.jpg";
 export { default as grassBladeDiffuse } from "./grass-blade-diffuse.jpg";
 export { default as perlinFbm } from "./perlin-fbm.jpg";
+export { default as cloudTexture } from "./cloud.webp";
