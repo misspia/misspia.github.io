@@ -8,6 +8,7 @@ import { Flowers } from "@webgl/Flowers";
 import { Grass } from "@webgl/Grass";
 import { Sky } from "@webgl/Sky";
 import { Ground } from "@webgl/Ground";
+import { Butterfly } from "@webgl/Butterfly";
 import { CameraManager } from "@webgl/CameraManager";
 
 // https://github.com/mrdoob/three.js/blob/master/examples/webgl_postprocessing_unreal_bloom_selective.html
@@ -25,6 +26,7 @@ export class Universe extends SceneManager {
   sky: Sky;
   grass: Grass;
   ground: Ground;
+  butterfly: Butterfly;
   cameraManager: CameraManager;
   constructor(canvas: HTMLCanvasElement) {
     super(canvas, {});
@@ -33,11 +35,12 @@ export class Universe extends SceneManager {
     this.lights = new Lights();
     this.flowers = new Flowers();
     this.ground = new Ground();
+    this.sky = new Sky();
+    this.butterfly = new Butterfly();
     this.leaves = new Leaves(this);
     this.petals = new Petals(this);
     this.blocks = new Blocks(this);
     this.grass = new Grass(this);
-    this.sky = new Sky();
     this.cameraManager = new CameraManager(this);
   }
 
@@ -51,6 +54,7 @@ export class Universe extends SceneManager {
     this.scene.add(this.lights.group);
     // this.scene.add(this.leaves.group);
     this.scene.add(this.petals.group);
+    this.scene.add(this.butterfly.group);
     // this.scene.add(this.blocks.group);
     // this.scene.add(this.flowers.group);
     this.scene.add(this.sky.group);
@@ -78,6 +82,7 @@ export class Universe extends SceneManager {
 
     this.leaves.update();
     this.petals.update();
+    this.butterfly.update();
     this.blocks.update();
     this.flowers.update();
     this.sky.update();
