@@ -52,21 +52,21 @@ export class Universe extends SceneManager {
     // this.scene.add(this.lights.group);
     // this.scene.add(this.leaves.group);
     this.scene.add(this.butterfly.group);
-    // this.scene.add(this.petals.group);
-    // this.scene.add(this.sky.group);
-    // this.scene.add(this.grass.group);
-    // this.scene.add(this.ground.group);
+    this.scene.add(this.petals.group);
+    this.scene.add(this.sky.group);
+    this.scene.add(this.grass.group);
+    this.scene.add(this.ground.group);
 
     this.sky.position.set(0, 0, -3.5);
     this.grass.position.set(0, -1.2, 0);
     this.ground.position.set(0, -1.2, 0);
 
     // Events
-    // document.addEventListener(
-    //   "mousemove",
-    //   this.cameraManager.onMouseMove,
-    //   false,
-    // );
+    document.addEventListener(
+      "mousemove",
+      this.cameraManager.onMouseMove,
+      false,
+    );
   }
 
   customResize(_width: number, height: number): void {}
