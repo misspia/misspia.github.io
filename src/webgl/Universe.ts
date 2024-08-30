@@ -3,7 +3,6 @@ import { SceneManager } from "./SceneManager";
 import { Lights } from "@webgl/Lights";
 import { Leaves } from "@webgl/Leaves";
 import { Petals } from "@webgl/Petals";
-import { Blocks } from "@webgl/Blocks";
 import { Flowers } from "@webgl/Flowers";
 import { Grass } from "@webgl/Grass";
 import { Sky } from "@webgl/Sky";
@@ -21,7 +20,6 @@ export class Universe extends SceneManager {
   lights: Lights;
   leaves: Leaves;
   petals: Petals;
-  blocks: Blocks;
   flowers: Flowers;
   sky: Sky;
   grass: Grass;
@@ -36,10 +34,9 @@ export class Universe extends SceneManager {
     this.flowers = new Flowers();
     this.ground = new Ground();
     this.sky = new Sky();
-    this.butterfly = new Butterfly();
+    this.butterfly = new Butterfly(this);
     this.leaves = new Leaves(this);
     this.petals = new Petals(this);
-    this.blocks = new Blocks(this);
     this.grass = new Grass(this);
     this.cameraManager = new CameraManager(this);
   }
@@ -51,17 +48,16 @@ export class Universe extends SceneManager {
     // this.setCameraPos(0, 8, 0);
     this.lookAt(new Vector3(0, 0, 0));
 
+    // this.scene.add(this.flowers.group);
     // this.scene.add(this.lights.group);
     // this.scene.add(this.leaves.group);
-    // this.scene.add(this.petals.group);
     this.scene.add(this.butterfly.group);
-    // this.scene.add(this.blocks.group);
-    // this.scene.add(this.flowers.group);
+    // this.scene.add(this.petals.group);
     // this.scene.add(this.sky.group);
     // this.scene.add(this.grass.group);
     // this.scene.add(this.ground.group);
 
-    this.sky.position.set(0, 0, -2.0);
+    this.sky.position.set(0, 0, -3.5);
     this.grass.position.set(0, -1.2, 0);
     this.ground.position.set(0, -1.2, 0);
 
@@ -83,7 +79,6 @@ export class Universe extends SceneManager {
     this.leaves.update();
     this.petals.update();
     this.butterfly.update();
-    this.blocks.update();
     this.flowers.update();
     this.sky.update();
     this.grass.update();

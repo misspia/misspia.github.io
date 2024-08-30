@@ -11,7 +11,7 @@ export class Sky {
   group: THREE.Group;
   constructor() {
     this.clouds = new Clouds();
-    this.geometry = new THREE.PlaneGeometry(6.5, 6);
+    this.geometry = new THREE.PlaneGeometry(8.5, 8);
     this.material = new THREE.RawShaderMaterial({
       fragmentShader,
       vertexShader,
