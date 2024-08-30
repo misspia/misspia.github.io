@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import { Petal } from "@webgl/Petal";
 import { petalTexture } from "@assets";
-import { Universe } from "@webgl/Universe";
 import vertexShader from "@webgl/shaders/petal.vert";
 import fragmentShader from "@webgl/shaders/petal.frag";
 
@@ -10,13 +9,11 @@ const NUM_LEAVES = 20;
 // https://x.com/reku_AL/status/1455547674275549190/photo/3
 
 export class Petals {
-  private context: Universe;
   private petals: Petal[];
   private geometry: THREE.BufferGeometry;
   private material: THREE.Material;
   public group: THREE.Points;
-  constructor(context: Universe) {
-    this.context = context;
+  constructor() {
     this.petals = [];
     this.geometry = new THREE.BufferGeometry();
     this.createPetals();

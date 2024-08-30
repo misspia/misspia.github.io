@@ -39,6 +39,10 @@ var AZIMUTH = 0.4;
 
 // https://codepen.io/al-ro/pen/GRJzYQK?editors=1010
 // https://codesandbox.io/s/grass-shader-forked-okub75?file=/src/GrassMaterial.js
+// grass:
+// https://codepen.io/al-ro/pen/GRJzYQK?editors=1010
+// https://jsfiddle.net/felixmariotto/hvrg721n/
+// https://github.com/mrdoob/three.js/blob/master/examples/webgpu_instance_mesh.html
 export class Grass {
   context: Universe;
   viewDirection: THREE.Vector3;

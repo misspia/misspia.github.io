@@ -22,7 +22,6 @@ export class Butterfly {
   target: THREE.Mesh;
 
   private curve: THREE.CatmullRomCurve3;
-  private path: THREE.Line;
   private pathProgess: number;
   private pathProgressVelocity: number;
   private wingRotationDirection: number;
@@ -53,12 +52,11 @@ export class Butterfly {
       new THREE.Vector3(0.5, 2, -4.5),
       new THREE.Vector3(0, 2.5, -5),
     ]);
-    const points = this.curve.getPoints(1000);
-
-    this.path = new THREE.Line(
-      new THREE.BufferGeometry().setFromPoints(points),
-      new THREE.LineBasicMaterial({ color: 0xff0000 }),
-    );
+    // const points = this.curve.getPoints(1000);
+    // const path = new THREE.Line(
+    //   new THREE.BufferGeometry().setFromPoints(points),
+    //   new THREE.LineBasicMaterial({ color: 0xff0000 }),
+    // );
     this.pathProgess = 0; // 0 - 1
 
     this.wingRotationDirection = 1;
