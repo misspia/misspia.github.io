@@ -51,15 +51,15 @@ export class Universe extends SceneManager {
     // this.setCameraPos(0, 8, 0);
     this.lookAt(new Vector3(0, 0, 0));
 
-    this.scene.add(this.lights.group);
+    // this.scene.add(this.lights.group);
     // this.scene.add(this.leaves.group);
-    this.scene.add(this.petals.group);
+    // this.scene.add(this.petals.group);
     this.scene.add(this.butterfly.group);
     // this.scene.add(this.blocks.group);
     // this.scene.add(this.flowers.group);
-    this.scene.add(this.sky.group);
-    this.scene.add(this.grass.group);
-    this.scene.add(this.ground.group);
+    // this.scene.add(this.sky.group);
+    // this.scene.add(this.grass.group);
+    // this.scene.add(this.ground.group);
 
     this.sky.position.set(0, 0, -2.0);
     this.grass.position.set(0, -1.2, 0);

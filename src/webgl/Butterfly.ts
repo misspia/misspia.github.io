@@ -3,9 +3,10 @@ import { butterflyWing } from "@assets";
 import { toRadians, randomFloatBetween } from "@utils";
 
 const WING_WIDTH = 1;
-const MIN_WING_ROTATION_VELOCITY = 0.2;
-const MAX_WING_ROTATION_VELOCITY = 0.4;
-const MAX_WING_ROTATION_RADIANS = toRadians(80);
+const MIN_WING_ROTATION_VELOCITY = 0.05;
+const MAX_WING_ROTATION_VELOCITY = 0.15;
+const MIN_WING_ROTATION_RADIANS = toRadians(-80);
+const MAX_WING_ROTATION_RADIANS = toRadians(0);
 
 // https://www.youtube.com/watch?v=WkbI48OZKV8
 
@@ -27,7 +28,7 @@ export class Butterfly {
       MIN_WING_ROTATION_VELOCITY,
       MAX_WING_ROTATION_VELOCITY,
     );
-    this.wingRotation = 0;
+    this.wingRotation = toRadians(20);
 
     this.material = new THREE.MeshBasicMaterial({
       map: new THREE.TextureLoader().load(butterflyWing),
@@ -38,11 +39,13 @@ export class Butterfly {
     const wing1Geometry = new THREE.PlaneGeometry(WING_WIDTH, WING_WIDTH * 1.3);
     const wing2Geometry = wing1Geometry.clone();
 
+    // offset transformation origin
+    wing1Geometry.translate(WING_WIDTH / 2, 0, 0);
+    wing2Geometry.translate(WING_WIDTH / 2, 0, 0); // reversed since flipped later
+
     this.wing1 = new THREE.Mesh(wing1Geometry, this.material);
     this.wing2 = new THREE.Mesh(wing2Geometry, this.material);
 
-    this.wing1.position.set(WING_WIDTH / 2, 0, 0);
-    this.wing2.position.set(-WING_WIDTH / 2, 0, 0);
     this.wing2.rotation.set(0, toRadians(180), 0);
 
     this.group = new THREE.Group();
@@ -56,11 +59,13 @@ export class Butterfly {
 
   update() {
     if (this.wingRotation >= MAX_WING_ROTATION_RADIANS) {
-      this.wingRotationDirection = -this.wingRotationDirection;
+      this.wingRotationDirection = -1;
+    } else if (this.wingRotation <= MIN_WING_ROTATION_RADIANS) {
+      this.wingRotationDirection = 1;
     }
 
     this.wingRotation += this.wingRotationSpeed * this.wingRotationDirection;
     this.wing1.rotation.y = this.wingRotation;
-    this.wing2.rotation.y = -this.wingRotation;
+    this.wing2.rotation.y = Math.PI - this.wingRotation;
   }
 }
