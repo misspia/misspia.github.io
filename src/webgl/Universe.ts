@@ -54,7 +54,7 @@ export class Universe extends SceneManager {
     this.scene.add(this.butterfly.group);
     this.scene.add(this.petals.group);
     this.scene.add(this.sky.group);
-    this.scene.add(this.grass.group);
+    // this.scene.add(this.grass.group);
     this.scene.add(this.ground.group);
 
     this.sky.position.set(0, 0, -3.5);
