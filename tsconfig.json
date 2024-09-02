@@ -22,6 +22,7 @@
     /* path aliases */
     "baseUrl": ".",
     "paths": {
+      "@hooks/*": ["src/hooks/*"],
       "@theme": ["src/theme/index.ts"],
       "@components": ["src/components/index.ts"],
       "@utils": ["src/utils.ts"],

@@ -33,6 +33,10 @@ body {
   place-items: center;
 }
 
+* {
+  cursor: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

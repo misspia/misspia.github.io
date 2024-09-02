@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useWindowSize() {
+export const useWindowSize = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -19,4 +19,4 @@ export function useWindowSize() {
   }, []);
 
   return { width, height };
-}
+};

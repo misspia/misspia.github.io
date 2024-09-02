@@ -1,10 +1,11 @@
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import styled from "styled-components";
 import { Section } from "@components";
 import { colors, fonts } from "@theme";
+import { useWindowSize } from "@hooks/useWindowSize";
 
-import { WebGLApp } from "../webgl";
-import { useWindowSize } from "./useWindowSize";
+import { WebGLApp } from "@webgl/WebGLApp";
+import { CustomCursor } from "./CustomCursor";
 
 /**
  * loading
@@ -52,7 +53,6 @@ const Link = styled.a`
   position: relative;
   font-size: 16px;
   color: ${colors.black};
-  cursor: pointer;
   text-decoration: none;
 
   &::before {
@@ -92,9 +92,12 @@ const LINKS: Link[] = [
     href: "https://github.com/misspia",
   },
 ];
+
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { width, height } = useWindowSize();
+  const [cursorActive, setCursorActive] = useState(false);
+
   const webgl = useMemo(() => {
     if (!canvasRef.current) {
       return;
@@ -122,12 +125,19 @@ export const Hero = () => {
         <Title>m i s s p i a</Title>
         <Links>
           {LINKS.map((link) => (
-            <Link key={link.label} href={link.href} target="_blank">
+            <Link
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              onMouseEnter={() => setCursorActive(true)}
+              onMouseLeave={() => setCursorActive(false)}
+            >
               {link.label}
             </Link>
           ))}
         </Links>
       </ContentContainer>
+      <CustomCursor active={cursorActive} />
     </Container>
   );
 };
