@@ -12,6 +12,8 @@ const MIN_PATH_PROGRESS = 0;
 const MAX_PATH_PROGRESS = 1;
 const MIN_PATH_PROGRESS_VELOCITY = 0.0005;
 const MAX_PATH_PROGRESS_VELOCITY = 0.003;
+const OPACITY_THRESHOLD_START = 0.2;
+const OPACITY_THRESHOLD_END = 0.8;
 
 export class Butterfly {
   context: Universe;
@@ -153,6 +155,23 @@ export class Butterfly {
     if (!this.butterfly.quaternion.equals(this.targetQuaternion)) {
       const step = 0.01 * delta;
       this.butterfly.quaternion.rotateTowards(this.targetQuaternion, step);
+    }
+
+    /**
+     * fade butterfly in / out
+     */
+    if (this.pathProgess < OPACITY_THRESHOLD_START) {
+      this.material.opacity = remap(
+        0,
+        OPACITY_THRESHOLD_START,
+        0,
+        1,
+        this.pathProgess,
+      );
+    }
+    if (this.pathProgess > OPACITY_THRESHOLD_END) {
+      this.material.opacity =
+        1 - remap(OPACITY_THRESHOLD_START, 1, 0, 1, this.pathProgess);
     }
   }
 }
