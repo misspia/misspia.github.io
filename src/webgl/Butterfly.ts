@@ -47,6 +47,8 @@ export class Butterfly {
 
     this.curve = new THREE.CatmullRomCurve3([
       new THREE.Vector3(0, -0.25, 0),
+      // new THREE.Vector3(-0.1, 0, -0.25),
+      new THREE.Vector3(-0.3, 0.1, -0.5),
       new THREE.Vector3(-0.6, 0.4, -1),
       new THREE.Vector3(-0.5, 1, -1.5),
       new THREE.Vector3(0, 1, -3.5),
@@ -99,7 +101,7 @@ export class Butterfly {
 
     this.group = new THREE.Group();
     this.group.add(this.butterfly);
-    // this.group.add(this.path)
+    // this.group.add(path)
   }
 
   get position() {

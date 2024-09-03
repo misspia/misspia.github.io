@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useCursorPosition = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState<null | {x: number; y: number }>(null);
 
   useEffect(() => {
     const mouseMoveHandler = (event: MouseEvent) => {

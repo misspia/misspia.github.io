@@ -34,5 +34,5 @@ const Cursor = styled.div.attrs<CursorProps>((props) => ({
 export const CustomCursor: React.FC<{ active: boolean }> = ({ active }) => {
   const { position } = useCursorPosition();
 
-  return <Cursor top={position.y} left={position.x} active={active} />;
+  return position && <Cursor top={position.y} left={position.x} active={active} />;
 };

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useMemo, useState } from "react";
 import styled from "styled-components";
 import { Section } from "@components";
-import { colors, fonts } from "@theme";
+import { colors, fonts, mediaQueries } from "@theme";
 import { useWindowSize } from "@hooks/useWindowSize";
 
 import { WebGLApp } from "@webgl/WebGLApp";
@@ -35,26 +35,33 @@ const ContentContainer = styled.div`
 
 const Title = styled.h1`
   font-weight: ${fonts.weight.semiBold};
-  font-size: 36px;
+  font-size: 3em;
   color: ${colors.black};
   letter-spacing: 0.3em;
   margin-right: -0.3em;
   text-transform: uppercase;
+
+  ${mediaQueries.s} {
+    font-size: 2.5em;
+  }
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 5px;
+  gap: 6px;
+  
+  ${mediaQueries.s} {
+    gap: 9px;
+  }
 `;
 
 const Link = styled.a`
   position: relative;
-  font-size: 16px;
   color: ${colors.black};
   text-decoration: none;
-
+  
   &::before {
     content: "";
     position: absolute;
@@ -70,6 +77,10 @@ const Link = styled.a`
     &::before {
       width: 100%;
     }
+  }
+
+  ${mediaQueries.s} {
+    font-size: 1.5em;
   }
 `;
 
