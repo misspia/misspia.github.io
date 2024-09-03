@@ -3929,7 +3929,7 @@ void main() {
   font-size: 3em;
   color: ${sc.black};
   letter-spacing: 0.75em;
-  margin-right: -0.3em;
+  margin-right: -0.75em;
   text-transform: uppercase;
 
   ${Jp.s} {
