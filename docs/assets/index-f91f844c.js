@@ -3800,7 +3800,7 @@ void main() {
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(vPosition, 1.0);
 
-}`;const rS=10,C2=64,R2=rS/C2,P2=.1,b2=1.5,M0=Yb?100:300,L2=.7,D2=1.5,I2=.5,U2=1.5,N2=256,O2=new F(1,1,.5),F2=new F(1,1,1);var E0=new je(.01,.01);const k2=4,Ru=.4,z2=Ru/8.33;var B2=.2,T0=.4;class V2{constructor(e){de(this,"context");de(this,"viewDirection");de(this,"geometry");de(this,"material");de(this,"group");this.context=e,this.viewDirection=new F,this.geometry=new Xb,this.createGrassInstances();const t=new Vo,i=t.load(u2),r=t.load(l2),s=t.load(c2);this.material=new vl({uniforms:{time:{value:0},delta:{value:R2},posX:{value:E0.x},posZ:{value:E0.y},radius:{value:0},width:{value:rS},map:{value:i},alphaMap:{value:r},noiseTexture:{value:s},sunDirection:{value:new F(Math.sin(T0),Math.sin(B2),-Math.cos(T0))},cameraPosition:{value:this.context.camera.position},ambientStrength:{value:L2},translucencyStrength:{value:D2},diffuseStrength:{value:U2},specularStrength:{value:I2},shininess:{value:N2},lightColour:{value:O2},specularColour:{value:F2}},vertexShader:A2,fragmentShader:w2,side:on}),this.group=new dn(this.geometry,this.material)}get position(){return this.group.position}get uniforms(){return this.material.uniforms}createGrassInstances(){const e=new Zo(z2,Ru,1,k2);e.translate(0,Ru/2,0);let t=new F,i=new Qi,r=new Qi,s,o,a,l,u,c,f;u=.05,c=Math.sin(u/2),f=new F(0,1,0),s=f.x*c,o=f.y*c,a=f.z*c,l=Math.cos(u/2),i.set(s,o,a,l),u=.3,c=Math.sin(u/2),f.set(1,0,0),s=f.x*c,o=f.y*c,a=f.z*c,l=Math.cos(u/2),r.set(s,o,a,l),i.multiply(r),u=.1,c=Math.sin(u/2),f.set(0,0,1),s=f.x*c,o=f.y*c,a=f.z*c,l=Math.cos(u/2),r.set(s,o,a,l),i.multiply(r);let d=new Qi;for(let S=0;S<e.attributes.position.array.length;S+=3){d.setFromAxisAngle(new F(0,1,0),Math.PI/2),t.x=e.attributes.position.array[S],t.y=e.attributes.position.array[S+1],t.z=e.attributes.position.array[S+2];let E=t.y/Ru;d.slerp(i,E),t.applyQuaternion(d),e.attributes.position.array,e.attributes.position.array[S]=t.x,e.attributes.position.array[S+1]=t.y,e.attributes.position.array[S+2]=t.z}e.computeVertexNormals(),this.geometry.index=e.index,this.geometry.attributes.position=e.attributes.position,this.geometry.attributes.uv=e.attributes.uv,this.geometry.attributes.normal=e.attributes.normal;var p=[],_=[],m=[],g=[];for(let S=0;S<M0;S++){p.push(S/M0);const{x:E,y:w,z:P}=this.getRandCirclePos();_.push(E,w,P);let y=Math.PI-Math.random()*(2*Math.PI);g.push(Math.sin(.5*y),Math.cos(.5*y)),S%3!=0?m.push(2+Math.random()*1.25):m.push(2+Math.random())}var h=new au(new Float32Array(_),3),v=new au(new Float32Array(m),1),x=new au(new Float32Array(g),2),M=new au(new Float32Array(p),1);this.geometry.setAttribute("offset",h),this.geometry.setAttribute("scale",v),this.geometry.setAttribute("halfRootAngle",x),this.geometry.setAttribute("index",M)}getRandCirclePos(){const e=mi(P2,b2),t=mi(0,Math.PI*2);return{x:e*Math.cos(t),y:0,z:e*Math.sin(t)}}update(){this.uniforms.time.value=this.context.clock.getElapsedTime()}}var H2=`precision highp float;
+}`;const rS=10,C2=64,R2=rS/C2,P2=.1,b2=1.5,M0=Yb?200:300,L2=.7,D2=1.5,I2=.5,U2=1.5,N2=256,O2=new F(1,1,.5),F2=new F(1,1,1);var E0=new je(.01,.01);const k2=4,Ru=.4,z2=Ru/8.33;var B2=.2,T0=.4;class V2{constructor(e){de(this,"context");de(this,"viewDirection");de(this,"geometry");de(this,"material");de(this,"group");this.context=e,this.viewDirection=new F,this.geometry=new Xb,this.createGrassInstances();const t=new Vo,i=t.load(u2),r=t.load(l2),s=t.load(c2);this.material=new vl({uniforms:{time:{value:0},delta:{value:R2},posX:{value:E0.x},posZ:{value:E0.y},radius:{value:0},width:{value:rS},map:{value:i},alphaMap:{value:r},noiseTexture:{value:s},sunDirection:{value:new F(Math.sin(T0),Math.sin(B2),-Math.cos(T0))},cameraPosition:{value:this.context.camera.position},ambientStrength:{value:L2},translucencyStrength:{value:D2},diffuseStrength:{value:U2},specularStrength:{value:I2},shininess:{value:N2},lightColour:{value:O2},specularColour:{value:F2}},vertexShader:A2,fragmentShader:w2,side:on}),this.group=new dn(this.geometry,this.material)}get position(){return this.group.position}get uniforms(){return this.material.uniforms}createGrassInstances(){const e=new Zo(z2,Ru,1,k2);e.translate(0,Ru/2,0);let t=new F,i=new Qi,r=new Qi,s,o,a,l,u,c,f;u=.05,c=Math.sin(u/2),f=new F(0,1,0),s=f.x*c,o=f.y*c,a=f.z*c,l=Math.cos(u/2),i.set(s,o,a,l),u=.3,c=Math.sin(u/2),f.set(1,0,0),s=f.x*c,o=f.y*c,a=f.z*c,l=Math.cos(u/2),r.set(s,o,a,l),i.multiply(r),u=.1,c=Math.sin(u/2),f.set(0,0,1),s=f.x*c,o=f.y*c,a=f.z*c,l=Math.cos(u/2),r.set(s,o,a,l),i.multiply(r);let d=new Qi;for(let S=0;S<e.attributes.position.array.length;S+=3){d.setFromAxisAngle(new F(0,1,0),Math.PI/2),t.x=e.attributes.position.array[S],t.y=e.attributes.position.array[S+1],t.z=e.attributes.position.array[S+2];let E=t.y/Ru;d.slerp(i,E),t.applyQuaternion(d),e.attributes.position.array,e.attributes.position.array[S]=t.x,e.attributes.position.array[S+1]=t.y,e.attributes.position.array[S+2]=t.z}e.computeVertexNormals(),this.geometry.index=e.index,this.geometry.attributes.position=e.attributes.position,this.geometry.attributes.uv=e.attributes.uv,this.geometry.attributes.normal=e.attributes.normal;var p=[],_=[],m=[],g=[];for(let S=0;S<M0;S++){p.push(S/M0);const{x:E,y:w,z:P}=this.getRandCirclePos();_.push(E,w,P);let y=Math.PI-Math.random()*(2*Math.PI);g.push(Math.sin(.5*y),Math.cos(.5*y)),S%3!=0?m.push(2+Math.random()*1.25):m.push(2+Math.random())}var h=new au(new Float32Array(_),3),v=new au(new Float32Array(m),1),x=new au(new Float32Array(g),2),M=new au(new Float32Array(p),1);this.geometry.setAttribute("offset",h),this.geometry.setAttribute("scale",v),this.geometry.setAttribute("halfRootAngle",x),this.geometry.setAttribute("index",M)}getRandCirclePos(){const e=mi(P2,b2),t=mi(0,Math.PI*2);return{x:e*Math.cos(t),y:0,z:e*Math.sin(t)}}update(){this.uniforms.time.value=this.context.clock.getElapsedTime()}}var H2=`precision highp float;
 
 varying vec2 vUv;
 
@@ -3928,12 +3928,13 @@ void main() {
   font-weight: ${Ed.weight.semiBold};
   font-size: 3em;
   color: ${sc.black};
-  letter-spacing: 0.3em;
+  letter-spacing: 0.75em;
   margin-right: -0.3em;
   text-transform: uppercase;
 
   ${Jp.s} {
     font-size: 2.5em;
+    letter-spacing: 0.6em;
   }
 `,CD=or.div`
   display: flex;
@@ -3948,6 +3949,7 @@ void main() {
   position: relative;
   color: ${sc.black};
   text-decoration: none;
+  font-size: 1.25em ;
   
   &::before {
     content: "";
@@ -3969,7 +3971,7 @@ void main() {
   ${Jp.s} {
     font-size: 1.5em;
   }
-`,PD=[{label:"sketchbook",href:"https://misspia.github.io/sketchbook/"},{label:"linkedin",href:"https://www.linkedin.com/in/misspia/"},{label:"github",href:"https://github.com/misspia"}],bD=()=>{const n=Tt.useRef(null),{width:e,height:t}=FT(),[i,r]=Tt.useState(!1),s=Tt.useMemo(()=>{if(!n.current)return;const o=new xD;return o.setup(n.current),o},[n.current]);return Tt.useEffect(()=>{s&&s.resize(e,t)},[e,t]),Tt.useEffect(()=>{s&&s.render()},[s]),bn.jsxs(TD,{children:[bn.jsx(ED,{ref:n}),bn.jsxs(wD,{children:[bn.jsx(AD,{children:"m i s s p i a"}),bn.jsx(CD,{children:PD.map(o=>bn.jsx(RD,{href:o.href,target:"_blank",onMouseEnter:()=>r(!0),onMouseLeave:()=>r(!1),children:o.label},o.label))})]}),bn.jsx(MD,{active:i})]})},LD=or.div`
+`,PD=[{label:"sketchbook",href:"https://misspia.github.io/sketchbook/"},{label:"linkedin",href:"https://www.linkedin.com/in/misspia/"},{label:"github",href:"https://github.com/misspia"}],bD=()=>{const n=Tt.useRef(null),{width:e,height:t}=FT(),[i,r]=Tt.useState(!1),s=Tt.useMemo(()=>{if(!n.current)return;const o=new xD;return o.setup(n.current),o},[n.current]);return Tt.useEffect(()=>{s&&s.resize(e,t)},[e,t]),Tt.useEffect(()=>{s&&s.render()},[s]),bn.jsxs(TD,{children:[bn.jsx(ED,{ref:n}),bn.jsxs(wD,{children:[bn.jsx(AD,{children:"misspia"}),bn.jsx(CD,{children:PD.map(o=>bn.jsx(RD,{href:o.href,target:"_blank",onMouseEnter:()=>r(!0),onMouseLeave:()=>r(!1),children:o.label},o.label))})]}),bn.jsx(MD,{active:i})]})},LD=or.div`
   display: flex;
   flex-direction: column;
   width: 100%;

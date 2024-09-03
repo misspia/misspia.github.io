@@ -37,12 +37,13 @@ const Title = styled.h1`
   font-weight: ${fonts.weight.semiBold};
   font-size: 3em;
   color: ${colors.black};
-  letter-spacing: 0.3em;
+  letter-spacing: 0.75em;
   margin-right: -0.3em;
   text-transform: uppercase;
 
   ${mediaQueries.s} {
     font-size: 2.5em;
+    letter-spacing: 0.6em;
   }
 `;
 
@@ -61,6 +62,7 @@ const Link = styled.a`
   position: relative;
   color: ${colors.black};
   text-decoration: none;
+  font-size: 1.25em ;
   
   &::before {
     content: "";
@@ -133,7 +135,7 @@ export const Hero = () => {
     <Container>
       <Canvas ref={canvasRef} />
       <ContentContainer>
-        <Title>m i s s p i a</Title>
+        <Title>misspia</Title>
         <Links>
           {LINKS.map((link) => (
             <Link
